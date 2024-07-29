@@ -17,13 +17,13 @@ export default function Component(item: Props) {
 
     const updateWidth = () => {
         if (window.innerWidth >= 1536) {
-            setWidth('770px');
+            setWidth('830px');
         } else if (window.innerWidth >= 1280) {
-            setWidth('670px');
+            setWidth('730px');
         } else if (window.innerWidth >= 768) {
-            setWidth('500px');
+            setWidth('560px');
         } else {
-            setWidth('300px');
+            setWidth('360px');
         }
     };
 

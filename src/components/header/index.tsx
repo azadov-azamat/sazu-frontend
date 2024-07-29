@@ -24,9 +24,10 @@ export default function Component() {
                     nextEl: nextRef.current,
                     prevEl: prevRef.current,
                 }}
-                loop
+                loop={true}
+                speed={3000}
                 autoplay={{
-                    delay: 2000,
+                    delay: 5000,
                     disableOnInteraction: false
                 }}
             >

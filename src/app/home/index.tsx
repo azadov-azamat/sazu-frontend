@@ -9,7 +9,6 @@ export default function Controller() {
 
     return (
         <div className={'flex flex-col gap-24'}>
-            {/*<SiteLoadingComponent/>*/}
             <HeaderSection/>
             <div className="relative flex justify-center items-center h-[710px]">
                 {
