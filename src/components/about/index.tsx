@@ -8,7 +8,7 @@ export default function Component() {
     return (
         <section>
             <PageTitleComponent title={"О нас"}/>
-            <div className={'flex gap-24 items-center'}>
+            <div className={'flex gap-24 items-center mt-8'}>
                 <div className={'w-[350px]'}>
                     <LazyLoadImage
                         className={'w-full object-cover object-center'}

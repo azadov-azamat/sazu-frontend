@@ -6,3 +6,11 @@ body {
     @apply m-0 p-0 box-border bg-primary-black;
     font-family: "Unbounded", sans-serif;
 }
+
+.truncate-multiline {
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

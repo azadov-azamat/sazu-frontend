@@ -1,6 +1,6 @@
 // importrt React, {useEffect} from 'react';
 
-import {AboutSection, HeaderSection} from "../../components";
+import {AboutSection, HeaderSection, NewsSection, PartnersSection} from "../../components";
 
 export default function Controller() {
 
@@ -8,6 +8,12 @@ export default function Controller() {
         <div className={'flex flex-col gap-14'}>
             <HeaderSection/>
             <AboutSection/>
+            <PartnersSection/>
+            <NewsSection/>
+
+            <div>
+
+            </div>
         </div>
     );
 }

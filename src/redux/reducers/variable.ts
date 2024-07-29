@@ -2,6 +2,14 @@ import {createSlice} from "@reduxjs/toolkit";
 // import {Dictionary} from "../../helpers/enumuration/dictionary";
 // import i18n from "i18next";
 import {InitialStateProps} from "../../interface/redux/variable.interface";
+import img1  from '../../assets/draft/partner1.png';
+import img2  from '../../assets/draft/partner2.png';
+import img3  from '../../assets/draft/partner3.png';
+import img4  from '../../assets/draft/partner4.png';
+import img5  from '../../assets/draft/partner5.png';
+import img6  from '../../assets/draft/news1.png';
+import img7  from '../../assets/draft/news2.png';
+import img8  from '../../assets/draft/news3.png';
 
 // export const login = createAsyncThunk('variables/login', async (data: authDataProps, {rejectWithValue}) => {
 //     try {
@@ -15,6 +23,54 @@ import {InitialStateProps} from "../../interface/redux/variable.interface";
 
 const initialState: InitialStateProps = {
     // lang: localStorage.getItem('i18nextLng') || 'ru',
+    partners: [
+        {
+            img: img1,
+            name: 'zortv'
+        },
+        {
+            img: img2,
+            name: 'zortv'
+        },
+        {
+            img: img3,
+            name: 'zortv'
+        },
+        {
+            img: img4,
+            name: 'zortv'
+        },
+        {
+            img: img5,
+            name: 'zortv'
+        }
+    ],
+    news: [
+        {
+            id: 1,
+            title: 'Компания Masterpack',
+            desc: 'ведущий производитель в сфере качественной упаковки, обратилась в маркетинговую компанию Sazu',
+            image: img6,
+        },
+        {
+            id: 2,
+            title: 'Компания Masterpack',
+            desc: 'ведущий производитель в сфере качественной упаковки, обратилась в маркетинговую компанию Sazu',
+            image: img7,
+        },
+        {
+            id: 3,
+            title: 'Компания Masterpack',
+            desc: 'ведущий производитель в сфере качественной упаковки, обратилась в маркетинговую компанию Sazu',
+            image:  img8,
+        },
+        {
+            id: 4,
+            title: 'Компания Masterpack',
+            desc: 'ведущий производитель в сфере качественной упаковки, обратилась в маркетинговую компанию Sazu',
+            image: img6,
+        },
+    ],
     loading: false,
     currentPage: 1,
     pageCount: 1,

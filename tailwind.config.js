@@ -7,11 +7,21 @@ export default {
   theme: {
     extend: {
       colors: {
-        'primary-black': '#0B0B0B'
+        'primary-black': '#0B0B0B',
+        'primary-gray': '#828282'
       },
       lineHeight: {
         '62': '62px',
-      }
+      },
+      keyframes: {
+        marquee: {
+          '0%': { transform: 'translateX(100%)' },
+          '100%': { transform: 'translateX(-100%)' },
+        },
+      },
+      animation: {
+        marquee: 'marquee 20s linear infinite',
+      },
     },
   },
   plugins: [],

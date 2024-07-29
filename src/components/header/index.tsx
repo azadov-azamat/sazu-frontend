@@ -1,6 +1,6 @@
 // import React from 'react';
 
-import AdsImage from '../../assets/img.png';
+import AdsImage from '../../assets/draft/header-image.png';
 import ArrowRight from '../../assets/arrow-right.png';
 import ArrowLeft from '../../assets/arrow-left.png';
 import { Swiper, SwiperSlide } from 'swiper/react';
