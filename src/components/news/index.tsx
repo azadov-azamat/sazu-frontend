@@ -9,7 +9,7 @@ export default function Component() {
     return (
         <section>
             <PageTitleComponent title={"Новости"}/>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
+            <div className="flex flex-wrap gap-8 mt-8 md:justify-between justify-center">
                 {
                     news.map((item, index) => (<NewsCardComponent key={index} {...item} />))
                 }

@@ -5,7 +5,7 @@ export default function Component(item: newsDataKeys) {
 
     return (
         <div
-            className="w-80 relative h-[500px] p-5 bg-white text-black rounded-[20px] overflow-hidden">
+            className="md:w-80 w-3/4 relative h-[500px] p-5 bg-white text-black rounded-[20px] overflow-hidden">
             <div className={'w-full h-[260px]'}>
                 <img src={item.image} alt={item.title}
                      className="w-full h-full object-contain object-center"

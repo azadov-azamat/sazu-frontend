@@ -17,13 +17,13 @@ export default function Component(item: Props) {
 
     const updateWidth = () => {
         if (window.innerWidth >= 1536) {
-            setWidth('830px');
+            setWidth('900px');
         } else if (window.innerWidth >= 1280) {
-            setWidth('730px');
+            setWidth('830px');
         } else if (window.innerWidth >= 768) {
-            setWidth('560px');
+            setWidth('660px');
         } else {
-            setWidth('360px');
+            setWidth('460px');
         }
     };
 
@@ -58,7 +58,7 @@ export default function Component(item: Props) {
             onMouseLeave={handleMouseLeave}
             style={{ top: `${item.index * 100}px`, zIndex: (item.index * (-1)) + 20, width: width, }}
             className={`card-${item.index} shadow-md hover:!z-50 transition-transform duration-500 absolute
-             flex items-center justify-center bg-white rounded-3xl 2xl:h-[300px] xl:h-[270px] h-64
+             flex items-center justify-center bg-white rounded-3xl 2xl:h-[280px] xl:h-[260px] h-64
              `}
         >
             <LazyLoadImage
