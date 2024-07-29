@@ -6,10 +6,12 @@ export default function Component(item: newsDataKeys) {
     return (
         <div
             data-aos="flip-down"
-            className="md:w-80 w-3/4 relative h-[500px] p-5 bg-white text-black rounded-[20px] overflow-hidden">
-            <div className={'w-full h-[260px]'}>
+            className="md:w-80 w-3/4 relative h-[500px] p-5 bg-white text-black rounded-[20px] overflow-hidden group">
+            <div className={'w-full h-[260px] relative'}>
                 <img src={item.image} alt={item.title}
-                     className="w-full h-full object-contain object-center"
+                     className="w-full h-full object-contain object-center absolute inset-0
+                     transition-transform duration-400 ease-in-out transform scale-100 group-hover:scale-105 rotate-0 group-hover:rotate-3
+                     "
                 />
             </div>
 

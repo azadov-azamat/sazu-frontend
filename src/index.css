@@ -7,7 +7,12 @@
 .splitting .word {
     display: inline-block;
     transition: color 0.5s;
-    color: gray;
+}
+
+.directorsCarousel__images-slide img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.5s;
 }
 
 body {
