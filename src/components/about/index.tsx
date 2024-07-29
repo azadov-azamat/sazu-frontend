@@ -3,8 +3,52 @@
 import {PageTitleComponent} from "../index.ts";
 import {LazyLoadImage} from "react-lazy-load-image-component";
 import aboutImage from "../../assets/about-section.png";
+import Splitting from 'splitting';
+import {useEffect, useRef} from "react";
 
 export default function Component() {
+    const textRef = useRef<HTMLDivElement | null>(null);
+
+    useEffect(() => {
+        Splitting();
+
+        const updateCharColors = (): void => {
+            if (!textRef.current) return;
+
+            const rect: DOMRect = textRef.current.getBoundingClientRect();
+            const viewportHeight: number = window.innerHeight;
+            const textHeight: number = rect.height;
+
+            // Calculate scroll progress
+            let scrollProgress: number = (viewportHeight - rect.top) / (viewportHeight + textHeight);
+            scrollProgress = Math.max(0, Math.min(1, scrollProgress));
+
+            const chars: NodeListOf<HTMLElement> = textRef.current.querySelectorAll('[data-char]');
+            chars.forEach((char, index) => {
+                const charProgress: number = index / chars.length;
+                if (charProgress <= scrollProgress) {
+                    char.style.color = 'white';
+                } else {
+                    char.style.color = 'gray';
+                }
+            });
+        };
+
+        // Initial color update
+        updateCharColors();
+
+        // Scroll event listener
+        const handleScroll = () => {
+            requestAnimationFrame(updateCharColors);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
 
     return (
         <section>
@@ -21,10 +65,8 @@ export default function Component() {
                     />
                 </div>
                 <p
-                    data-aos="fade-in"
-                    data-aos-duration="5000"
-                    data-aos-anchor-placement="top-bottom"
-                    className="xl:w-[45%] w-full text-white font-normal md:text-3xl text-xl leading-9">
+                    ref={textRef}
+                    className="xl:w-[45%] w-full text-gray-500 font-normal md:text-3xl text-xl leading-9 words chars splitting" data-splitting>
                     Sazu - это команда опытных специалистов в сфере маркетинга, которые специализируются
                     на продвижении жилых комплексов. Мы обладаем глубоким пониманием рынка
                     недвижимости и используем инновационные методы, чтобы создавать эффективные

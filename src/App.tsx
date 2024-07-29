@@ -6,6 +6,7 @@ import 'swiper/css';
 import 'swiper/swiper-bundle.css';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import 'aos/dist/aos.css';
+import 'splitting/dist/splitting.css';
 
 function App() {
 

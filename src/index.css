@@ -1,6 +1,14 @@
+@import 'splitting/dist/splitting.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.splitting .word {
+    display: inline-block;
+    transition: color 0.5s;
+    color: gray;
+}
 
 body {
     @apply m-0 p-0 box-border bg-primary-black;

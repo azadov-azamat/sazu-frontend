@@ -7,4 +7,5 @@ export {default as NewsSection} from './news';
 export {default as ProjectCardComponent} from './project-card';
 export {default as PageTitleComponent} from './page-title';
 export {default as NewsCardComponent} from './news-card';
+// export {default as ZoomImageComponent} from './zoom-image';
 export {default as SiteLoadingComponent} from './loading-site';
