@@ -1,12 +1,17 @@
 import {LayoutProps} from "./layout.props";
-// import Footer from "../components/footer";
+import {FooterSection, NavbarSection} from "../components";
 
 function Layout({children}: LayoutProps): JSX.Element {
 
     return (
-        <div className={'flex w-full h-auto'}>
-            <main
-                className={'w-full h-auto bg-white transition-transform duration-500 p-4'}>{children}</main>
+        <div className={'flex justify-center items-center w-full'}>
+            <div className={'flex flex-col w-full h-auto container'}>
+                <NavbarSection/>
+                <main className={'w-full h-auto'}>
+                    {children}
+                </main>
+                <FooterSection/>
+            </div>
         </div>
     );
 }

@@ -3,6 +3,7 @@ import {routes} from "./utils/constants.ts";
 import Layout from "./layout/layout.tsx";
 import './index.css'
 import 'swiper/css';
+import 'swiper/swiper-bundle.css';
 
 function App() {
 
