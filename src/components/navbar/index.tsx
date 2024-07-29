@@ -21,7 +21,7 @@ export default function Component() {
     };
 
     return (
-        <nav className={'absolute w-full flex justify-between items-center z-10 bg-transparent mt-9 px-6'}>
+        <nav className={'absolute w-full flex justify-between items-center z-50 bg-transparent mt-9 px-6'}>
             <LazyLoadImage
                 alt={"logo-site"}
                 src={SiteLogo}/>
@@ -33,7 +33,7 @@ export default function Component() {
                 </div>
             </div>
             <div
-                className={`menu fixed top-0 left-0 w-full h-full bg-gray-300 bg-opacity-55 transform -translate-y-full backdrop-blur justify-center ${isOpen ? 'flex justify-center' : 'hidden'}`}>
+                className={`menu z-[1000] fixed top-0 left-0 w-full h-full bg-gray-300 bg-opacity-55 transform -translate-y-full backdrop-blur justify-center ${isOpen ? 'flex justify-center' : 'hidden'}`}>
                 <div className={'container relative flex items-center justify-start'}>
                     <div
                         className={`absolute top-12 right-4 flex flex-col justify-between cursor-pointer w-10 h-10`}

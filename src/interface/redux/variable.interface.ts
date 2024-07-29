@@ -1,6 +1,7 @@
 export interface InitialStateProps {
     // lang: string;
     loading: boolean;
+    projects: projectsDataKey[] | [];
     partners: partnersDataKeys[] | [];
     news: newsDataKeys[] | []
     currentPage: number;
@@ -10,6 +11,11 @@ export interface InitialStateProps {
 }
 
 export interface partnersDataKeys {
+    img: string;
+    name: string;
+}
+
+export interface projectsDataKey extends defaultKeys{
     img: string;
     name: string;
 }

@@ -10,6 +10,11 @@ import img5  from '../../assets/draft/partner5.png';
 import img6  from '../../assets/draft/news1.png';
 import img7  from '../../assets/draft/news2.png';
 import img8  from '../../assets/draft/news3.png';
+import sazu  from '../../assets/sazu/img.png';
+import sBlogger  from '../../assets/sazu/blogger.png';
+import sEvent  from '../../assets/sazu/event.png';
+import sSmm  from '../../assets/sazu/smm.png';
+import sTv  from '../../assets/sazu/tv.png';
 
 // export const login = createAsyncThunk('variables/login', async (data: authDataProps, {rejectWithValue}) => {
 //     try {
@@ -23,6 +28,33 @@ import img8  from '../../assets/draft/news3.png';
 
 const initialState: InitialStateProps = {
     // lang: localStorage.getItem('i18nextLng') || 'ru',
+    projects: [
+        {
+            id: 1,
+          name: 'sazu',
+          img: sazu
+        },
+        {
+            id: 2,
+          name: 'blogger',
+          img: sBlogger
+        },
+        {
+            id: 3,
+          name: 'event',
+          img: sEvent
+        },
+        {
+            id: 4,
+          name: 'smm',
+          img: sSmm
+        },
+        {
+            id: 5,
+          name: 'tv',
+          img: sTv
+        },
+    ],
     partners: [
         {
             img: img1,
