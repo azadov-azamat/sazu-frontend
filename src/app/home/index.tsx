@@ -2,10 +2,16 @@
 
 import {AboutSection, HeaderSection, NewsSection, PartnersSection, ProjectCardComponent} from "../../components";
 import {useAppSelector} from "../../redux/hooks.ts";
+import {useEffect} from "react";
+import AOS from "aos";
 
 export default function Controller() {
 
     const {projects} = useAppSelector(state => state.variables)
+
+    useEffect(() => {
+        AOS.init();
+    }, []);
 
     return (
         <div className={'flex flex-col gap-24'}>
