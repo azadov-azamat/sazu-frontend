@@ -1,6 +1,12 @@
 // importrt React, {useEffect} from 'react';
 
-import {AboutSection, HeaderSection, NewsSection, PartnersSection, ProjectCardComponent} from "../../components";
+import {
+    AboutSection,
+    HeaderSection,
+    NewsSection,
+    PartnersSection,
+    ProjectCardComponent
+} from "../../components";
 import {useAppSelector} from "../../redux/hooks.ts";
 import {useEffect} from "react";
 import AOS from "aos";
