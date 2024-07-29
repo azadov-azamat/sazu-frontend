@@ -1,5 +1,5 @@
 // import React from 'react';
-import SiteLogo from '../../../public/assets/site-logo.png';
+import SiteLogo from '../../assets/site-logo.png';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 export default function Component() {

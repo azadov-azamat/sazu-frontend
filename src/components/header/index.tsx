@@ -1,11 +1,11 @@
 // import React from 'react';
 
-import AdsImage from '../../../public/assets/img.png';
-import ArrowRight from '../../../public/assets/arrow-right.png';
-import ArrowLeft from '../../../public/assets/arrow-left.png';
+import AdsImage from '../../assets/img.png';
+import ArrowRight from '../../assets/arrow-right.png';
+import ArrowLeft from '../../assets/arrow-left.png';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import { Navigation } from 'swiper/modules';
+import { Navigation, Autoplay } from 'swiper/modules';
 import {LazyLoadImage} from "react-lazy-load-image-component";
 import {useRef} from "react";
 
@@ -17,8 +17,7 @@ export default function Component() {
     return (
         <header className={'w-full h-auto'}>
             <Swiper
-                autoplay={true}
-                modules={[Navigation]}
+                modules={[Navigation, Autoplay]}
                 className={'w-full'}
                 slidesPerView={1}
                 navigation={{
@@ -26,6 +25,10 @@ export default function Component() {
                     prevEl: prevRef.current,
                 }}
                 loop
+                autoplay={{
+                    delay: 2000,
+                    disableOnInteraction: false
+                }}
             >
                 {
                     [1, 2, 3, 4, 5, 6, 7].map((_, key) => (

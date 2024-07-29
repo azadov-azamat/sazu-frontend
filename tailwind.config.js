@@ -8,6 +8,9 @@ export default {
     extend: {
       colors: {
         'primary-black': '#0B0B0B'
+      },
+      lineHeight: {
+        '62': '62px',
       }
     },
   },
