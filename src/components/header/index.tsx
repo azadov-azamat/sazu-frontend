@@ -20,6 +20,7 @@ export default function Component() {
                 modules={[Navigation, Autoplay]}
                 className={'w-full'}
                 slidesPerView={1}
+                spaceBetween={10}
                 navigation={{
                     nextEl: nextRef.current,
                     prevEl: prevRef.current,
