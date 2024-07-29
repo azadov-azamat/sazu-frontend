@@ -5,7 +5,7 @@ function Layout({children}: LayoutProps): JSX.Element {
 
     return (
         <div className={'flex justify-center items-center w-full'}>
-            <div className={'flex flex-col w-full h-auto container'}>
+            <div className={'flex flex-col relative w-full h-auto container'}>
                 <NavbarSection/>
                 <main className={'w-full h-auto'}>
                     {children}
