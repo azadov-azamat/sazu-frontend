@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      boxShadow: {
+        'purple-blur': '0 12px 20px rgba(91, 33, 182, 0.5)',
+      },
       backgroundPosition: {
         'right-top-20px': 'right 20px top',
       },
@@ -38,6 +41,9 @@ export default {
         marquee: 'marquee 20s linear infinite',
       },
     },
+    filter: {
+      'blur': 'blur(4px)',
+    }
   },
   plugins: [],
 }

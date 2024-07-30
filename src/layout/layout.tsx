@@ -1,7 +1,24 @@
 import {LayoutProps} from "./layout.props";
 import {FooterSection, NavbarSection} from "../components";
+import { useEffect } from 'react';
+import { gsap } from 'gsap';
 
 function Layout({children}: LayoutProps): JSX.Element {
+
+    const detailsClass= ' falling-element absolute -z-10 bottom-0 w-56 h-52 bg-no-repeat bg-[length:225px_200px]';
+
+    useEffect(() => {
+        gsap.fromTo(
+            '.falling-element',
+            { y: -300, opacity: 0 },
+            {
+                y: 0,
+                opacity: 1,
+                duration: 2,
+                stagger: 0.5,
+            }
+        );
+    }, []);
 
     return (
         <div className={'flex justify-center items-center w-full'}>
@@ -10,9 +27,9 @@ function Layout({children}: LayoutProps): JSX.Element {
                 <main className={'w-full h-auto'}>
                     {children}
                 </main>
-                <div className={'absolute -z-10 bottom-0 w-56 h-52 bg-first-pattern bg-no-repeat bg-[length:225px_200px] top-1/4 md:-right-5 right-0'}/>
-                <div className={'absolute -z-10 bottom-0 w-56 h-52 bg-second-pattern bg-no-repeat bg-[length:225px_200px] top-1/2 !-left-20'}/>
-                <div className={'absolute -z-10 bottom-0 w-56 h-52 bg-thirty-pattern bg-no-repeat bg-[length:225px_200px] top-[60%] right-1'}/>
+                <div className={'bg-first-pattern top-1/4 md:-right-5 right-0' + detailsClass}/>
+                <div className={'bg-second-pattern top-1/2 !-left-20' + detailsClass}/>
+                <div className={'bg-thirty-pattern top-[60%] right-1' + detailsClass}/>
                 <FooterSection/>
             </div>
         </div>
