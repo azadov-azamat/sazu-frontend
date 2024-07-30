@@ -14,6 +14,7 @@ interface Props extends projectsDataKey {
 export default function Component(item: Props) {
     const cardRef = useRef(null);
     const [width, setWidth] = useState('770px'); // Default width
+    const [squareSize, setSquareSize] = useState<number>(115); // Default width
 
     const updateWidth = () => {
         if (window.innerWidth >= 1536) {
@@ -23,6 +24,7 @@ export default function Component(item: Props) {
         } else if (window.innerWidth >= 768) {
             setWidth('660px');
         } else {
+            setSquareSize(65);
             setWidth('90%');
         }
     };
@@ -58,7 +60,7 @@ export default function Component(item: Props) {
             data-aos-duration={item.index + '000'}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-            style={{ top: `${item.index * 115}px`, zIndex: (item.index * (-1)) + 20, width: width, }}
+            style={{ top: `${item.index * squareSize}px`, zIndex: (item.index * (-1)) + 20, width: width, }}
             className={`card-${item.index} shadow-md hover:!z-50 transition-transform duration-500 absolute
              flex items-center justify-center bg-white rounded-3xl 2xl:h-[280px] xl:h-[260px] md:h-64 h-40`}
         >
