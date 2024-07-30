@@ -8,9 +8,10 @@ import {useState} from "react";
 
 export default function Component() {
 
-    const [selectedProfile, setSelectedProfile] = useState<null | contactCardDataProps>(null);
 
     const {contacts} = useAppSelector(state => state.variables);
+
+    const [selectedProfile, setSelectedProfile] = useState<null | contactCardDataProps>(contacts[0]);
 
     return (
         <section>

@@ -16,6 +16,8 @@ export default {
         'first-pattern': "url('/src/assets/background/img1.png')",
         'second-pattern': "url('/src/assets/background/img_1.png')",
         'thirty-pattern': "url('/src/assets/background/img_2.png')",
+        'fourth-pattern': "url('/src/assets/background/img_3.png')",
+        'fifth-pattern': "url('/src/assets/background/img_4.png')",
       }),
       perspective: {
         '1000': '1000px',
