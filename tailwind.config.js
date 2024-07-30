@@ -13,7 +13,7 @@ export default {
         'right-top-20px': 'right 20px top',
       },
       backgroundImage: theme => ({
-        'first-pattern': "url('/src/assets/background/img.png')",
+        'first-pattern': "url('/src/assets/background/img1.png')",
         'second-pattern': "url('/src/assets/background/img_1.png')",
         'thirty-pattern': "url('/src/assets/background/img_2.png')",
       }),

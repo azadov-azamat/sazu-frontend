@@ -10,6 +10,10 @@ import img5  from '../../assets/draft/partner5.png';
 import img6  from '../../assets/draft/news1.png';
 import img7  from '../../assets/draft/news2.png';
 import img8  from '../../assets/draft/news3.png';
+import elon  from '../../assets/draft/elon-musk.png';
+import warren  from '../../assets/draft/warren-buffet.png';
+import steve  from '../../assets/draft/steve-jobs.png';
+import bill  from '../../assets/draft/bill-gates.png';
 import sazu  from '../../assets/sazu/img.png';
 import sBlogger  from '../../assets/sazu/blogger.png';
 import sEvent  from '../../assets/sazu/event.png';
@@ -28,6 +32,32 @@ import sTv  from '../../assets/sazu/tv.png';
 
 const initialState: InitialStateProps = {
     // lang: localStorage.getItem('i18nextLng') || 'ru',
+    contacts: [
+        {
+            image: elon,
+            name: 'Elon Musk',
+            position: 'Programmist',
+            description: 'Elon Musk is a programmer and entrepreneur known for founding SpaceX and co-founding Tesla.',
+        },
+        {
+            image: warren,
+            name: 'Warren Buffett',
+            position: 'Menedjer',
+            description: 'Warren Buffett is a manager and one of the most successful investors in the world.',
+        },
+        {
+            image: bill,
+            name: 'Bill Gates',
+            position: 'Veb dizayner',
+            description: 'Bill Gates is a web designer and co-founder of Microsoft, a leading software company.',
+        },
+        {
+            image: steve,
+            name: 'Steve Jobs',
+            position: 'Injener',
+            description: 'Steve Jobs was an engineer and visionary who co-founded Apple Inc.',
+        }
+    ],
     projects: [
         {
             id: 1,

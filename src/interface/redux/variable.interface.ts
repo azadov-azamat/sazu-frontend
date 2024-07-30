@@ -2,12 +2,20 @@ export interface InitialStateProps {
     // lang: string;
     loading: boolean;
     projects: projectsDataKey[] | [];
+    contacts: contactCardDataProps[] | [];
     partners: partnersDataKeys[] | [];
     news: newsDataKeys[] | []
     currentPage: number;
     pageCount: number;
     limit: number;
     totalCount: number;
+}
+
+export interface contactCardDataProps {
+    image: string;
+    name: string;
+    position: string;
+    description: string;
 }
 
 export interface partnersDataKeys {

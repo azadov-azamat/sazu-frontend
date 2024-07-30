@@ -1,7 +1,7 @@
 // importrt React, {useEffect} from 'react';
 
 import {
-    AboutSection,
+    AboutSection, ContactSection,
     HeaderSection,
     NewsSection,
     PartnersSection,
@@ -32,6 +32,7 @@ export default function Controller() {
             <AboutSection/>
             <PartnersSection/>
             <NewsSection/>
+            <ContactSection/>
 
             <div>
 
