@@ -54,6 +54,8 @@ export default function Component(item: Props) {
     return (
         <div
             ref={cardRef}
+            data-aos="zoom-in-down"
+            data-aos-duration={item.index + '000'}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             style={{ top: `${item.index * 100}px`, zIndex: (item.index * (-1)) + 20, width: width, }}

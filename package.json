@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.6",
+    "@svgr/rollup": "^8.1.0",
     "aos": "^2.3.4",
     "axios": "^1.7.2",
     "dotenv": "^16.4.5",
@@ -31,6 +32,7 @@
     "swiper": "^11.1.5"
   },
   "devDependencies": {
+    "@svgr/webpack": "^8.1.0",
     "@types/aos": "^3.0.7",
     "@types/node": "^22.0.0",
     "@types/qs": "^6.9.15",

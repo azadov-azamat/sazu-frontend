@@ -42,10 +42,10 @@ export default function Component() {
                         </SwiperSlide>
                     ))
                 }
-                <div ref={nextRef} className="swiper-button-next !w-12 mr-4 ">
+                <div ref={nextRef} data-aos="fade-right" data-aos-duration="3000" className="swiper-button-next !w-12 mr-4 ">
                     {/*<img src={ArrowRight} alt="swiper-arrow-right"/>*/}
                 </div>
-                <div ref={prevRef} className="swiper-button-prev !w-12 ml-4 ">
+                <div ref={prevRef} data-aos="fade-left" data-aos-duration="3000" className="swiper-button-prev !w-12 ml-4 ">
                     {/*<img src={ArrowLeft} alt="swiper-arrow-left"/>*/}
                 </div>
             </Swiper>
