@@ -15,7 +15,7 @@ export default function Component() {
     const nextRef = useRef<HTMLDivElement>(null);
 
     return (
-        <header className={'w-full h-auto'}>
+        <header className={'w-full flex items-center justify-center'}>
             <Swiper
                 modules={[Navigation, Autoplay]}
                 className={'w-full'}
@@ -41,7 +41,7 @@ export default function Component() {
                                     // If you need to, you can tweak the effect transition using the wrapper style.
                                     style: {transitionDelay: "1s"},
                                 }}
-                                className={'w-full h-[700px] object-cover object-center'}
+                                className={'w-full md:h-[700px] h-[30rem] md:object-cover object-contain object-center'}
                                 alt={"logo-site"}
                                 src={AdsImage}/>
                         </SwiperSlide>
