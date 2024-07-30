@@ -20,7 +20,7 @@ export default function Controller() {
     }, []);
 
     return (
-        <div className={'flex flex-col gap-24'}>
+        <div className={'flex flex-col gap-32'}>
             <HeaderSection/>
             <div className="relative flex justify-center items-center h-[710px]">
                 {
