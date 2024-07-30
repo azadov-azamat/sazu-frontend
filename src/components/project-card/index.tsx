@@ -23,7 +23,7 @@ export default function Component(item: Props) {
         } else if (window.innerWidth >= 768) {
             setWidth('660px');
         } else {
-            setWidth('460px');
+            setWidth('90%');
         }
     };
 
