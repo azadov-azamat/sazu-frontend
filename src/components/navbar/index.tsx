@@ -35,7 +35,7 @@ export default function Component() {
                 </div>
             </div>
             <div
-                className={`menu z-[1000] fixed top-0 left-0 w-full h-full bg-gray-300 bg-opacity-55 transform -translate-y-full backdrop-blur justify-center ${isOpen ? 'flex justify-center' : 'hidden'}`}>
+                className={`menu z-[1000] fixed top-0 left-0 w-full h-full bg-gray-300 bg-opacity-50 transform -translate-y-full backdrop-blur justify-center ${isOpen ? 'flex justify-center' : 'hidden'}`}>
                 <div className={'container relative flex items-center justify-start'}>
                     <div
                         className={`absolute top-12 right-4 flex flex-col justify-between cursor-pointer w-10 h-10`}
@@ -47,12 +47,12 @@ export default function Component() {
                             className={`w-8 h-0.5 bg-white transition-transform transform -rotate-45 -translate-y-1.5 absolute top-6`}></div>
                     </div>
 
-                    <ul className="menu-list list-none p-0 m-0 flex flex-col gap-1">
-                        <li className="2xl:text-6xl md:text-4xl text-xl text-white font-normal">Главная</li>
-                        <li className="2xl:text-6xl md:text-4xl text-xl text-white font-normal">О нас</li>
-                        <li className="2xl:text-6xl md:text-4xl text-xl text-white font-normal">Новости</li>
-                        <li className="2xl:text-6xl md:text-4xl text-xl text-white font-normal">Партнеры</li>
-                        <li className="2xl:text-6xl md:text-4xl text-xl text-white font-normal">Контакты</li>
+                    <ul className="menu-list w-full list-none p-0 m-0 flex flex-col md:items-start items-center gap-1">
+                        <li className="2xl:text-6xl md:text-4xl text-2xl text-white font-normal">Главная</li>
+                        <li className="2xl:text-6xl md:text-4xl text-2xl text-white font-normal">О нас</li>
+                        <li className="2xl:text-6xl md:text-4xl text-2xl text-white font-normal">Новости</li>
+                        <li className="2xl:text-6xl md:text-4xl text-2xl text-white font-normal">Партнеры</li>
+                        <li className="2xl:text-6xl md:text-4xl text-2xl text-white font-normal">Контакты</li>
                     </ul>
                 </div>
             </div>
