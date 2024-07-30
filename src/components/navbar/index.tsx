@@ -1,9 +1,10 @@
 // import React from 'react';
 import SiteLogo from '../../assets/site-logo.png';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
+import {LazyLoadImage} from 'react-lazy-load-image-component';
 import React from "react";
-import { gsap } from 'gsap';
+import {gsap} from 'gsap';
 import {LanguageDropdownComponent} from "../index.ts";
+import {Link} from "react-router-dom";
 
 export default function Component() {
     const [isOpen, setIsOpen] = React.useState(false);
@@ -12,21 +13,23 @@ export default function Component() {
         setIsOpen(!isOpen);
         if (!isOpen) {
             const tl = gsap.timeline();
-            tl.to('.menu', { duration: 1, y: 0, opacity: 1, display: 'flex' }) // Menyu divini sekinroq chiqarish
-                .fromTo('.menu-list', { x: '-100%', opacity: 0 }, { x: 0, opacity: 1, duration: 0.5, delay: 0.2 }); // Menyu listni chiqarish
+            tl.to('.menu', {duration: 1, y: 0, opacity: 1, display: 'flex'}) // Menyu divini sekinroq chiqarish
+                .fromTo('.menu-list', {x: '-100%', opacity: 0}, {x: 0, opacity: 1, duration: 0.5, delay: 0.2}); // Menyu listni chiqarish
         } else {
             const tl = gsap.timeline();
-            tl.to('.menu-list', { x: '-100%', opacity: 0, duration: 0.5 }) // Menyu listni yashirish
-                .to('.menu', { duration: 0.5, y: '-100%', opacity: 0, display: 'none' }); // Menyu divini yashirish
+            tl.to('.menu-list', {x: '-100%', opacity: 0, duration: 0.5}) // Menyu listni yashirish
+                .to('.menu', {duration: 0.5, y: '-100%', opacity: 0, display: 'none'}); // Menyu divini yashirish
         }
     };
 
     return (
         <nav className={'absolute w-full flex justify-between items-center z-50 bg-transparent mt-9 px-6'}>
-            <LazyLoadImage
-                alt={"logo-site"}
-                src={SiteLogo}/>
+            <Link to={'/'}>
+                <LazyLoadImage
+                    alt={"logo-site"}
+                    src={SiteLogo}/>
 
+            </Link>
             <div className={'flex items-center gap-4'}>
                 <LanguageDropdownComponent/>
                 <div className="burger flex flex-col justify-between h-3 cursor-pointer" onClick={toggleMenu}>
