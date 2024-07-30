@@ -90,7 +90,7 @@ export default function Component() {
                 </div>
                 <p
                     ref={textRef}
-                    className="xl:w-[45%] w-full text-gray-500 font-normal md:text-3xl text-xl leading-9 words chars splitting"
+                    className="xl:w-[45%] w-full text-gray-500 px-6 md:px-0 font-normal md:text-3xl text-xl leading-9 words chars splitting"
                     data-splitting>
                     Sazu - это команда опытных специалистов в сфере маркетинга, которые специализируются
                     на продвижении жилых комплексов. Мы обладаем глубоким пониманием рынка

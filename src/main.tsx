@@ -8,12 +8,12 @@ import {Provider} from "react-redux";
 import {store} from "./redux/store.ts";
 
 const app = (
-    <BrowserRouter>
-        <Provider store={store}>
-            <App/>
-        </Provider>
-    </BrowserRouter>
-)
+    <Provider store={store}>
+            <BrowserRouter>
+                <App/>
+            </BrowserRouter>
+    </Provider>
+);
 const container = document.getElementById('root') as HTMLElement
 const root = createRoot(container)
 

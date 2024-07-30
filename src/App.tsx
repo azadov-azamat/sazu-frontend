@@ -7,11 +7,20 @@ import 'swiper/swiper-bundle.css';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import 'aos/dist/aos.css';
 import 'splitting/dist/splitting.css';
+import React from "react";
+import {SiteLoadingComponent} from "./components";
 
 function App() {
+    const [loading, setLoading] = React.useState(true);
+
+    React.useEffect(() => {
+        setTimeout(() => {
+            setLoading(false);
+        }, 3000);
+    }, []);
 
     return (
-        <Routes>
+        loading ? <SiteLoadingComponent/> : <Routes>
             {
                 routes.map(route =>
                     <Route
