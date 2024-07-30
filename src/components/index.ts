@@ -8,3 +8,4 @@ export {default as ProjectCardComponent} from './project-card';
 export {default as PageTitleComponent} from './page-title';
 export {default as NewsCardComponent} from './news-card';
 export {default as SiteLoadingComponent} from './loading-site';
+export {default as LanguageDropdownComponent} from './language-dropdown';

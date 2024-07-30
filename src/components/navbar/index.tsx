@@ -3,6 +3,7 @@ import SiteLogo from '../../assets/site-logo.png';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import React from "react";
 import { gsap } from 'gsap';
+import {LanguageDropdownComponent} from "../index.ts";
 
 export default function Component() {
     const [isOpen, setIsOpen] = React.useState(false);
@@ -26,7 +27,8 @@ export default function Component() {
                 alt={"logo-site"}
                 src={SiteLogo}/>
 
-            <div className={'flex gap-4'}>
+            <div className={'flex items-center gap-4'}>
+                <LanguageDropdownComponent/>
                 <div className="burger flex flex-col justify-between h-3 cursor-pointer" onClick={toggleMenu}>
                     <div className="w-10 h-0.5 bg-white"></div>
                     <div className="w-10 h-0.5 bg-white"></div>
