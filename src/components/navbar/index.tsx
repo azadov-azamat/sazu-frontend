@@ -48,11 +48,11 @@ export default function Component() {
                     </div>
 
                     <ul className="menu-list list-none p-0 m-0 flex flex-col gap-1">
-                        <li className=" text-6xl text-white font-normal">Главная</li>
-                        <li className=" text-6xl text-white font-normal">О нас</li>
-                        <li className=" text-6xl text-white font-normal">Новости</li>
-                        <li className=" text-6xl text-white font-normal">Партнеры</li>
-                        <li className=" text-6xl text-white font-normal">Контакты</li>
+                        <li className="2xl:text-6xl md:text-4xl text-xl text-white font-normal">Главная</li>
+                        <li className="2xl:text-6xl md:text-4xl text-xl text-white font-normal">О нас</li>
+                        <li className="2xl:text-6xl md:text-4xl text-xl text-white font-normal">Новости</li>
+                        <li className="2xl:text-6xl md:text-4xl text-xl text-white font-normal">Партнеры</li>
+                        <li className="2xl:text-6xl md:text-4xl text-xl text-white font-normal">Контакты</li>
                     </ul>
                 </div>
             </div>
