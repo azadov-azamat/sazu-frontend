@@ -41,7 +41,7 @@ export default function Component() {
                                     // If you need to, you can tweak the effect transition using the wrapper style.
                                     style: {transitionDelay: "1s"},
                                 }}
-                                className={'w-full md:h-[700px] h-[30rem] md:object-cover object-contain object-center'}
+                                className={'w-full md:h-[700px] h-[70vh] object-cover object-center'}
                                 alt={"logo-site"}
                                 src={AdsImage}/>
                         </SwiperSlide>
