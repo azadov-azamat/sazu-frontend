@@ -5,7 +5,7 @@ import {
     HeaderSection,
     NewsSection,
     PartnersSection,
-    ProjectCardComponent
+    ProjectCardComponent, VideoPlayerSection
 } from "../../components";
 import {useAppSelector} from "../../redux/hooks.ts";
 import {useEffect} from "react";
@@ -33,7 +33,9 @@ export default function Controller() {
             <PartnersSection/>
             <NewsSection/>
             <ContactSection/>
-
+            <div className={'flex items-center justify-center'}>
+                <VideoPlayerSection/>
+            </div>
             <div>
 
             </div>

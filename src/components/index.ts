@@ -5,6 +5,7 @@ export {default as AboutSection} from './about';
 export {default as PartnersSection} from './partners';
 export {default as NewsSection} from './news';
 export {default as ContactSection} from './contact';
+export {default as VideoPlayerSection} from './video-player';
 
 export {default as ProjectCardComponent} from './project-card';
 export {default as PageTitleComponent} from './page-title';
