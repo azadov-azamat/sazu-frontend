@@ -60,11 +60,10 @@ export default function Component(item: Props) {
             onMouseLeave={handleMouseLeave}
             style={{ top: `${item.index * 115}px`, zIndex: (item.index * (-1)) + 20, width: width, }}
             className={`card-${item.index} shadow-md hover:!z-50 transition-transform duration-500 absolute
-             flex items-center justify-center bg-white rounded-3xl 2xl:h-[280px] xl:h-[260px] h-64
-             `}
+             flex items-center justify-center bg-white rounded-3xl 2xl:h-[280px] xl:h-[260px] md:h-64 h-40`}
         >
             <LazyLoadImage
-                className={'2xl:w-60 xl:w-56 md:w-52 w-44 object-cover object-center'}
+                className={'2xl:w-60 xl:w-56 md:w-52 lg:w-44 w-36 object-cover object-center'}
                 alt={"project-card-image"}
                 src={item.img}
             />
