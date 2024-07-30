@@ -2,8 +2,9 @@
 
 import {NewsCardComponent, PageTitleComponent} from "../index.ts";
 import {useAppSelector} from "../../redux/hooks.ts";
+import {trackWindowScroll} from "react-lazy-load-image-component";
 
-export default function Component() {
+function Component({scrollPosition}: any) {
     const {news} = useAppSelector(state => state.variables);
 
     return (
@@ -11,9 +12,11 @@ export default function Component() {
             <PageTitleComponent title={"Новости"}/>
             <div className="flex flex-wrap gap-8 mt-8 md:justify-between justify-center">
                 {
-                    news.map((item, index) => (<NewsCardComponent key={index} {...item} />))
+                    news.map((item, index) => (<NewsCardComponent key={index} {...item} scrollPosition={scrollPosition} />))
                 }
             </div>
         </section>
     );
 }
+
+export default trackWindowScroll(Component)

@@ -36,6 +36,11 @@ export default function Component() {
                     [1, 2, 3, 4, 5, 6, 7].map((_, key) => (
                         <SwiperSlide key={key} className={'w-full'}>
                             <LazyLoadImage
+                                effect="blur"
+                                wrapperProps={{
+                                    // If you need to, you can tweak the effect transition using the wrapper style.
+                                    style: {transitionDelay: "1s"},
+                                }}
                                 className={'w-full h-[700px] object-cover object-center'}
                                 alt={"logo-site"}
                                 src={AdsImage}/>
