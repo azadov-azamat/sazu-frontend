@@ -27,8 +27,8 @@ export default function Component() {
             <Link to={'/'}>
                 <LazyLoadImage
                     alt={"logo-site"}
+                    className={'w-28'}
                     src={SiteLogo}/>
-
             </Link>
             <div className={'flex items-center gap-4'}>
                 <LanguageDropdownComponent/>
