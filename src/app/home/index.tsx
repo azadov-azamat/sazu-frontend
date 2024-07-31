@@ -1,16 +1,18 @@
 // importrt React, {useEffect} from 'react';
 
 import {
-    AboutSection, ContactSection,
+    AboutSection,
+    ContactSection,
     HeaderSection,
     NewsSection,
     PartnersSection,
-    ProjectCardComponent, VideoPlayerSection
+    ProjectCardComponent,
+    VideoPlayerSection
 } from "../../components";
 import {useAppDispatch, useAppSelector} from "../../redux/hooks.ts";
 import {useEffect} from "react";
 import AOS from "aos";
-import {getCarouselData} from "../../redux/reducers/variable.ts";
+import {getNewsData} from "../../redux/reducers/variable.ts";
 
 export default function Controller() {
 
@@ -22,7 +24,7 @@ export default function Controller() {
     }, []);
 
     useEffect(() => {
-        dispatch(getCarouselData());
+        dispatch(getNewsData());
     }, []);
 
     return (

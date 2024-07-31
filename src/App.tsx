@@ -9,6 +9,7 @@ import 'aos/dist/aos.css';
 import 'splitting/dist/splitting.css';
 import React from "react";
 import {SiteLoadingComponent} from "./components";
+import './utils/i18n.ts';
 
 function App() {
     const [loading, setLoading] = React.useState(true);

@@ -14,4 +14,9 @@ export default defineConfig({
   optimizeDeps: {
     include: ['framer-motion'],
   },
+  server: {
+    watch: {
+      usePolling: true,
+    },
+  },
 })

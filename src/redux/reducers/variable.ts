@@ -30,6 +30,66 @@ export const getCarouselData = createAsyncThunk('variables/getCarouselData', asy
     }
 });
 
+export const getAboutData = createAsyncThunk('variables/getAboutData', async (_, {rejectWithValue}) => {
+    try {
+        const response = await http.get(`/about`)
+        if (response.data === null) return rejectWithValue(response?.data)
+        return response.data
+    } catch (error) {
+        return rejectWithValue(error)
+    }
+});
+
+export const getFooterData = createAsyncThunk('variables/getFooterData', async (_, {rejectWithValue}) => {
+    try {
+        const response = await http.get(`/footer`)
+        if (response.data === null) return rejectWithValue(response?.data)
+        return response.data
+    } catch (error) {
+        return rejectWithValue(error)
+    }
+});
+
+export const getNewsData = createAsyncThunk('variables/getNewsData', async (_, {rejectWithValue}) => {
+    try {
+        const response = await http.get(`/news`)
+        if (response.data === null) return rejectWithValue(response?.data)
+        return response.data
+    } catch (error) {
+        return rejectWithValue(error)
+    }
+});
+
+export const getPartnersData = createAsyncThunk('variables/getPartnersData', async (_, {rejectWithValue}) => {
+    try {
+        const response = await http.get(`/partners`)
+        if (response.data === null) return rejectWithValue(response?.data)
+        return response.data
+    } catch (error) {
+        return rejectWithValue(error)
+    }
+});
+
+export const getSazusData = createAsyncThunk('variables/getSazusData', async (_, {rejectWithValue}) => {
+    try {
+        const response = await http.get(`/sazus`)
+        if (response.data === null) return rejectWithValue(response?.data)
+        return response.data
+    } catch (error) {
+        return rejectWithValue(error)
+    }
+});
+
+export const getStaffsData = createAsyncThunk('variables/getStaffsData', async (_, {rejectWithValue}) => {
+    try {
+        const response = await http.get(`/staffs`)
+        if (response.data === null) return rejectWithValue(response?.data)
+        return response.data
+    } catch (error) {
+        return rejectWithValue(error)
+    }
+});
+
 const initialState: InitialStateProps = {
     // lang: localStorage.getItem('i18nextLng') || 'ru',
     carousels: [],
@@ -159,14 +219,24 @@ export const variableSlice = createSlice({
     reducers,
     extraReducers: (builder) => {
         builder.addCase(getCarouselData.fulfilled, (state: InitialStateProps, action) => {
-            debugger
-            console.log(action.payload)
+            console.log("get-carousel action.payload", action.payload)
             state.loading = false
         })
         builder.addCase(getCarouselData.pending, (state: InitialStateProps) => {
             state.loading = true
         })
         builder.addCase(getCarouselData.rejected, (state: InitialStateProps) => {
+            state.loading = false
+        })
+
+        builder.addCase(getNewsData.fulfilled, (state: InitialStateProps, action) => {
+            console.log("get-news action.payload", action.payload)
+            state.loading = false
+        })
+        builder.addCase(getNewsData.pending, (state: InitialStateProps) => {
+            state.loading = true
+        })
+        builder.addCase(getNewsData.rejected, (state: InitialStateProps) => {
             state.loading = false
         })
     }
