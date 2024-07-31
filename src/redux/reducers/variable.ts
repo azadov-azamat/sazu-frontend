@@ -93,9 +93,7 @@ export const getStaffsData = createAsyncThunk('variables/getStaffsData', async (
 
 export const createSubscribe = createAsyncThunk('variables/createSubscribe', async (data: {email: string}, {rejectWithValue}) => {
     try {
-        console.log("this is data ukam", data)
-        const response = await http.post(`/subcribe`, data)
-        console.log("this is response", response)
+        const response = await http.post(`/subscribe`, data)
         if (response.data === null) return rejectWithValue(response?.data)
         return response.data
     } catch (error) {
