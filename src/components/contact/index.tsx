@@ -5,17 +5,18 @@ import {useAppSelector} from "../../redux/hooks.ts";
 import { motion } from 'framer-motion';
 import {contactCardDataProps} from "../../interface/redux/variable.interface.ts";
 import {useState} from "react";
+import {useTranslation} from "react-i18next";
 
 export default function Component() {
 
-
+    const {t} = useTranslation()
     const {contacts} = useAppSelector(state => state.variables);
 
     const [selectedProfile, setSelectedProfile] = useState<null | contactCardDataProps>(contacts[0]);
 
     return (
-        <section>
-            <PageTitleComponent title={"Контакты"} className={'justify-center'}/>
+        <section id={'contacts'}>
+            <PageTitleComponent title={t ('contacts')} className={'justify-center'}/>
             <div>
                 {selectedProfile && (
                     <motion.div

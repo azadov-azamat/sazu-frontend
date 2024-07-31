@@ -1,12 +1,15 @@
 // import React from 'react';
 import {newsDataKeys} from "../../interface/redux/variable.interface.ts";
 import {LazyLoadImage} from "react-lazy-load-image-component";
+import {useTranslation} from "react-i18next";
 
 interface NewCardProps extends newsDataKeys {
     scrollPosition: any,
 }
 
 export default function Component(item: NewCardProps) {
+
+    const {t} = useTranslation();
 
     return (
         <div
@@ -33,7 +36,7 @@ export default function Component(item: NewCardProps) {
                     {item.desc}</p>
             </div>
             <a href="#"
-               className="absolute bottom-5 text-purple-800 underline !font-bold mt-4 inline-block">подробнее</a>
+               className="absolute bottom-5 text-purple-800 underline !font-bold mt-4 inline-block">{t ("more")}</a>
         </div>
     );
 }

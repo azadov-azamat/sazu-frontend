@@ -1,6 +1,9 @@
 import {useState} from 'react';
+import {useTranslation} from "react-i18next";
 
 export default function Component() {
+
+    const { i18n } = useTranslation();
 
     const langs: { label: string, value: string }[] = [
         {
@@ -24,7 +27,8 @@ export default function Component() {
         setIsOpen(!isOpen);
     };
 
-    const selectLanguage = (lang: { label: string, value: string }) => {
+    const selectLanguage = async (lang: { label: string, value: string }) => {
+        await i18n.changeLanguage(lang.value);
         setSelectedLanguage(lang);
         setIsOpen(false);
     };

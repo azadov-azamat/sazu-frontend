@@ -5,8 +5,11 @@ import React from "react";
 import {gsap} from 'gsap';
 import {LanguageDropdownComponent} from "../index.ts";
 import {Link} from "react-router-dom";
+import {useTranslation} from "react-i18next";
 
 export default function Component() {
+
+    const {t} = useTranslation()
     const [isOpen, setIsOpen] = React.useState(false);
 
     const toggleMenu = () => {
@@ -51,11 +54,31 @@ export default function Component() {
                     </div>
 
                     <ul className="menu-list w-full list-none p-0 m-0 flex flex-col md:items-start items-center gap-1">
-                        <li className="2xl:text-6xl md:text-4xl text-2xl text-white font-normal">Главная</li>
-                        <li className="2xl:text-6xl md:text-4xl text-2xl text-white font-normal">О нас</li>
-                        <li className="2xl:text-6xl md:text-4xl text-2xl text-white font-normal">Новости</li>
-                        <li className="2xl:text-6xl md:text-4xl text-2xl text-white font-normal">Партнеры</li>
-                        <li className="2xl:text-6xl md:text-4xl text-2xl text-white font-normal">Контакты</li>
+                        <li className="2xl:text-6xl md:text-4xl text-2xl text-white font-normal">
+                            <Link to={'/'}>
+                                {t ('main')}
+                            </Link>
+                        </li>
+                        <li className="2xl:text-6xl md:text-4xl text-2xl text-white font-normal">
+                            <a href="#about-us">
+                                {t ('about-us')}
+                            </a>
+                        </li>
+                        <li className="2xl:text-6xl md:text-4xl text-2xl text-white font-normal">
+                            <a href="#news">
+                                {t ('news')}
+                            </a>
+                        </li>
+                        <li className="2xl:text-6xl md:text-4xl text-2xl text-white font-normal">
+                            <a href="#partners">
+                                {t ('partners')}
+                            </a>
+                        </li>
+                        <li className="2xl:text-6xl md:text-4xl text-2xl text-white font-normal">
+                            <a href="#contacts">
+                                {t  ('contacts')}
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>

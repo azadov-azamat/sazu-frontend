@@ -7,10 +7,14 @@ import Splitting from 'splitting';
 import {useEffect, useRef} from "react";
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import {useTranslation} from "react-i18next";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Component() {
+
+    const {t} = useTranslation()
+
     const textRef = useRef<HTMLDivElement | null>(null);
     const imageRef = useRef<HTMLDivElement | null>(null);
 
@@ -73,8 +77,8 @@ export default function Component() {
     }, []);
 
     return (
-        <section>
-            <PageTitleComponent title={"О нас"}/>
+        <section id={'about-us'}>
+            <PageTitleComponent title={t ('about-us')}/>
             <div className={'flex md:flex-row flex-col gap-24 items-center mt-8'}>
 
                 <div

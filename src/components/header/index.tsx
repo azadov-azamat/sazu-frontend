@@ -15,7 +15,7 @@ export default function Component() {
     const nextRef = useRef<HTMLDivElement>(null);
 
     return (
-        <header className={'w-full flex items-center justify-center'}>
+        <header id={'header'} className={'w-full flex items-center justify-center'}>
             <Swiper
                 modules={[Navigation, Autoplay]}
                 className={'w-full'}

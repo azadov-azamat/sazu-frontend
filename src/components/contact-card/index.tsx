@@ -1,11 +1,14 @@
 // import React from 'react';
 
 import {contactCardDataProps} from "../../interface/redux/variable.interface.ts";
+import {useTranslation} from "react-i18next";
 
 interface componentCardProps extends contactCardDataProps{
     onSelect: () => void;
 }
 export default function Component({name, image, position, description, onSelect}: componentCardProps) {
+    const {t} = useTranslation()
+
     return (
         <div className="relative w-full xl:h-[490px] md:h-[350px] h-80 bg-black rounded-xl overflow-hidden shadow-lg group">
             <img
@@ -30,7 +33,7 @@ export default function Component({name, image, position, description, onSelect}
                 group-hover:opacity-100 bg-black bg-opacity-70">
                 <h3 className="text-white text-2xl font-bold mb-2">{name}</h3>
                 <p className="text-gray-300 text-center truncate-multiline">{description}</p>
-                <button onClick={onSelect} className="border-none text-purple-800 !font-bold mt-4 inline-block">подробнее</button>
+                <button onClick={onSelect} className="border-none text-purple-800 !font-bold mt-4 inline-block">{t ("more")}</button>
             </div>
         </div>
     );

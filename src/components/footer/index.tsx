@@ -8,9 +8,11 @@ import {Link} from "react-router-dom";
 import instagram from '../../assets/icons/instagram.png';
 import telegram from '../../assets/icons/telegram.png';
 import facebook from '../../assets/icons/facebook.png';
+import {useTranslation} from "react-i18next";
 
 export default function Component() {
 
+    const {t} = useTranslation();
     const { ref: footerRef, inView: footerInView } = useInView({
         threshold: 0,
         triggerOnce: false,
@@ -37,15 +39,15 @@ export default function Component() {
                         </Link>
                         <div className="mt-16 flex md:flex-row flex-col justify-start md:items-center items-start md:gap-40 gap-10">
                             <div className={'flex flex-col gap-3'}>
-                                <span className="text-purple-700 text-xl">Адрес</span>
+                                <span className="text-purple-700 text-xl">{t ('address')}</span>
                                 <span>Улица Нукусская, 48 Ташкент, Узбекистан</span>
                             </div>
                             <div className={'flex flex-col gap-3'}>
-                                <span className="text-purple-700 text-xl">Телефон номер</span>
+                                <span className="text-purple-700 text-xl">{t ('phone-number')}</span>
                                 <a href={'tel:95 313 33 33'}>95 313 33 33</a>
                             </div>
                             <div className={'flex flex-col gap-2'}>
-                                <span className="text-purple-700 text-xl">Соц. сети</span>
+                                <span className="text-purple-700 text-xl">{t ('social-network')}</span>
                                 <div className={'flex items-center gap-3'}>
                                     <a href="#"><img  src={telegram} alt="telegram-icon" className={'w-9'}/></a>
                                     <a href="#"><img  src={instagram} alt="instagram-icon" className={'w-9'}/></a>
