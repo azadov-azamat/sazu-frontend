@@ -1,5 +1,4 @@
-import {createSlice} from "@reduxjs/toolkit";
-// import {Dictionary} from "../../helpers/enumuration/dictionary";
+import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 // import i18n from "i18next";
 import {InitialStateProps} from "../../interface/redux/variable.interface";
 import img1  from '../../assets/draft/partner1.png';
@@ -19,19 +18,21 @@ import sBlogger  from '../../assets/sazu/blogger.png';
 import sEvent  from '../../assets/sazu/event.png';
 import sSmm  from '../../assets/sazu/smm.png';
 import sTv  from '../../assets/sazu/tv.png';
+import {http} from "../../config/api.ts";
 
-// export const login = createAsyncThunk('variables/login', async (data: authDataProps, {rejectWithValue}) => {
-//     try {
-//         const response = await http.post(`/auth/login`, data)
-//         if (response.data === null) return rejectWithValue(response?.data)
-//         return response.data
-//     } catch (error) {
-//         return rejectWithValue(error)
-//     }
-// })
+export const getCarouselData = createAsyncThunk('variables/getCarouselData', async (_, {rejectWithValue}) => {
+    try {
+        const response = await http.get(`/carusel`)
+        if (response.data === null) return rejectWithValue(response?.data)
+        return response.data
+    } catch (error) {
+        return rejectWithValue(error)
+    }
+});
 
 const initialState: InitialStateProps = {
     // lang: localStorage.getItem('i18nextLng') || 'ru',
+    carousels: [],
     contacts: [
         {
             image: elon,
@@ -155,7 +156,20 @@ const reducers = {
 export const variableSlice = createSlice({
     name: 'variable',
     initialState,
-    reducers
+    reducers,
+    extraReducers: (builder) => {
+        builder.addCase(getCarouselData.fulfilled, (state: InitialStateProps, action) => {
+            debugger
+            console.log(action.payload)
+            state.loading = false
+        })
+        builder.addCase(getCarouselData.pending, (state: InitialStateProps) => {
+            state.loading = true
+        })
+        builder.addCase(getCarouselData.rejected, (state: InitialStateProps) => {
+            state.loading = false
+        })
+    }
 })
 
 export const {

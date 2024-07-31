@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const baseUrl = import.meta.env.BACKEND_HOST;
+export const baseUrl = "https://back.sazumedia.com/en/api/v1";
 export const uri = ""
 
 export const getToken = () => localStorage.getItem("TOKEN")

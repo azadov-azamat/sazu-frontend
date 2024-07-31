@@ -7,16 +7,22 @@ import {
     PartnersSection,
     ProjectCardComponent, VideoPlayerSection
 } from "../../components";
-import {useAppSelector} from "../../redux/hooks.ts";
+import {useAppDispatch, useAppSelector} from "../../redux/hooks.ts";
 import {useEffect} from "react";
 import AOS from "aos";
+import {getCarouselData} from "../../redux/reducers/variable.ts";
 
 export default function Controller() {
 
+    const dispatch = useAppDispatch();
     const {projects} = useAppSelector(state => state.variables)
 
     useEffect(() => {
         AOS.init();
+    }, []);
+
+    useEffect(() => {
+        dispatch(getCarouselData());
     }, []);
 
     return (

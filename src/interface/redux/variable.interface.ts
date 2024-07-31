@@ -1,6 +1,7 @@
 export interface InitialStateProps {
     // lang: string;
     loading: boolean;
+    carousels: carouselDataKey[] | [];
     projects: projectsDataKey[] | [];
     contacts: contactCardDataProps[] | [];
     partners: partnersDataKeys[] | [];
@@ -9,6 +10,10 @@ export interface InitialStateProps {
     pageCount: number;
     limit: number;
     totalCount: number;
+}
+
+export interface carouselDataKey {
+    image: string;
 }
 
 export interface contactCardDataProps {
@@ -23,12 +28,12 @@ export interface partnersDataKeys {
     name: string;
 }
 
-export interface projectsDataKey extends defaultKeys{
+export interface projectsDataKey extends defaultKeys {
     img: string;
     name: string;
 }
 
-export interface newsDataKeys extends defaultKeys{
+export interface newsDataKeys extends defaultKeys {
     image: string;
     title: string;
     desc: string;
