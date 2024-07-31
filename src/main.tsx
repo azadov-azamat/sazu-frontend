@@ -7,12 +7,24 @@ import {BrowserRouter} from "react-router-dom";
 import {Provider} from "react-redux";
 import {store} from "./redux/store.ts";
 import smoothscroll from 'smoothscroll-polyfill';
+import {ToastContainer} from "react-toastify";
 
 smoothscroll.polyfill();
 
 const app = (
     <Provider store={store}>
             <BrowserRouter>
+                <ToastContainer
+                    position='top-right'
+                    autoClose={3000}
+                    // hideProgressBar
+                    newestOnTop={false}
+                    closeOnClick={false}
+                    rtl={false}
+                    pauseOnFocusLoss={false}
+                    draggable={false}
+                    pauseOnHover={false}
+                />
                 <App/>
             </BrowserRouter>
     </Provider>

@@ -19,6 +19,7 @@ import sEvent  from '../../assets/sazu/event.png';
 import sSmm  from '../../assets/sazu/smm.png';
 import sTv  from '../../assets/sazu/tv.png';
 import {http} from "../../config/api.ts";
+import {toast} from "react-toastify";
 
 export const getCarouselData = createAsyncThunk('variables/getCarouselData', async (_, {rejectWithValue}) => {
     try {
@@ -83,6 +84,18 @@ export const getSazusData = createAsyncThunk('variables/getSazusData', async (_,
 export const getStaffsData = createAsyncThunk('variables/getStaffsData', async (_, {rejectWithValue}) => {
     try {
         const response = await http.get(`/staffs`)
+        if (response.data === null) return rejectWithValue(response?.data)
+        return response.data
+    } catch (error) {
+        return rejectWithValue(error)
+    }
+});
+
+export const createSubscribe = createAsyncThunk('variables/createSubscribe', async (data: {email: string}, {rejectWithValue}) => {
+    try {
+        console.log("this is data ukam", data)
+        const response = await http.post(`/subcribe`, data)
+        console.log("this is response", response)
         if (response.data === null) return rejectWithValue(response?.data)
         return response.data
     } catch (error) {
@@ -237,6 +250,20 @@ export const variableSlice = createSlice({
             state.loading = true
         })
         builder.addCase(getNewsData.rejected, (state: InitialStateProps) => {
+            state.loading = false
+        })
+
+        builder.addCase(createSubscribe.fulfilled, (state: InitialStateProps, action) => {
+            console.log("createSubscribe action.payload", action.payload)
+            toast.success("Success");
+            state.loading = false
+        })
+        builder.addCase(createSubscribe.pending, (state: InitialStateProps) => {
+            state.loading = true
+        })
+        builder.addCase(createSubscribe.rejected, (state: InitialStateProps, action) => {
+            console.log(action.payload)
+            toast.error("Network error");
             state.loading = false
         })
     }

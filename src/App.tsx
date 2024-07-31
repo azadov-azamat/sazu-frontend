@@ -1,14 +1,22 @@
+import React from "react";
+
 import {Route, Routes} from "react-router-dom";
 import {routes} from "./utils/constants.ts";
 import Layout from "./layout/layout.tsx";
+import {SiteLoadingComponent} from "./components";
+import {IndexController} from "./app/index.ts";
+
+// CSS
 import './index.css'
 import 'swiper/css';
 import 'swiper/swiper-bundle.css';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import 'aos/dist/aos.css';
 import 'splitting/dist/splitting.css';
-import React from "react";
-import {SiteLoadingComponent} from "./components";
+import 'react-toastify/dist/ReactToastify.css';
+import 'react-toastify/scss/main.scss';
+
+// CONFIG
 import './utils/i18n.ts';
 
 function App() {
@@ -34,6 +42,7 @@ function App() {
                     />
                 )
             }
+            <Route path="*" element={<Layout><IndexController/></Layout>}/>
         </Routes>
     )
 }

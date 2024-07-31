@@ -9,21 +9,27 @@ import instagram from '../../assets/icons/instagram.png';
 import telegram from '../../assets/icons/telegram.png';
 import facebook from '../../assets/icons/facebook.png';
 import {useTranslation} from "react-i18next";
+import {useAppDispatch} from "../../redux/hooks.ts";
+import {createSubscribe} from "../../redux/reducers/variable.ts";
 
 export default function Component() {
 
     const {t} = useTranslation();
+    const dispatch = useAppDispatch()
+
     const {ref: footerRef, inView: footerInView} = useInView({
         threshold: 0,
         triggerOnce: false,
     });
 
-    function handleSubscribe(e: React.FormEvent<HTMLFormElement>) {
+    async function handleSubscribe(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
         // @ts-ignore
         const email = e.target[0].value;
 
-        console.log('Subscribed with email:', email);
+        await dispatch(createSubscribe({email}));
+        // @ts-ignore
+        e.target[0].value = ''
     }
 
     return (
@@ -82,7 +88,8 @@ export default function Component() {
                                 </form>
                             </div>
                         </div>
-                        <Link to={'/'} className={'flex absolute sm:bottom-0 sm:top-auto bottom-auto top-0 right-0 md:hidden'}>
+                        <Link to={'/'}
+                              className={'flex absolute sm:bottom-0 sm:top-auto bottom-auto top-0 right-0 md:hidden'}>
                             <LazyLoadImage
                                 alt={"logo-site"}
                                 className={'w-28'}
