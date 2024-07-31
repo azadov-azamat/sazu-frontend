@@ -1,14 +1,13 @@
 // import React from 'react';
 
 import ReactPlayer from "react-player";
-import {footerDataKeys} from "../../interface/redux/variable.interface.ts";
 
-export default function Component(item: footerDataKeys) {
+export default function Component({video}: {video: string}) {
 
     return (
         <section className="video-wrapper xl:w-[850px] md:w-[700px] w-full xl:h-[450px] md:[350px] h-96 rounded-lg overflow-hidden">
             <ReactPlayer
-                url={item.video}
+                url={video}
                 playing={true}
                 loop
                 controls={false}

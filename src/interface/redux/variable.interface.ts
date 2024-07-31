@@ -2,7 +2,7 @@ export interface InitialStateProps {
     // lang: string;
     loading: boolean;
     about: aboutDataKey | null;
-    footer: footerDataKeys;
+    footer: footerDataKeys | null;
     carousels: carouselDataKey[] | [];
     projects: projectsDataKey[] | [];
     contacts: contactCardDataProps[] | [];

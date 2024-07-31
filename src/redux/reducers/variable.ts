@@ -1,23 +1,7 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
-// import i18n from "i18next";
+
 import {InitialStateProps} from "../../interface/redux/variable.interface";
-// import img1  from '../../assets/draft/partner1.png';
-// import img2  from '../../assets/draft/partner2.png';
-// import img3  from '../../assets/draft/partner3.png';
-// import img4  from '../../assets/draft/partner4.png';
-// import img5  from '../../assets/draft/partner5.png';
-// import img6  from '../../assets/draft/news1.png';
-// import img7  from '../../assets/draft/news2.png';
-// import img8  from '../../assets/draft/news3.png';
-// import elon  from '../../assets/draft/elon-musk.png';
-// import warren  from '../../assets/draft/warren-buffet.png';
-// import steve  from '../../assets/draft/steve-jobs.png';
-// import bill  from '../../assets/draft/bill-gates.png';
-// import sazu  from '../../assets/sazu/img.png';
-// import sBlogger  from '../../assets/sazu/blogger.png';
-// import sEvent  from '../../assets/sazu/event.png';
-// import sSmm  from '../../assets/sazu/smm.png';
-// import sTv  from '../../assets/sazu/tv.png';
+
 import {http} from "../../config/api.ts";
 import {toast} from "react-toastify";
 

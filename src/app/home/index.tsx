@@ -42,7 +42,7 @@ export default function Controller() {
             <NewsSection/>
             <ContactSection/>
             <div className={'flex items-center md:px-0 px-6 justify-center'}>
-                <VideoPlayerSection {...footer}/>
+                <VideoPlayerSection video={footer?.video || ""}/>
             </div>
             <div>
 
