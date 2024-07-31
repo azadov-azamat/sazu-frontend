@@ -54,7 +54,9 @@ export default function Component(item: Props) {
     };
 
     return (
-        <div
+        <a
+            href={item.link}
+            target={'_blank'}
             ref={cardRef}
             data-aos="zoom-in-down"
             data-aos-duration={item.index + '000'}
@@ -67,8 +69,8 @@ export default function Component(item: Props) {
             <LazyLoadImage
                 className={'2xl:w-60 xl:w-56 md:w-52 lg:w-44 w-36 object-cover object-center'}
                 alt={"project-card-image"}
-                src={item.img}
+                src={item.icon}
             />
-        </div>
+        </a>
     );
 };

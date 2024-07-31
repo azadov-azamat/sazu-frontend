@@ -1,18 +1,25 @@
 // import React from 'react';
 
-import AdsImage from '../../assets/draft/header-image.png';
-// import ArrowRight from '../../assets/arrow-right.png';
-// import ArrowLeft from '../../assets/arrow-left.png';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import {Swiper, SwiperSlide} from 'swiper/react';
 
-import { Navigation, Autoplay } from 'swiper/modules';
+import {Navigation, Autoplay} from 'swiper/modules';
 import {LazyLoadImage} from "react-lazy-load-image-component";
-import {useRef} from "react";
+import {useEffect, useRef} from "react";
+import {getCarouselData} from "../../redux/reducers/variable.ts";
+import {useAppDispatch, useAppSelector} from "../../redux/hooks.ts";
 
 
 export default function Component() {
+
+    const dispatch = useAppDispatch();
+
+    const {carousels} = useAppSelector(state => state.variables);
     const prevRef = useRef<HTMLDivElement>(null);
     const nextRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        dispatch(getCarouselData());
+    }, []);
 
     return (
         <header id={'header'} className={'w-full flex items-center justify-center'}>
@@ -33,7 +40,7 @@ export default function Component() {
                 }}
             >
                 {
-                    [1, 2, 3, 4, 5, 6, 7].map((_, key) => (
+                    carousels.map((carousel, key) => (
                         <SwiperSlide key={key} className={'w-full'}>
                             <LazyLoadImage
                                 effect="blur"
@@ -43,14 +50,17 @@ export default function Component() {
                                 }}
                                 className={'w-full md:h-[700px] h-[70vh] object-cover object-center'}
                                 alt={"logo-site"}
-                                src={AdsImage}/>
+                                src={carousel.image}
+                            />
                         </SwiperSlide>
                     ))
                 }
-                <div ref={nextRef} data-aos="fade-right" data-aos-duration="3000" className="swiper-button-next !w-12 mr-4 ">
+                <div ref={nextRef} data-aos="fade-right" data-aos-duration="3000"
+                     className="swiper-button-next !w-12 mr-4 ">
                     {/*<img src={ArrowRight} alt="swiper-arrow-right"/>*/}
                 </div>
-                <div ref={prevRef} data-aos="fade-left" data-aos-duration="3000" className="swiper-button-prev !w-12 ml-4 ">
+                <div ref={prevRef} data-aos="fade-left" data-aos-duration="3000"
+                     className="swiper-button-prev !w-12 ml-4 ">
                     {/*<img src={ArrowLeft} alt="swiper-arrow-left"/>*/}
                 </div>
             </Swiper>

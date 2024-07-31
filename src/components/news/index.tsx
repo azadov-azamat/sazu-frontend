@@ -11,7 +11,7 @@ function Component({scrollPosition}: any) {
 
     const {news} = useAppSelector(state => state.variables);
 
-    return (
+    return news.length && (
         <section id={'news'}>
             <PageTitleComponent title={t ('news')}/>
             <div className="flex flex-wrap gap-8 mt-8 md:justify-between justify-center">

@@ -33,7 +33,7 @@ export default function Component(item: NewCardProps) {
 
                 <p className={'leading-5 font-normal text-gray-700 !text-base truncate-multiline'}>
                     <span className={'text-black font-bold'}> {item.title} - </span>
-                    {item.desc}</p>
+                    {item.description}</p>
             </div>
             <a href="#"
                className="absolute bottom-5 text-purple-800 underline !font-bold mt-4 inline-block">{t ("more")}</a>

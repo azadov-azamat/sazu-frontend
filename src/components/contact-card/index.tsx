@@ -2,16 +2,17 @@
 
 import {contactCardDataProps} from "../../interface/redux/variable.interface.ts";
 import {useTranslation} from "react-i18next";
+import {LazyLoadImage} from "react-lazy-load-image-component";
 
 interface componentCardProps extends contactCardDataProps{
     onSelect: () => void;
 }
-export default function Component({name, image, position, description, onSelect}: componentCardProps) {
+export default function Component({name, image, profession, text, onSelect}: componentCardProps) {
     const {t} = useTranslation()
 
     return (
         <div className="relative w-full xl:h-[490px] md:h-[350px] h-80 bg-black rounded-xl overflow-hidden shadow-lg group">
-            <img
+            <LazyLoadImage
                 src={image}
                 alt={name}
                 className="w-full h-full object-cover transition duration-500 group-hover:blur-sm ease-in-out group-hover:scale-95"
@@ -26,13 +27,13 @@ export default function Component({name, image, position, description, onSelect}
                 <p
                     data-aos="fade-up"
                     data-aos-duration="2000"
-                    className="text-gray-400">{position}</p>
+                    className="text-gray-400">{profession}</p>
             </div>
             <div
                 className="absolute inset-0 p-4 flex flex-col justify-center items-center transition-opacity duration-500 opacity-0
                 group-hover:opacity-100 bg-black bg-opacity-70">
                 <h3 className="text-white text-2xl font-bold mb-2">{name}</h3>
-                <p className="text-gray-300 text-center truncate-multiline">{description}</p>
+                <p className="text-gray-300 text-center truncate-multiline">{text}</p>
                 <button onClick={onSelect} className="border-none text-purple-800 !font-bold mt-4 inline-block">{t ("more")}</button>
             </div>
         </div>

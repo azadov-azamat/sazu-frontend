@@ -17,7 +17,7 @@ import {getNewsData} from "../../redux/reducers/variable.ts";
 export default function Controller() {
 
     const dispatch = useAppDispatch();
-    const {projects} = useAppSelector(state => state.variables)
+    const {projects, footer} = useAppSelector(state => state.variables)
 
     useEffect(() => {
         AOS.init();
@@ -41,8 +41,8 @@ export default function Controller() {
             <PartnersSection/>
             <NewsSection/>
             <ContactSection/>
-            <div className={'flex items-center justify-center'}>
-                <VideoPlayerSection/>
+            <div className={'flex items-center md:px-0 px-6 justify-center'}>
+                <VideoPlayerSection {...footer}/>
             </div>
             <div>
 

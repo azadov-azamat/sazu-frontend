@@ -34,8 +34,8 @@ export default {
         '62': '62px',
       },
       keyframes: {
-        marquee: {
-          '0%': { transform: 'translateX(100%)' },
+        scroll: {
+          '0%': { transform: 'translateX(0%)' },
           '100%': { transform: 'translateX(-100%)' },
         },
         'marquee-reverse': {
@@ -44,7 +44,7 @@ export default {
         },
       },
       animation: {
-        marquee: 'marquee 55s linear infinite',
+        scroll: 'scroll 30s linear infinite',
         'marquee-reverse': 'marquee-reverse 55s linear infinite',
       },
     },
