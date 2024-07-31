@@ -26,7 +26,7 @@ export default function Component() {
                     initial={{y: '100%'}}
                     animate={{y: footerInView ? '0%' : '100%'}}
                     transition={{duration: 1}}
-                    className="text-white p-8 fixed bottom-0 left-0 w-full"
+                    className="text-white p-8 fixed bottom-0 left-0 w-full bg-[#141313]"
                 >
                     <div className="container mx-auto flex md:flex-col flex-row md:items-start items-end md:justify-start justify-between">
                         <Link to={'/'} className={'hidden md:flex'}>
