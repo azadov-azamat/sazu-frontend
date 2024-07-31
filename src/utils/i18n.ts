@@ -12,7 +12,7 @@ i18n
         lng: 'ru',
         debug: true,
         backend: {
-            loadPath: '/src/translations/{{lng}}.json',
+            loadPath: '/locales/{{lng}}.json',
         },
         interpolation: {
             escapeValue: false, // not needed for react as it escapes by default
