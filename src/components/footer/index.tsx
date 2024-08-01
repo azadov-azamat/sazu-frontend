@@ -54,9 +54,15 @@ export default function Component() {
                             <div className={'flex flex-col gap-2'}>
                                 <span className="text-purple-700 text-xl">{t('social-network')}</span>
                                 <div className={'flex items-center gap-3'}>
-                                    <a href="#"><img src={telegram} alt="telegram-icon" className={'w-9'}/></a>
-                                    <a href="#"><img src={instagram} alt="instagram-icon" className={'w-9'}/></a>
-                                    <a href="#"><img src={facebook} alt="facebook-icon" className={'w-9'}/></a>
+                                    <a target={'_blank'} href="https://t.me/+nBdEWxV0oMYxNDZi">
+                                        <img src={telegram} alt="telegram-icon" className={'w-9'}/>
+                                    </a>
+                                    <a href="https://www.instagram.com/sazu_uz" target={'_blank'}>
+                                        <img src={instagram} alt="instagram-icon" className={'w-9'}/>
+                                    </a>
+                                    <a href="https://www.facebook.com/profile.php?id=61557165297636&mibextid=ZbWKwL">
+                                        <img src={facebook} alt="facebook-icon" className={'w-9'}/>
+                                    </a>
                                 </div>
                             </div>
                             <div className={'md:w-auto lg:hidden 2xl:flex w-full h-full flex md:items-end items-start'}>
@@ -80,7 +86,7 @@ export default function Component() {
     );
 }
 
-export function FormFooter(){
+export function FormFooter() {
 
     const {t} = useTranslation();
     const dispatch = useAppDispatch()
