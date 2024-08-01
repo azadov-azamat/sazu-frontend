@@ -56,27 +56,27 @@ export default function Component() {
 
                     <ul className="menu-list w-full list-none p-0 m-0 flex flex-col md:items-start items-center gap-1">
                         <li className="2xl:text-6xl md:text-4xl text-2xl text-white font-normal">
-                            <Link to={'/'}>
+                            <Link to={'/'} onClick={toggleMenu}>
                                 {t ('main')}
                             </Link>
                         </li>
                         <li className="2xl:text-6xl md:text-4xl text-2xl text-white font-normal">
-                            <a href="#about-us">
+                            <a href="#about-us" onClick={toggleMenu}>
                                 {t ('about-us')}
                             </a>
                         </li>
                         <li className="2xl:text-6xl md:text-4xl text-2xl text-white font-normal">
-                            <a href="#news">
+                            <a href="#news" onClick={toggleMenu}>
                                 {t ('news')}
                             </a>
                         </li>
                         <li className="2xl:text-6xl md:text-4xl text-2xl text-white font-normal">
-                            <a href="#partners">
+                            <a href="#partners" onClick={toggleMenu}>
                                 {t ('partners')}
                             </a>
                         </li>
                         <li className="2xl:text-6xl md:text-4xl text-2xl text-white font-normal">
-                            <a href="#contacts">
+                            <a href="#contacts" onClick={toggleMenu}>
                                 {t  ('contacts')}
                             </a>
                         </li>
