@@ -31,7 +31,7 @@ function App() {
 
         setTimeout(() => {
             setLoading(false);
-        }, 3000);
+        }, 3500);
     }, [loading]);
 
     i18n.on('languageChanged', () => {
