@@ -13,6 +13,7 @@ export {default as NewsCardComponent} from './news-card';
 export {default as SiteLoadingComponent} from './loading-site';
 export {default as LanguageDropdownComponent} from './language-dropdown';
 export {default as ContactCardComponent} from './contact-card';
+// export {default as ParticlesBackgroundComponent} from './particles-background';
 
 export {default as LoginFormComponent} from './form/login';
 export {default as RegisterFormComponent} from './form/register';

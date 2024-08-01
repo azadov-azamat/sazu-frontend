@@ -37,6 +37,7 @@ export default function Component() {
                         className="container relative mx-auto flex md:flex-col flex-row md:items-start items-end md:justify-start justify-between">
                         <Link to={'/'} className={'hidden md:flex'}>
                             <LazyLoadImage
+                                loading={'lazy'}
                                 alt={"logo-site"}
                                 className={'w-28'}
                                 src={SiteLogo}/>
@@ -55,7 +56,7 @@ export default function Component() {
                                 <span className="text-purple-700 text-xl">{t('social-network')}</span>
                                 <div className={'flex items-center gap-3'}>
                                     <a target={'_blank'} href="https://t.me/+nBdEWxV0oMYxNDZi">
-                                        <img src={telegram} alt="telegram-icon" className={'w-9'}/>
+                                        <img loading={'lazy'} src={telegram} alt="telegram-icon" className={'w-9'}/>
                                     </a>
                                     <a href="https://www.instagram.com/sazu_uz" target={'_blank'}>
                                         <img src={instagram} alt="instagram-icon" className={'w-9'}/>
@@ -72,6 +73,7 @@ export default function Component() {
                         <Link to={'/'}
                               className={'flex absolute md:bottom-0 md:top-auto bottom-auto top-0 right-0 md:hidden'}>
                             <LazyLoadImage
+                                loading={'lazy'}
                                 alt={"logo-site"}
                                 className={'w-28'}
                                 src={SiteLogo}/>

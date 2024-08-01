@@ -13,6 +13,7 @@ export default function Component({name, image, profession, text, onSelect}: com
     return (
         <div className="relative w-full xl:h-[490px] md:h-[350px] h-80 bg-black rounded-xl overflow-hidden shadow-lg group">
             <LazyLoadImage
+                loading={'lazy'}
                 src={image}
                 alt={name}
                 className="w-full h-full object-cover transition duration-500 group-hover:blur-sm ease-in-out group-hover:scale-95"

@@ -90,6 +90,7 @@ export default function Component() {
                     className={'md:w-[350px] w-3/4'}
                 >
                     <LazyLoadImage
+                        loading={'lazy'}
                         className={'w-full object-cover object-center mediaFill parallaxImage revealStaggered'}
                         alt={"about-image"}
                         style={{opacity: 0.9}}

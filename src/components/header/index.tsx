@@ -44,6 +44,7 @@ export default function Component() {
                         <SwiperSlide key={key} className={'w-full'}>
                             <LazyLoadImage
                                 effect="blur"
+                                loading={'lazy'}
                                 wrapperProps={{
                                     // If you need to, you can tweak the effect transition using the wrapper style.
                                     style: {transitionDelay: "1s"},
