@@ -35,24 +35,22 @@ function App() {
     }, [loading]);
 
     i18n.on('languageChanged', () => {
-        setLoading(true)
+        setLoading(true);
+        updateTitle()
     });
 
     React.useEffect(()=>{
-        const updateTitle = () => {
-            document.title = t('app.title'); // 'app.title' ni sizga mos keladigan matnga o'zgartiring
-        };
-
         updateTitle();
 
-        // Til o'zgarganda sarlavhani yangilash uchun eventni qo'shish
-        i18n.on('languageChanged', updateTitle);
-
-        // Cleanup function: component unmounted bo'lganda eventni olib tashlash
         return () => {
             i18n.off('languageChanged', updateTitle);
         };
     }, [])
+
+    const updateTitle = () => {
+        document.title = t('app.title');
+        document.documentElement.lang = i18n.language;
+    };
 
     return (
         loading ? <SiteLoadingComponent/> : <Routes>
