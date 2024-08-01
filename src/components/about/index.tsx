@@ -32,7 +32,7 @@ export default function Component() {
                 const textHeight: number = rect.height;
 
                 // Calculate scroll progress
-                let scrollProgress: number = (viewportHeight - rect.top) / (viewportHeight + textHeight);
+                let scrollProgress: number = (viewportHeight - rect.top) / (viewportHeight / 2 + textHeight);
                 scrollProgress = Math.max(0, Math.min(1, scrollProgress));
 
                 const chars: NodeListOf<HTMLElement> = textRef.current.querySelectorAll('[data-char]');
