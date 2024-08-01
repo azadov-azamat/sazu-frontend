@@ -1,4 +1,7 @@
 {
+  "app": {
+    "title": "Sazu - Dunyoga biz bilan bog'lan"
+  },
   "about-us": "Biz haqimizda",
   "news": "Yangiliklar",
   "contacts": "Kontaktlar",

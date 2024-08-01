@@ -20,9 +20,11 @@ import 'react-toastify/scss/main.scss';
 import './utils/i18n.ts';
 
 import i18n from "./utils/i18n.ts";
+import {useTranslation} from "react-i18next";
 
 function App() {
 
+    const {t} = useTranslation()
     const [loading, setLoading] = React.useState(true);
 
     React.useEffect(() => {
@@ -35,6 +37,22 @@ function App() {
     i18n.on('languageChanged', () => {
         setLoading(true)
     });
+
+    React.useEffect(()=>{
+        const updateTitle = () => {
+            document.title = t('app.title'); // 'app.title' ni sizga mos keladigan matnga o'zgartiring
+        };
+
+        updateTitle();
+
+        // Til o'zgarganda sarlavhani yangilash uchun eventni qo'shish
+        i18n.on('languageChanged', updateTitle);
+
+        // Cleanup function: component unmounted bo'lganda eventni olib tashlash
+        return () => {
+            i18n.off('languageChanged', updateTitle);
+        };
+    }, [])
 
     return (
         loading ? <SiteLoadingComponent/> : <Routes>

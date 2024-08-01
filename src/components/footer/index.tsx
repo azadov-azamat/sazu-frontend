@@ -90,7 +90,6 @@ export function FormFooter(){
         // @ts-ignore
         const email = e.target[0].value;
 
-
         await dispatch(createSubscribe({email}));
         // @ts-ignore
         e.target[0].value = ''
