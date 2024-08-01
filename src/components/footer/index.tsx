@@ -15,22 +15,11 @@ import {createSubscribe} from "../../redux/reducers/variable.ts";
 export default function Component() {
 
     const {t} = useTranslation();
-    const dispatch = useAppDispatch()
 
     const {ref: footerRef, inView: footerInView} = useInView({
         threshold: 0,
         triggerOnce: false,
     });
-
-    async function handleSubscribe(e: React.FormEvent<HTMLFormElement>) {
-        e.preventDefault();
-        // @ts-ignore
-        const email = e.target[0].value;
-
-        await dispatch(createSubscribe({email}));
-        // @ts-ignore
-        e.target[0].value = ''
-    }
 
     return (
         <div className={'md:h-56 h-72'}>
@@ -53,7 +42,7 @@ export default function Component() {
                                 src={SiteLogo}/>
                         </Link>
                         <div
-                            className="mt-16 w-full flex md:flex-row flex-col flex-wrap justify-start md:items-center items-start md:gap-40 gap-10">
+                            className="2xl:mt-16 mt-10 w-full flex md:flex-row flex-col flex-wrap justify-start md:items-center items-start lg:gap-40 gap-10">
                             <div className={'flex flex-col gap-3'}>
                                 <span className="text-purple-700 text-xl">{t('address')}</span>
                                 <span>Улица Нукусская, 48 Ташкент, Узбекистан</span>
@@ -70,34 +59,57 @@ export default function Component() {
                                     <a href="#"><img src={facebook} alt="facebook-icon" className={'w-9'}/></a>
                                 </div>
                             </div>
-                            <div className={'md:w-auto w-full h-full flex md:items-end items-start'}>
-                                <form onSubmit={handleSubscribe}
-                                      className="w-full flex flex-wrap md:flex-nowrap gap-2">
-                                    <input
-                                        type="email"
-                                        className="xl:w-60 flex-1 sm:flex-auto md:w-52 w-auto px-3 py-2 border rounded-md focus:outline-none focus:ring focus:ring-purple-800 text-primary-black"
-                                        placeholder={t('enter-email')}
-                                        required
-                                    />
-                                    <button
-                                        type="submit"
-                                        className="bg-purple-700 sm:flex-auto flex-1 text-white px-4 py-2 rounded-md"
-                                    >
-                                        {t('subscribe')}
-                                    </button>
-                                </form>
+                            <div className={'md:w-auto lg:hidden 2xl:flex w-full h-full flex md:items-end items-start'}>
+                                <FormFooter/>
                             </div>
                         </div>
                         <Link to={'/'}
-                              className={'flex absolute sm:bottom-0 sm:top-auto bottom-auto top-0 right-0 md:hidden'}>
+                              className={'flex absolute md:bottom-0 md:top-auto bottom-auto top-0 right-0 md:hidden'}>
                             <LazyLoadImage
                                 alt={"logo-site"}
                                 className={'w-28'}
                                 src={SiteLogo}/>
                         </Link>
+                        <div className={'lg:flex 2xl:hidden hidden mt-10'}>
+                            <FormFooter/>
+                        </div>
                     </div>
                 </motion.div>
             </div>
         </div>
     );
+}
+
+export function FormFooter(){
+
+    const {t} = useTranslation();
+    const dispatch = useAppDispatch()
+
+    async function handleSubscribe(e: React.FormEvent<HTMLFormElement>) {
+        e.preventDefault();
+        // @ts-ignore
+        const email = e.target[0].value;
+
+        await dispatch(createSubscribe({email}));
+        // @ts-ignore
+        e.target[0].value = ''
+    }
+
+    return (
+        <form onSubmit={handleSubscribe}
+              className="w-full flex flex-wrap md:flex-nowrap gap-2">
+            <input
+                type="email"
+                className="xl:w-60 flex-1 sm:flex-auto md:w-52 w-auto px-3 py-2 border rounded-md focus:outline-none focus:ring focus:ring-purple-800 text-primary-black"
+                placeholder={t('enter-email')}
+                required
+            />
+            <button
+                type="submit"
+                className="bg-purple-700 sm:flex-auto flex-1 text-white px-4 py-2 rounded-md"
+            >
+                {t('subscribe')}
+            </button>
+        </form>
+    )
 }
