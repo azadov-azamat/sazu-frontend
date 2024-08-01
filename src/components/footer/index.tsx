@@ -9,7 +9,7 @@ import instagram from '../../assets/icons/instagram.png';
 import telegram from '../../assets/icons/telegram.png';
 import facebook from '../../assets/icons/facebook.png';
 import {useTranslation} from "react-i18next";
-import {useAppDispatch} from "../../redux/hooks.ts";
+import {useAppDispatch, useAppSelector} from "../../redux/hooks.ts";
 import {createSubscribe} from "../../redux/reducers/variable.ts";
 
 export default function Component() {
@@ -84,6 +84,7 @@ export function FormFooter(){
 
     const {t} = useTranslation();
     const dispatch = useAppDispatch()
+    const {subscribeLoading} = useAppSelector(state => state.variables)
 
     async function handleSubscribe(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
@@ -106,6 +107,7 @@ export function FormFooter(){
             />
             <button
                 type="submit"
+                disabled={subscribeLoading}
                 className="bg-purple-700 sm:flex-auto flex-1 text-white px-4 py-2 rounded-md"
             >
                 {t('subscribe')}
