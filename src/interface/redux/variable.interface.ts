@@ -1,5 +1,4 @@
 export interface InitialStateProps {
-    lang: string;
     loading: boolean;
     subscribeLoading: boolean;
     about: aboutDataKey | null;

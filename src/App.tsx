@@ -18,20 +18,23 @@ import 'react-toastify/scss/main.scss';
 
 // CONFIG
 import './utils/i18n.ts';
-import {useAppSelector} from "./redux/hooks.ts";
+
+import i18n from "./utils/i18n.ts";
 
 function App() {
 
-    const {lang} = useAppSelector(state => state.variables);
     const [loading, setLoading] = React.useState(true);
 
     React.useEffect(() => {
-        setLoading(true);
 
         setTimeout(() => {
             setLoading(false);
         }, 3000);
-    }, [lang]);
+    }, [loading]);
+
+    i18n.on('languageChanged', () => {
+        setLoading(true)
+    });
 
     return (
         loading ? <SiteLoadingComponent/> : <Routes>

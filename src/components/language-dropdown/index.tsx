@@ -1,13 +1,9 @@
 import {useState} from 'react';
-import {useAppDispatch, useAppSelector} from "../../redux/hooks.ts";
-import {setLang} from "../../redux/reducers/variable.ts";
 import {useTranslation} from "react-i18next";
 
 export default function Component() {
 
     const {i18n} = useTranslation();
-    const dispatch = useAppDispatch();
-    const {lang} = useAppSelector(state => state.variables);
 
     const langs: { label: string, value: string }[] = [
         {
@@ -32,11 +28,7 @@ export default function Component() {
 
     const selectLanguage = async (lang: { label: string, value: string }) => {
         await i18n.changeLanguage(lang.value);
-        console.log(i18n.language)
-        setTimeout(()=>{
-            dispatch(setLang(lang.value));
-            setIsOpen(false);
-        }, 500)
+        setIsOpen(false);
     };
 
     return (
@@ -46,7 +38,7 @@ export default function Component() {
                     onClick={toggleDropdown}
                     className="flex items-center justify-center capitalize w-full px-4 text-base font-medium text-white"
                 >
-                    {lang}
+                    {i18n.language}
                     <svg
                         className={`-mr-1 ml-1 w-6 transform transition-transform duration-200 ${
                             !isOpen ? 'rotate-180' : 'rotate-0'

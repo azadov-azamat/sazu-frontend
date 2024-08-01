@@ -1,4 +1,4 @@
-import {createAsyncThunk, createSlice, PayloadAction} from "@reduxjs/toolkit";
+import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import {InitialStateProps} from "../../interface/redux/variable.interface";
 
 import {http} from "../../config/api.ts";
@@ -85,7 +85,6 @@ export const createSubscribe = createAsyncThunk('variables/createSubscribe', asy
 });
 
 const initialState: InitialStateProps = {
-    lang: localStorage.getItem('i18nextLng') || 'ru',
     footer: null,
     about: null,
     carousels: [],
@@ -101,12 +100,7 @@ const initialState: InitialStateProps = {
     limit: 10
 }
 
-const reducers = {
-    setLang: (state: InitialStateProps, action: PayloadAction<string>) => {
-        state.lang = action.payload;
-        state.loading = true;
-    },
-}
+const reducers = {}
 
 export const variableSlice = createSlice({
     name: 'variable',
@@ -116,72 +110,30 @@ export const variableSlice = createSlice({
         builder.addCase(getCarouselData.fulfilled, (state: InitialStateProps, action) => {
             state.carousels = action.payload
         })
-        // builder.addCase(getCarouselData.pending, (state: InitialStateProps) => {
-        //     state.loading = true
-        // })
-        // builder.addCase(getCarouselData.rejected, (state: InitialStateProps) => {
-        //     state.loading = false
-        // })
 
         builder.addCase(getAboutData.fulfilled, (state: InitialStateProps, action) => {
             state.about = action.payload
         })
-        // builder.addCase(getAboutData.pending, (state: InitialStateProps) => {
-        //     state.loading = true
-        // })
-        // builder.addCase(getAboutData.rejected, (state: InitialStateProps) => {
-        //     state.loading = false
-        // })
 
         builder.addCase(getPartnersData.fulfilled, (state: InitialStateProps, action) => {
             state.partners = [...action.payload, ...action.payload, ...action.payload]
         })
-        // builder.addCase(getPartnersData.pending, (state: InitialStateProps) => {
-        //     state.loading = true
-        // })
-        // builder.addCase(getPartnersData.rejected, (state: InitialStateProps) => {
-        //     state.loading = false
-        // })
 
         builder.addCase(getSazusData.fulfilled, (state: InitialStateProps, action) => {
             state.projects = action.payload
         })
-        // builder.addCase(getSazusData.pending, (state: InitialStateProps) => {
-        //     state.loading = true
-        // })
-        // builder.addCase(getSazusData.rejected, (state: InitialStateProps) => {
-        //     state.loading = false
-        // })
 
         builder.addCase(getNewsData.fulfilled, (state: InitialStateProps, action) => {
             state.news = action.payload
         })
-        // builder.addCase(getNewsData.pending, (state: InitialStateProps) => {
-        //     state.loading = true
-        // })
-        // builder.addCase(getNewsData.rejected, (state: InitialStateProps) => {
-        //     state.loading = false
-        // })
 
         builder.addCase(getStaffsData.fulfilled, (state: InitialStateProps, action) => {
             state.contacts = action.payload;
         })
-        // builder.addCase(getStaffsData.pending, (state: InitialStateProps) => {
-        //     state.loading = true
-        // })
-        // builder.addCase(getStaffsData.rejected, (state: InitialStateProps) => {
-        //     state.loading = false
-        // })
 
         builder.addCase(getFooterData.fulfilled, (state: InitialStateProps, action) => {
             state.footer = action.payload;
         })
-        // builder.addCase(getFooterData.pending, (state: InitialStateProps) => {
-        //     state.loading = true
-        // })
-        // builder.addCase(getFooterData.rejected, (state: InitialStateProps) => {
-        //     state.loading = false
-        // })
 
         builder.addCase(createSubscribe.fulfilled, (state: InitialStateProps, action) => {
             console.log("createSubscribe action.payload", action.payload)
@@ -199,5 +151,7 @@ export const variableSlice = createSlice({
     }
 })
 
-export const {setLang} = variableSlice.actions;
+export const {
+
+} = variableSlice.actions;
 export default variableSlice.reducer

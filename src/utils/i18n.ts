@@ -8,8 +8,8 @@ i18n
     .use(LanguageDetector)
     .use(initReactI18next)
     .init({
-        fallbackLng: localStorage.getItem('i18nextLng') || 'ru',
-        lng: localStorage.getItem('i18nextLng') || 'ru',
+        fallbackLng: 'ru',
+        lng: 'ru',
         debug: true,
         backend: {
             loadPath: '/locales/{{lng}}.json',
