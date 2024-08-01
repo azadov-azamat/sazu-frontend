@@ -46,7 +46,7 @@ export default function Component() {
                             className="2xl:mt-16 mt-10 w-full flex md:flex-row flex-col flex-wrap justify-start md:items-center items-start lg:gap-40 gap-10">
                             <div className={'flex flex-col gap-3'}>
                                 <span className="text-purple-700 text-xl">{t('address')}</span>
-                                <span>Улица Нукусская, 48 Ташкент, Узбекистан</span>
+                                <a href={'https://yandex.uz/maps/10335/tashkent/house/YkAYdAJmTkwDQFprfX55cH9qYg==/?ll=69.256794%2C41.281396&z=17'} target={'_blank'}>{t ('address-company')}</a>
                             </div>
                             <div className={'flex flex-col gap-3'}>
                                 <span className="text-purple-700 text-xl">{t('phone-number')}</span>

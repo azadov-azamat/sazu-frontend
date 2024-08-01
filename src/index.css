@@ -9,12 +9,6 @@
     transition: color 0.5s;
 }
 
-.directorsCarousel__images-slide img {
-    width: 100%;
-    height: auto;
-    transition: transform 0.5s;
-}
-
 body {
     @apply m-0 p-0 box-border bg-primary-black;
     font-family: "Unbounded", sans-serif;
