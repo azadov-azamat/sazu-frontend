@@ -2,6 +2,7 @@
 import {newsDataKeys} from "../../interface/redux/variable.interface.ts";
 import {LazyLoadImage} from "react-lazy-load-image-component";
 import {useTranslation} from "react-i18next";
+import {Link} from "react-router-dom";
 
 interface NewCardProps extends newsDataKeys {
     scrollPosition: any,
@@ -13,7 +14,6 @@ export default function Component(item: NewCardProps) {
 
     return (
         <div
-            // data-aos="flip-down"
             className="md:w-80 w-3/4 relative h-[500px] p-5 bg-white text-black rounded-[20px]
              overflow-hidden group shadow-purple-blur filter-blur">
             <div className={'w-full h-[260px] relative'}>
@@ -35,8 +35,8 @@ export default function Component(item: NewCardProps) {
                     <span className={'text-black font-bold'}> {item.title} - </span>
                     {item.description}</p>
             </div>
-            <a href="#"
-               className="absolute bottom-5 text-purple-800 underline !font-bold mt-4 inline-block">{t ("more")}</a>
+            <Link to={`/news/${item.id || 1}`}
+               className="absolute bottom-5 text-primary-purple underline !font-bold mt-4 inline-block">{t ("more")}</Link>
         </div>
     );
 }

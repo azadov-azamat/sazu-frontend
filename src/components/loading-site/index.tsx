@@ -40,7 +40,7 @@ export default function Component() {
     return (
         <div className="relative w-full h-screen bg-black flex items-center justify-center">
             <div className={'relative w-96 h-80'}>
-                <div className="absolute bg-white w-[98%] left-1 bottom-1 background-fill z-0"
+                <div className="absolute bg-primary-purple w-[98%] left-1 bottom-1 background-fill z-0"
                      style={{position: 'absolute'}}/>
                 <img src={logo} alt="Example" className="absolute w-96 h-80 z-10"/>
             </div>

@@ -7,7 +7,7 @@ export default function Component() {
                 <label className="block text-gray-700">Name</label>
                 <input
                     type="text"
-                    className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:ring-purple-800"
+                    className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:ring-primary-purple"
                     placeholder="Full Name"
                 />
             </div>
@@ -15,7 +15,7 @@ export default function Component() {
                 <label className="block text-gray-700">Email</label>
                 <input
                     type="email"
-                    className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:ring-purple-800"
+                    className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:ring-primary-purple"
                     placeholder="Email"
                 />
             </div>
@@ -23,12 +23,12 @@ export default function Component() {
                 <label className="block text-gray-700">Password</label>
                 <input
                     type="password"
-                    className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:ring-purple-800"
+                    className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:ring-primary-purple"
                     placeholder="Password"
                 />
             </div>
             <button
-                className="w-full bg-purple-800 text-white py-2 rounded-md hover:bg-purple-900 transition duration-300">
+                className="w-full bg-primary-purple text-white py-2 rounded-md hover:bg-purple-900 transition duration-300">
                 Register
             </button>
         </form>

@@ -34,7 +34,8 @@ export default function Component() {
                     className="text-white p-8 fixed bottom-0 left-0 w-full bg-[#141313]"
                 >
                     <div
-                        className="container relative mx-auto flex md:flex-col flex-row md:items-start items-end md:justify-start justify-between">
+                        className="container relative mx-auto flex md:flex-col flex-row md:items-start items-end
+                         md:justify-start justify-between">
                         <Link to={'/'} className={'hidden md:flex'}>
                             <LazyLoadImage
                                 loading={'lazy'}
@@ -43,17 +44,18 @@ export default function Component() {
                                 src={SiteLogo}/>
                         </Link>
                         <div
-                            className="2xl:mt-16 mt-10 w-full flex md:flex-row flex-col flex-wrap justify-start md:items-center items-start lg:gap-40 gap-10">
+                            className="2xl:mt-16 mt-10 w-full flex md:flex-row flex-col flex-wrap justify-start md:items-center
+                            items-start lg:gap-40 2xl:gap-32 gap-10">
                             <div className={'flex flex-col gap-3'}>
-                                <span className="text-purple-700 text-xl">{t('address')}</span>
+                                <span className="text-primary-purple text-xl">{t('address')}</span>
                                 <a href={'https://yandex.uz/maps/10335/tashkent/house/YkAYdAJmTkwDQFprfX55cH9qYg==/?ll=69.256794%2C41.281396&z=17'} target={'_blank'}>{t ('address-company')}</a>
                             </div>
                             <div className={'flex flex-col gap-3'}>
-                                <span className="text-purple-700 text-xl">{t('phone-number')}</span>
+                                <span className="text-primary-purple text-xl">{t('phone-number')}</span>
                                 <a href={'tel:95 313 33 33'}>+998 95 313 33 33</a>
                             </div>
                             <div className={'flex flex-col gap-2'}>
-                                <span className="text-purple-700 text-xl">{t('social-network')}</span>
+                                <span className="text-primary-purple text-xl">{t('social-network')}</span>
                                 <div className={'flex items-center gap-3'}>
                                     <a target={'_blank'} href="https://t.me/+nBdEWxV0oMYxNDZi">
                                         <img loading={'lazy'} src={telegram} alt="telegram-icon" className={'w-9'}/>
@@ -109,14 +111,14 @@ export function FormFooter() {
               className="w-full flex flex-wrap md:flex-nowrap gap-2">
             <input
                 type="email"
-                className="xl:w-60 flex-1 sm:flex-auto md:w-52 w-auto px-3 py-2 border rounded-md focus:outline-none focus:ring focus:ring-purple-800 text-primary-black"
+                className="xl:w-60 flex-1 sm:flex-auto md:w-52 w-auto px-3 py-2 border rounded-md focus:outline-none focus:ring focus:ring-primary-purple text-primary-black"
                 placeholder={t('enter-email')}
                 required
             />
             <button
                 type="submit"
                 disabled={subscribeLoading}
-                className="bg-purple-700 sm:flex-auto flex-1 text-white px-4 py-2 rounded-md"
+                className="bg-primary-purple sm:flex-auto flex-1 text-white px-4 py-2 rounded-md"
             >
                 {t('subscribe')}
             </button>

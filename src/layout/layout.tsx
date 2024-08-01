@@ -27,7 +27,7 @@ function Layout({children}: LayoutProps): JSX.Element {
                 <main className={'w-full h-auto'}>
                     {children}
                 </main>
-                <div className={'bg-first-pattern top-[14%] md:-right-5 right-0' + detailsClass}/>
+                <div className={'bg-first-pattern top-[14%] right-0' + detailsClass}/>
                 <div className={'bg-second-pattern top-[30%] !-left-20' + detailsClass}/>
                 <div className={'bg-thirty-pattern top-[35%] right-1' + detailsClass}/>
                 <div className={'bg-fourth-pattern bottom-[30%] left-0' + detailsClass}/>

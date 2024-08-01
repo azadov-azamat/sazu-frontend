@@ -1,5 +1,5 @@
 import {
-    IndexController, LoginController, RegisterController
+    IndexController, NewsPreviewController
 } from '../app/index';
 
 
@@ -12,14 +12,8 @@ export const routes = [
     },
     {
         id: 2,
-        name: 'login page',
-        path: '/login',
-        component: LoginController
-    },
-    {
-        id: 3,
-        name: 'register page',
-        path: '/register',
-        component: RegisterController
+        name: 'news preview page',
+        path: '/news/:id',
+        component: NewsPreviewController
     }
 ]

@@ -8,6 +8,7 @@ import {Provider} from "react-redux";
 import {store} from "./redux/store.ts";
 import smoothscroll from 'smoothscroll-polyfill';
 import {ToastContainer} from "react-toastify";
+import {ScrollToTopComponent} from "./components";
 
 smoothscroll.polyfill();
 
@@ -25,6 +26,7 @@ const app = (
                     draggable={false}
                     pauseOnHover={false}
                 />
+                <ScrollToTopComponent/>
                 <App/>
             </BrowserRouter>
     </Provider>

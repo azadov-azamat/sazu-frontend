@@ -35,7 +35,7 @@ export default function Component({name, image, profession, text, onSelect}: com
                 group-hover:opacity-100 bg-black bg-opacity-70">
                 <h3 className="text-white text-2xl font-bold mb-2">{name}</h3>
                 <p className="text-gray-300 text-center truncate-multiline">{text}</p>
-                <button onClick={onSelect} className="border-none text-purple-800 !font-bold mt-4 inline-block">{t ("more")}</button>
+                <a href={'#contacts'} onClick={onSelect} className="border-none text-primary-purple !font-bold mt-4 inline-block">{t ("more")}</a>
             </div>
         </div>
     );

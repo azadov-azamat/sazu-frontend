@@ -28,7 +28,8 @@ export default {
       },
       colors: {
         'primary-black': '#0B0B0B',
-        'primary-gray': '#828282'
+        'primary-gray': '#828282',
+        'primary-purple': '#54267C'
       },
       lineHeight: {
         '62': '62px',
