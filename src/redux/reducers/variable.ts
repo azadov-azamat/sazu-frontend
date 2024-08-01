@@ -1,5 +1,4 @@
-import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
-
+import {createAsyncThunk, createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {InitialStateProps} from "../../interface/redux/variable.interface";
 
 import {http} from "../../config/api.ts";
@@ -86,7 +85,7 @@ export const createSubscribe = createAsyncThunk('variables/createSubscribe', asy
 });
 
 const initialState: InitialStateProps = {
-    // lang: localStorage.getItem('i18nextLng') || 'ru',
+    lang: localStorage.getItem('i18nextLng') || 'ru',
     footer: null,
     about: null,
     carousels: [],
@@ -94,6 +93,7 @@ const initialState: InitialStateProps = {
     projects: [],
     partners: [],
     news: [],
+    subscribeLoading: false,
     loading: false,
     currentPage: 1,
     pageCount: 1,
@@ -102,116 +102,102 @@ const initialState: InitialStateProps = {
 }
 
 const reducers = {
-    // setLang: (state: InitialStateProps, action: PayloadAction<number>) => {
-    //     const langIndex = action.payload
-    //     state.lang = Dictionary[langIndex]
-    //     i18n.changeLanguage(Dictionary[langIndex])
-    // },
-    // logoutFunc: (state: InitialStateProps) => {
-    //     state.userData = null
-    //     localStorage.clear()
-    // }
+    setLang: (state: InitialStateProps, action: PayloadAction<string>) => {
+        state.lang = action.payload;
+        state.loading = true;
+    },
 }
 
 export const variableSlice = createSlice({
     name: 'variable',
     initialState,
-    reducers,
+    reducers: reducers,
     extraReducers: (builder) => {
         builder.addCase(getCarouselData.fulfilled, (state: InitialStateProps, action) => {
             state.carousels = action.payload
-            state.loading = false
         })
-        builder.addCase(getCarouselData.pending, (state: InitialStateProps) => {
-            state.loading = true
-        })
-        builder.addCase(getCarouselData.rejected, (state: InitialStateProps) => {
-            state.loading = false
-        })
+        // builder.addCase(getCarouselData.pending, (state: InitialStateProps) => {
+        //     state.loading = true
+        // })
+        // builder.addCase(getCarouselData.rejected, (state: InitialStateProps) => {
+        //     state.loading = false
+        // })
 
         builder.addCase(getAboutData.fulfilled, (state: InitialStateProps, action) => {
             state.about = action.payload
-            state.loading = false
         })
-        builder.addCase(getAboutData.pending, (state: InitialStateProps) => {
-            state.loading = true
-        })
-        builder.addCase(getAboutData.rejected, (state: InitialStateProps) => {
-            state.loading = false
-        })
+        // builder.addCase(getAboutData.pending, (state: InitialStateProps) => {
+        //     state.loading = true
+        // })
+        // builder.addCase(getAboutData.rejected, (state: InitialStateProps) => {
+        //     state.loading = false
+        // })
 
         builder.addCase(getPartnersData.fulfilled, (state: InitialStateProps, action) => {
             state.partners = [...action.payload, ...action.payload, ...action.payload]
-            state.loading = false
         })
-        builder.addCase(getPartnersData.pending, (state: InitialStateProps) => {
-            state.loading = true
-        })
-        builder.addCase(getPartnersData.rejected, (state: InitialStateProps) => {
-            state.loading = false
-        })
+        // builder.addCase(getPartnersData.pending, (state: InitialStateProps) => {
+        //     state.loading = true
+        // })
+        // builder.addCase(getPartnersData.rejected, (state: InitialStateProps) => {
+        //     state.loading = false
+        // })
 
         builder.addCase(getSazusData.fulfilled, (state: InitialStateProps, action) => {
             state.projects = action.payload
-            state.loading = false
         })
-        builder.addCase(getSazusData.pending, (state: InitialStateProps) => {
-            state.loading = true
-        })
-        builder.addCase(getSazusData.rejected, (state: InitialStateProps) => {
-            state.loading = false
-        })
+        // builder.addCase(getSazusData.pending, (state: InitialStateProps) => {
+        //     state.loading = true
+        // })
+        // builder.addCase(getSazusData.rejected, (state: InitialStateProps) => {
+        //     state.loading = false
+        // })
 
         builder.addCase(getNewsData.fulfilled, (state: InitialStateProps, action) => {
             state.news = action.payload
-            state.loading = false
         })
-        builder.addCase(getNewsData.pending, (state: InitialStateProps) => {
-            state.loading = true
-        })
-        builder.addCase(getNewsData.rejected, (state: InitialStateProps) => {
-            state.loading = false
-        })
+        // builder.addCase(getNewsData.pending, (state: InitialStateProps) => {
+        //     state.loading = true
+        // })
+        // builder.addCase(getNewsData.rejected, (state: InitialStateProps) => {
+        //     state.loading = false
+        // })
 
         builder.addCase(getStaffsData.fulfilled, (state: InitialStateProps, action) => {
             state.contacts = action.payload;
-            state.loading = false
         })
-        builder.addCase(getStaffsData.pending, (state: InitialStateProps) => {
-            state.loading = true
-        })
-        builder.addCase(getStaffsData.rejected, (state: InitialStateProps) => {
-            state.loading = false
-        })
+        // builder.addCase(getStaffsData.pending, (state: InitialStateProps) => {
+        //     state.loading = true
+        // })
+        // builder.addCase(getStaffsData.rejected, (state: InitialStateProps) => {
+        //     state.loading = false
+        // })
 
         builder.addCase(getFooterData.fulfilled, (state: InitialStateProps, action) => {
             state.footer = action.payload;
-            state.loading = false
         })
-        builder.addCase(getFooterData.pending, (state: InitialStateProps) => {
-            state.loading = true
-        })
-        builder.addCase(getFooterData.rejected, (state: InitialStateProps) => {
-            state.loading = false
-        })
+        // builder.addCase(getFooterData.pending, (state: InitialStateProps) => {
+        //     state.loading = true
+        // })
+        // builder.addCase(getFooterData.rejected, (state: InitialStateProps) => {
+        //     state.loading = false
+        // })
 
         builder.addCase(createSubscribe.fulfilled, (state: InitialStateProps, action) => {
             console.log("createSubscribe action.payload", action.payload)
             toast.success("Success");
-            state.loading = false
+            state.subscribeLoading = false
         })
         builder.addCase(createSubscribe.pending, (state: InitialStateProps) => {
-            state.loading = true
+            state.subscribeLoading = true
         })
         builder.addCase(createSubscribe.rejected, (state: InitialStateProps, action) => {
             console.log(action.payload)
             toast.error("Network error");
-            state.loading = false
+            state.subscribeLoading = false
         })
     }
 })
 
-export const {
-    // logoutFunc
-} = variableSlice.actions;
+export const {setLang} = variableSlice.actions;
 export default variableSlice.reducer

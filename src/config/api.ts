@@ -1,6 +1,8 @@
 import axios from "axios";
 
-export const baseUrl = import.meta.env.VITE_BACKEND_HOST;
+const language = localStorage.getItem('i18nextLng');
+
+export const baseUrl = `${import.meta.env.VITE_BACKEND_HOST}/${language}/api/v1`;
 
 export const http = axios.create({
     baseURL: baseUrl,

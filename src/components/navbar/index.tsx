@@ -10,6 +10,7 @@ import {useTranslation} from "react-i18next";
 export default function Component() {
 
     const {t} = useTranslation()
+
     const [isOpen, setIsOpen] = React.useState(false);
 
     const toggleMenu = () => {

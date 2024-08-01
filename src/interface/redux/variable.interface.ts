@@ -1,6 +1,7 @@
 export interface InitialStateProps {
-    // lang: string;
+    lang: string;
     loading: boolean;
+    subscribeLoading: boolean;
     about: aboutDataKey | null;
     footer: footerDataKeys | null;
     carousels: carouselDataKey[] | [];

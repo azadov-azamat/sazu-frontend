@@ -18,15 +18,20 @@ import 'react-toastify/scss/main.scss';
 
 // CONFIG
 import './utils/i18n.ts';
+import {useAppSelector} from "./redux/hooks.ts";
 
 function App() {
+
+    const {lang} = useAppSelector(state => state.variables);
     const [loading, setLoading] = React.useState(true);
 
     React.useEffect(() => {
+        setLoading(true);
+
         setTimeout(() => {
             setLoading(false);
         }, 3000);
-    }, []);
+    }, [lang]);
 
     return (
         loading ? <SiteLoadingComponent/> : <Routes>
