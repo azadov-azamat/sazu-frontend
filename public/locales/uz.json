@@ -14,6 +14,8 @@
   "partners": "Hamkorlar",
   "subscribe-newsletter": "Yangiliklarimizga obuna bo'ling",
   "enter-email": "Email manzilingizni kiriting",
-  "subscribe": "Obuna bo'lish"
-
+  "subscribe": "Obuna bo'lish",
+  "subscribe-success": "Muvoffaqiyatli obuna bo'ldingiz",
+  "subscribe-exist": "Elektron pochta allaqachon ro'yxatdan o'tgan",
+  "subscribe-error": "Saqlashda xatolik, qayta urinib ko'ring"
 }

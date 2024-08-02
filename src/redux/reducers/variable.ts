@@ -2,6 +2,8 @@ import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import {InitialStateProps} from "../../interface/redux/variable.interface";
 
 import {http} from "../../config/api.ts";
+import {toast} from "react-toastify";
+import i18n from "../../utils/i18n.ts";
 
 export const getCarouselData = createAsyncThunk('variables/getCarouselData', async (_, {rejectWithValue}) => {
     try {
@@ -151,13 +153,20 @@ export const variableSlice = createSlice({
 
         builder.addCase(createSubscribe.fulfilled, (state: InitialStateProps, action) => {
             console.log("createSubscribe action.payload", action.payload)
+            toast.success(i18n.t('subscribe-success'))
             state.subscribeLoading = false
         })
         builder.addCase(createSubscribe.pending, (state: InitialStateProps) => {
             state.subscribeLoading = true
         })
         builder.addCase(createSubscribe.rejected, (state: InitialStateProps, action) => {
-            console.log(action.payload)
+            console.log("create subscribe action.payload", action.payload)
+            // @ts-ignore
+            if (action.payload?.response.status === 400 ){
+                toast.error(i18n.t('subscribe-exist'))
+            } else {
+                toast.error(i18n.t('subscribe-error'))
+            }
             state.subscribeLoading = false
         })
     }

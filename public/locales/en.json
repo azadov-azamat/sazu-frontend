@@ -14,5 +14,8 @@
   "partners": "Partners",
   "subscribe-newsletter": "Subscribe to our newsletter",
   "enter-email": "Enter your email",
-  "subscribe": "Subscribe"
+  "subscribe": "Subscribe",
+  "subscribe-success": "Success subscribe",
+  "subscribe-exist": "The email has already been registered",
+  "subscribe-error": "Error saving, please try again"
 }
