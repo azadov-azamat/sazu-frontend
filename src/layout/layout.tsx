@@ -2,6 +2,7 @@ import {LayoutProps} from "./layout.props";
 import {FooterSection, NavbarSection} from "../components";
 import { useEffect } from 'react';
 import { gsap } from 'gsap';
+import bgVideo from '../assets/background/animation-back.mp4'
 
 function Layout({children}: LayoutProps): JSX.Element {
 
@@ -21,7 +22,15 @@ function Layout({children}: LayoutProps): JSX.Element {
     }, []);
 
     return (
-        <div className={'flex justify-center items-center w-full'}>
+        <div className={'flex relative w-full h-auto justify-center items-center'}>
+            <video
+                className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
+                autoPlay
+                loop
+                muted
+            >
+                <source src={bgVideo} type="video/mp4"/>
+            </video>
             <div className={'flex flex-col relative w-full h-auto container'}>
                 <NavbarSection/>
                 <main className={'w-full h-auto'}>

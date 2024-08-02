@@ -14,7 +14,7 @@ export default function Component() {
 
     const {contacts} = useAppSelector(state => state.variables);
 
-    const [selectedProfile, setSelectedProfile] = useState<null | contactDataKey>(contacts && contacts?.boss);
+    const [selectedProfile] = useState<null | contactDataKey>(contacts && contacts?.boss);
 
     return (
         <section id={'contacts'}>
@@ -50,7 +50,6 @@ export default function Component() {
                     <ContactCardComponent
                         key={index}
                         {...profile}
-                        onSelect={() => setSelectedProfile(profile)}
                     />
                 ))}
             </motion.div>
