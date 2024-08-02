@@ -3,10 +3,18 @@ import {FooterSection, NavbarSection} from "../components";
 import { useEffect } from 'react';
 import { gsap } from 'gsap';
 import bgVideo from '../assets/background/animation-back.mp4'
+import AOS from "aos";
 
 function Layout({children}: LayoutProps): JSX.Element {
 
-    const detailsClass= ' falling-element absolute -z-10 bottom-0 w-56 h-52 bg-no-repeat bg-[length:225px_200px]';
+    const detailsClass= ' falling-element absolute z-[-1] bottom-0 w-56 h-52 bg-no-repeat bg-[length:225px_200px]';
+
+    useEffect(() => {
+        AOS.init({
+            duration: 2000,
+            once: true,
+        });
+    }, []);
 
     useEffect(() => {
         gsap.fromTo(
@@ -28,6 +36,7 @@ function Layout({children}: LayoutProps): JSX.Element {
                 autoPlay
                 loop
                 muted
+                data-aos="fade-in"
             >
                 <source src={bgVideo} type="video/mp4"/>
             </video>
