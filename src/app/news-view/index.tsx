@@ -10,7 +10,7 @@ import {
 import {useAppDispatch, useAppSelector} from "../../redux/hooks.ts";
 import {useEffect} from "react";
 import AOS from "aos";
-import {getNewsData} from "../../redux/reducers/variable.ts";
+import {getNewsDataById} from "../../redux/reducers/variable.ts";
 import {useParams} from "react-router";
 import {LazyLoadImage} from "react-lazy-load-image-component";
 
@@ -18,17 +18,15 @@ export default function Controller() {
 
     const {id} = useParams()
     const dispatch = useAppDispatch();
-    const {news, footer} = useAppSelector(state => state.variables)
-
-    const currentNews = news.find(item => item.id === Number(id));
+    const {currentNews, footer} = useAppSelector(state => state.variables)
 
     useEffect(() => {
         AOS.init();
     }, []);
 
     useEffect(() => {
-        dispatch(getNewsData());
-    }, []);
+        dispatch(getNewsDataById(Number(id)));
+    }, [id]);
 
     return (
         <div className={'flex flex-col md:gap-32 gap-20'}>

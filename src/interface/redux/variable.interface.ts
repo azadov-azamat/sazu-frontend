@@ -3,6 +3,7 @@ export interface InitialStateProps {
     subscribeLoading: boolean;
     about: aboutDataKey | null;
     footer: footerDataKeys | null;
+    currentNews: newsDataKeys | null;
     carousels: carouselDataKey[] | [];
     projects: projectsDataKey[] | [];
     contacts: contactCardDataProps | null;
@@ -51,6 +52,7 @@ export interface newsDataKeys extends defaultKeys {
     image: string;
     title: string;
     description: string;
+    video?: string;
 }
 
 export interface defaultKeys {
