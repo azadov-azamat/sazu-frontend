@@ -88,7 +88,7 @@ const initialState: InitialStateProps = {
     footer: null,
     about: null,
     carousels: [],
-    contacts: [],
+    contacts: null,
     projects: [],
     partners: [],
     news: [],

@@ -5,7 +5,7 @@ export interface InitialStateProps {
     footer: footerDataKeys | null;
     carousels: carouselDataKey[] | [];
     projects: projectsDataKey[] | [];
-    contacts: contactCardDataProps[] | [];
+    contacts: contactCardDataProps | null;
     partners: partnersDataKeys[] | [];
     news: newsDataKeys[] | []
     currentPage: number;
@@ -23,6 +23,11 @@ export interface aboutDataKey extends carouselDataKey{
 }
 
 export interface contactCardDataProps {
+   boss: contactDataKey,
+    workers: contactDataKey[]
+}
+
+export interface contactDataKey {
     image: string;
     name: string;
     profession: string;

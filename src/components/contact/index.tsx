@@ -3,7 +3,7 @@
 import {ContactCardComponent, PageTitleComponent} from "../index.ts";
 import {useAppSelector} from "../../redux/hooks.ts";
 import {motion} from 'framer-motion';
-import {contactCardDataProps} from "../../interface/redux/variable.interface.ts";
+import {contactDataKey} from "../../interface/redux/variable.interface.ts";
 import {useState} from "react";
 import {useTranslation} from "react-i18next";
 import {LazyLoadImage} from "react-lazy-load-image-component";
@@ -14,7 +14,7 @@ export default function Component() {
 
     const {contacts} = useAppSelector(state => state.variables);
 
-    const [selectedProfile, setSelectedProfile] = useState<null | contactCardDataProps>(contacts[0]);
+    const [selectedProfile, setSelectedProfile] = useState<null | contactDataKey>(contacts && contacts?.boss);
 
     return (
         <section id={'contacts'}>
@@ -46,7 +46,7 @@ export default function Component() {
                 animate={{opacity: 1}}
                 transition={{delay: 1}}
             >
-                {contacts.map((profile: contactCardDataProps, index: number) => (
+                {contacts && contacts?.workers.map((profile: contactDataKey, index: number) => (
                     <ContactCardComponent
                         key={index}
                         {...profile}

@@ -20,7 +20,7 @@ export default function Controller() {
     const dispatch = useAppDispatch();
     const {news, footer} = useAppSelector(state => state.variables)
 
-    const currentNews = news.find((_, index) => index === Number(id));
+    const currentNews = news.find(item => item.id === Number(id));
 
     useEffect(() => {
         AOS.init();

@@ -1,10 +1,10 @@
 // import React from 'react';
 
-import {contactCardDataProps} from "../../interface/redux/variable.interface.ts";
+import {contactDataKey} from "../../interface/redux/variable.interface.ts";
 import {useTranslation} from "react-i18next";
 import {LazyLoadImage} from "react-lazy-load-image-component";
 
-interface componentCardProps extends contactCardDataProps{
+interface componentCardProps extends contactDataKey{
     onSelect: () => void;
 }
 export default function Component({name, image, profession, text, onSelect}: componentCardProps) {
