@@ -10,12 +10,12 @@ import {
     getStaffsData
 } from "../../redux/reducers/variable.ts";
 
-export default function Component() {
+export default function Component({setLoading}: {setLoading: any}) {
 
     const dispatch = useAppDispatch();
 
     useEffect( () => {
-         fetchApies()
+        fetchApies()
     }, []);
 
     useEffect(() => {
@@ -26,15 +26,22 @@ export default function Component() {
         );
     }, []);
 
-    async function fetchApies(){
-        await Promise.all([
-            dispatch(getCarouselData()),
-            dispatch(getAboutData()),
-            dispatch(getSazusData()),
-            dispatch(getPartnersData()),
-            dispatch(getStaffsData()),
-            dispatch(getFooterData()),
-        ])
+    async function fetchApies() {
+        try {
+            await Promise.all([
+                dispatch(getCarouselData()),
+                dispatch(getAboutData()),
+                dispatch(getSazusData()),
+                dispatch(getPartnersData()),
+                dispatch(getStaffsData()),
+                dispatch(getFooterData()),
+            ])
+        } catch (e) {
+            console.log(e)
+            setLoading(true);
+        } finally {
+            setLoading(false)
+        }
     }
 
     return (

@@ -27,13 +27,6 @@ function App() {
     const {t} = useTranslation()
     const [loading, setLoading] = React.useState(true);
 
-    React.useEffect(() => {
-
-        setTimeout(() => {
-            setLoading(false);
-        }, 3500);
-    }, [loading]);
-
     i18n.on('languageChanged', () => {
         setLoading(true);
         updateTitle()
@@ -53,7 +46,7 @@ function App() {
     };
 
     return (
-        loading ? <SiteLoadingComponent/> : <Routes>
+        loading ? <SiteLoadingComponent setLoading={setLoading}/> : <Routes>
             {
                 routes.map(route =>
                     <Route
