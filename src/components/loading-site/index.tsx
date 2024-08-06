@@ -1,4 +1,4 @@
-import {useEffect} from 'react';
+import {useEffect, useLayoutEffect} from 'react';
 import gsap from 'gsap';
 import logo from '../../assets/sazu/loading.png';
 import {useAppDispatch} from "../../redux/hooks.ts";
@@ -14,7 +14,7 @@ export default function Component({setLoading}: {setLoading: any}) {
 
     const dispatch = useAppDispatch();
 
-    useEffect( () => {
+    useLayoutEffect( () => {
         fetchApies()
     }, []);
 
@@ -22,25 +22,33 @@ export default function Component({setLoading}: {setLoading: any}) {
         gsap.fromTo(
             ".background-fill",
             {bottom: '1px', height: 0},
-            {bottom: '1px', height: "98%", duration: 5, ease: "power1.inOut"}
+            {bottom: '1px', height: "98%", duration: 5, ease: "power1.inOut", repeat: -1 }
         );
     }, []);
 
     async function fetchApies() {
         try {
-            await Promise.all([
+            let results = await Promise.all([
                 dispatch(getCarouselData()),
                 dispatch(getAboutData()),
                 dispatch(getSazusData()),
                 dispatch(getPartnersData()),
                 dispatch(getStaffsData()),
                 dispatch(getFooterData()),
-            ])
+            ]);
+
+            const allRejected = results.every(result => {
+                return (result as any).error?.message === 'Rejected';
+            });
+
+            if (allRejected) {
+                console.error("Some requests were not fulfilled.");
+            } else {
+                setLoading(false);
+            }
         } catch (e) {
-            console.log(e)
+            console.log("error", e)
             setLoading(true);
-        } finally {
-            setLoading(false)
         }
     }
 

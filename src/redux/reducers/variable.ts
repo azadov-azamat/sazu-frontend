@@ -122,33 +122,73 @@ export const variableSlice = createSlice({
         builder.addCase(getCarouselData.fulfilled, (state: InitialStateProps, action) => {
             state.carousels = action.payload
         })
+        builder.addCase(getCarouselData.rejected, (state: InitialStateProps, action) => {
+            state.carousels = []
+            // @ts-ignore
+            console.error(action.payload.message)
+        })
 
         builder.addCase(getAboutData.fulfilled, (state: InitialStateProps, action) => {
             state.about = action.payload
+        })
+        builder.addCase(getAboutData.rejected, (state: InitialStateProps, action) => {
+            state.about = null
+            // @ts-ignore
+            console.error(action.payload.message)
         })
 
         builder.addCase(getPartnersData.fulfilled, (state: InitialStateProps, action) => {
             state.partners = [...action.payload, ...action.payload, ...action.payload]
         })
+        builder.addCase(getPartnersData.rejected, (state: InitialStateProps, action) => {
+            state.partners = []
+            // @ts-ignore
+            console.error(action.payload.message)
+        })
 
         builder.addCase(getSazusData.fulfilled, (state: InitialStateProps, action) => {
             state.projects = action.payload
+        })
+        builder.addCase(getSazusData.rejected, (state: InitialStateProps, action) => {
+            state.projects = []
+            // @ts-ignore
+            console.error(action.payload.message)
         })
 
         builder.addCase(getNewsData.fulfilled, (state: InitialStateProps, action) => {
             state.news = action.payload
         })
+        builder.addCase(getNewsData.rejected, (state: InitialStateProps, action) => {
+            state.news = []
+            // @ts-ignore
+            console.error(action.payload.message)
+        })
 
         builder.addCase(getNewsDataById.fulfilled, (state: InitialStateProps, action) => {
             state.currentNews = action.payload
+        })
+        builder.addCase(getNewsDataById.rejected, (state: InitialStateProps, action) => {
+            state.currentNews = null
+            // @ts-ignore
+            console.error(action.payload.message)
         })
 
         builder.addCase(getStaffsData.fulfilled, (state: InitialStateProps, action) => {
             state.contacts = action.payload;
         })
+        builder.addCase(getStaffsData.rejected, (state: InitialStateProps, action) => {
+            state.contacts = null;
+            // @ts-ignore
+            console.error(action.payload.message)
+        })
 
         builder.addCase(getFooterData.fulfilled, (state: InitialStateProps, action) => {
             state.footer = action.payload;
+        })
+        builder.addCase(getFooterData.rejected, (state: InitialStateProps, action) => {
+            state.footer = null;
+            // @ts-ignore
+            console.error(action.payload.message)
         })
 
         builder.addCase(createSubscribe.fulfilled, (state: InitialStateProps, action) => {
