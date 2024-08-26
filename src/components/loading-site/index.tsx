@@ -1,6 +1,6 @@
 import {useEffect, useLayoutEffect} from 'react';
 import gsap from 'gsap';
-import logo from '../../assets/sazu/loading.png';
+import logo from '../../assets/sazu/loading-with-border.png';
 import {useAppDispatch} from "../../redux/hooks.ts";
 import {
     getAboutData,
@@ -44,7 +44,9 @@ export default function Component({setLoading}: {setLoading: any}) {
             if (allRejected) {
                 console.error("Some requests were not fulfilled.");
             } else {
-                setLoading(false);
+                setTimeout(()=>{
+                    setLoading(false);
+                }, 2500)
             }
         } catch (e) {
             console.log("error", e)
@@ -53,7 +55,7 @@ export default function Component({setLoading}: {setLoading: any}) {
     }
 
     return (
-        <div className="relative w-full h-screen bg-black flex items-center justify-center">
+        <div className="relative w-full h-screen bg-white flex items-center justify-center">
             <div className={'relative w-96 h-80'}>
                 <div className="absolute bg-primary-purple w-[98%] left-1 bottom-1 background-fill z-0"
                      style={{position: 'absolute'}}/>
