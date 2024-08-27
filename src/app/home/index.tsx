@@ -30,7 +30,7 @@ export default function Controller() {
     return (
         <div className={'flex flex-col md:gap-32 gap-20'}>
             <HeaderSection/>
-            <div className="relative flex justify-center items-center md:h-[710px] h-96">
+            <div className="flex flex-col gap-4 items-center h-auto">
                 {
                     projects.map((project, index) => (
                         <ProjectCardComponent {...project} index={index} total={projects.length} key={index}/>

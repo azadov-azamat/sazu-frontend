@@ -45,6 +45,7 @@ export interface footerDataKeys {
 
 export interface projectsDataKey extends defaultKeys {
     icon: string;
+    image: string;
     link: string;
 }
 

@@ -1,9 +1,7 @@
-// @flow
-// import * as React from 'react';
 
 import {projectsDataKey} from "../../interface/redux/variable.interface.ts";
 import {LazyLoadImage} from "react-lazy-load-image-component";
-import {useEffect, useRef, useState} from "react";
+import {useRef, useState} from "react";
 import gsap from 'gsap';
 
 interface Props extends projectsDataKey {
@@ -13,33 +11,12 @@ interface Props extends projectsDataKey {
 
 export default function Component(item: Props) {
     const cardRef = useRef(null);
-    const [width, setWidth] = useState('770px'); // Default width
-    const [squareSize, setSquareSize] = useState<number>(115); // Default width
-
-    const updateWidth = () => {
-        if (window.innerWidth >= 1536) {
-            setWidth('900px');
-        } else if (window.innerWidth >= 1280) {
-            setWidth('830px');
-        } else if (window.innerWidth >= 768) {
-            setWidth('660px');
-        } else {
-            setSquareSize(65);
-            setWidth('90%');
-        }
-    };
-
-    useEffect(() => {
-        updateWidth();
-        window.addEventListener('resize', updateWidth);
-        return () => window.removeEventListener('resize', updateWidth);
-    }, []);
+    const [width] = useState('85%'); // Default width
 
     const handleMouseEnter = () => {
         gsap.to(cardRef.current, {
-            y: -50,
             duration: 0.5,
-            width: `calc(${width} + 30px)`,  // Increase width by 30px on hover
+            width: `calc(${width} + 50px)`,
             boxShadow: "0 20px 40px rgba(0, 0, 0, 0.2)",
         });
     };
@@ -62,15 +39,22 @@ export default function Component(item: Props) {
             data-aos-duration={item.index + '000'}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-            style={{ top: `${item.index * squareSize}px`, zIndex: (item.index * (-1)) + 20, width: width, }}
-            className={`card-${item.index} shadow-md hover:!z-50 transition-transform duration-500 absolute
-             flex items-center justify-center bg-white rounded-3xl 2xl:h-[280px] xl:h-[260px] md:h-64 h-40`}
+            style={{width: width, }}
+            className={`card-${item.index} shadow-md hover:!z-50 transition-transform duration-500
+             flex bg-white rounded-[33px] items-center 2xl:h-[260px] xl:h-[240px] md:h-60 h-44 relative pl-14`}
         >
             <LazyLoadImage
-                className={'2xl:w-60 xl:w-56 md:w-52 lg:w-44 w-36 object-cover object-center'}
+                className={'md:flex hidden 2xl:w-60 xl:w-56 md:w-52  object-cover object-center'}
                 alt={"project-card-image"}
                 src={item.icon}
             />
+            <div className={'w-full xl:w-auto h-full md:w-1/2 absolute top-0 right-0 md:object-contain xl:object-cover object-cover object-center'}>
+                <LazyLoadImage
+                    className={'w-full h-full'}
+                    alt={"project-card-image"}
+                    src={item.image}
+                />
+            </div>
         </a>
     );
 };
