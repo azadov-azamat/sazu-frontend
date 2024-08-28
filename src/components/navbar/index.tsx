@@ -9,8 +9,11 @@ import {useTranslation} from "react-i18next";
 const Navbar: React.FC = () => {
 
     const { t } = useTranslation();
+
     const menuRef = useRef<HTMLDivElement>(null);
     const menuContentRef = useRef<HTMLDivElement>(null);
+    const burgerRef = useRef<HTMLButtonElement>(null);
+
     const [menuOpen, setMenuOpen] = useState(false);
 
     const calculateScale = () => {
@@ -22,6 +25,18 @@ const Navbar: React.FC = () => {
 
     const toggleMenu = () => {
         if (!menuOpen) {
+            const burgerBounds = burgerRef.current?.getBoundingClientRect();
+
+            if (burgerBounds && menuRef.current) {
+                gsap.set(menuRef.current, {
+                    top: burgerBounds.top + burgerBounds.height / 2,
+                    left: burgerBounds.left + burgerBounds.width / 2,
+                    xPercent: -50, // Doirani burger tugmasining markaziga joylashtirish uchun
+                    yPercent: -50, // Doirani burger tugmasining markaziga joylashtirish uchun
+                    transformOrigin: 'center', // Menyu kengayishini markazdan boshlash
+                });
+            }
+
             gsap.to(menuRef.current, {
                 scale: calculateScale(),
                 duration: 1.5,
@@ -31,8 +46,8 @@ const Navbar: React.FC = () => {
 
             gsap.to(menuContentRef.current, {
                 opacity: 1,
-                delay: 0.5,
-                duration: 0.3,
+                delay: 1,
+                duration: 0.6,
             });
 
             // li elementlar uchun fade-up animatsiyasi
@@ -82,13 +97,14 @@ const Navbar: React.FC = () => {
                 </Link>
                 <div className="flex items-center gap-4">
                     <LanguageDropdownComponent/>
-                    <div
+                    <button
+                        ref={burgerRef}
                         className="burger flex flex-col justify-between h-3 cursor-pointer"
                         onClick={toggleMenu}
                     >
                         <div className="w-10 h-0.5 bg-white"></div>
                         <div className="w-10 h-0.5 bg-white"></div>
-                    </div>
+                    </button>
                 </div>
 
                 <div
