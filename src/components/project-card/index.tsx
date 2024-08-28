@@ -45,13 +45,13 @@ export default function Component(item: Props) {
         >
             <LazyLoadImage
                 className={'md:flex hidden 2xl:w-60 xl:w-56 md:w-52  object-cover object-center'}
-                alt={"project-card-image"}
+                alt={"project-card-icon-" + item.id}
                 src={item.icon}
             />
             <div className={'w-full xl:w-auto h-full md:w-1/2 absolute top-0 right-0 md:object-contain xl:object-cover object-cover object-center'}>
                 <LazyLoadImage
                     className={'w-full h-full'}
-                    alt={"project-card-image"}
+                    alt={"project-card-image-" + item.id}
                     src={item.image}
                 />
             </div>
