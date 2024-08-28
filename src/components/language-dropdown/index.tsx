@@ -70,7 +70,7 @@ export default function Component() {
                                 <button
                                     key={index}
                                     onClick={() => selectLanguage(lang)}
-                                    className="flex w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                                    className="flex w-full px-4 py-2 text-lg text-gray-700 hover:bg-gray-100"
                                     role="menuitem"
                                 >
                                     {lang.label}

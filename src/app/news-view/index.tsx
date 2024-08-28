@@ -1,10 +1,10 @@
 // importrt React, {useEffect} from 'react';
 
 import {
-    AboutSection,
-    ContactSection,
+    // AboutSection,
+    // ContactSection,
     NewsSection,
-    PartnersSection,
+    // PartnersSection,
     VideoPlayerSection
 } from "../../components";
 import {useAppDispatch, useAppSelector} from "../../redux/hooks.ts";
@@ -43,9 +43,9 @@ export default function Controller() {
                 </p>
             </div>
             <NewsSection/>
-            <AboutSection/>
-            <PartnersSection/>
-            <ContactSection/>
+            {/*<AboutSection/>*/}
+            {/*<PartnersSection/>*/}
+            {/*<ContactSection/>*/}
             <div className={'flex items-center md:px-0 px-6 justify-center'}>
                 <VideoPlayerSection video={footer?.video || ""}/>
             </div>

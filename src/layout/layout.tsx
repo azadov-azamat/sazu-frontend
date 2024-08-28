@@ -7,7 +7,7 @@ import AOS from "aos";
 
 function Layout({children}: LayoutProps): JSX.Element {
 
-    const detailsClass= ' falling-element absolute z-[-1] bottom-0 w-56 h-52 bg-no-repeat bg-[length:225px_200px]';
+    // const detailsClass= ' falling-element absolute z-[-1] bottom-0 w-56 h-52 bg-no-repeat bg-[length:225px_200px]';
 
     useEffect(() => {
         AOS.init({
@@ -45,11 +45,11 @@ function Layout({children}: LayoutProps): JSX.Element {
                 <main className={'w-full h-auto'}>
                     {children}
                 </main>
-                <div className={'bg-first-pattern top-[14%] right-0' + detailsClass}/>
-                <div className={'bg-second-pattern top-[30%] !-left-20' + detailsClass}/>
-                <div className={'bg-thirty-pattern top-[35%] right-1' + detailsClass}/>
-                <div className={'bg-fourth-pattern bottom-[30%] left-0' + detailsClass}/>
-                <div className={'bg-fifth-pattern bottom-[13%] right-10' + detailsClass}/>
+                {/*<div className={'bg-first-pattern top-[14%] right-0' + detailsClass}/>*/}
+                {/*<div className={'bg-second-pattern top-[30%] !-left-20' + detailsClass}/>*/}
+                {/*<div className={'bg-thirty-pattern top-[35%] right-1' + detailsClass}/>*/}
+                {/*<div className={'bg-fourth-pattern bottom-[30%] left-0' + detailsClass}/>*/}
+                {/*<div className={'bg-fifth-pattern bottom-[13%] right-10' + detailsClass}/>*/}
                 <FooterSection/>
             </div>
         </div>
