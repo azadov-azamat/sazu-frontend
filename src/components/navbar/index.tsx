@@ -69,14 +69,14 @@ const Navbar: React.FC = () => {
         } else {
             gsap.to(menuContentRef.current, {
                 opacity: 0,
-                duration: 0.8,
+                duration: 1.3,
             });
 
             gsap.to(menuRef.current, {
                 scale: 0,
                 delay: 0.5,
-                duration: 1,
-                ease: 'power4.inOut',
+                duration: 1.8,
+                ease: 'power4.out',
                 backdropFilter: 'blur(0px)',
             });
         }
