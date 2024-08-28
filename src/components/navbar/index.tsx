@@ -31,15 +31,15 @@ const Navbar: React.FC = () => {
                 gsap.set(menuRef.current, {
                     top: burgerBounds.top + burgerBounds.height / 2,
                     left: burgerBounds.left + burgerBounds.width / 2,
-                    xPercent: -50, // Doirani burger tugmasining markaziga joylashtirish uchun
-                    yPercent: -50, // Doirani burger tugmasining markaziga joylashtirish uchun
+                    xPercent: -200, // Doirani burger tugmasining markaziga joylashtirish uchun
+                    yPercent: 0, // Doirani burger tugmasining markaziga joylashtirish uchun
                     transformOrigin: 'center', // Menyu kengayishini markazdan boshlash
                 });
             }
 
             gsap.to(menuRef.current, {
                 scale: calculateScale(),
-                duration: 1.5,
+                duration: 1.8,
                 ease: 'power4.inOut',
                 backdropFilter: 'blur(20px)',
             });
@@ -69,13 +69,13 @@ const Navbar: React.FC = () => {
         } else {
             gsap.to(menuContentRef.current, {
                 opacity: 0,
-                duration: 0.3,
+                duration: 0.8,
             });
 
             gsap.to(menuRef.current, {
                 scale: 0,
-                delay: 0.3,
-                duration: 0.8,
+                delay: 0.5,
+                duration: 1,
                 ease: 'power4.inOut',
                 backdropFilter: 'blur(0px)',
             });
