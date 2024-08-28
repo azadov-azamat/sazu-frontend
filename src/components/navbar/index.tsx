@@ -24,7 +24,7 @@ const Navbar: React.FC = () => {
         if (!menuOpen) {
             gsap.to(menuRef.current, {
                 scale: calculateScale(),
-                duration: 0.8,
+                duration: 1.5,
                 ease: 'power4.inOut',
                 backdropFilter: 'blur(20px)',
             });
