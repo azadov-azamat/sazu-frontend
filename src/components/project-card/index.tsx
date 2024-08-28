@@ -1,8 +1,10 @@
-
 import {projectsDataKey} from "../../interface/redux/variable.interface.ts";
 import {LazyLoadImage} from "react-lazy-load-image-component";
-import {useRef, useState} from "react";
+import {useRef, useState, useEffect} from "react";
 import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 interface Props extends projectsDataKey {
     total: number;
@@ -12,6 +14,24 @@ interface Props extends projectsDataKey {
 export default function Component(item: Props) {
     const cardRef = useRef(null);
     const [width] = useState('85%'); // Default width
+
+    useEffect(() => {
+        gsap.fromTo(cardRef.current,
+            { scale: 0.8, y: 60, opacity: 0 },
+            {
+                scale: 1,
+                y: 0,
+                opacity: 1,
+                duration: 0.6,
+                ease: "power2.in",
+                scrollTrigger: {
+                    trigger: cardRef.current,
+                    start: "top 80%",
+                    toggleActions: "play none none none"
+                }
+            }
+        );
+    }, []);
 
     const handleMouseEnter = () => {
         gsap.to(cardRef.current, {
@@ -35,8 +55,6 @@ export default function Component(item: Props) {
             href={item.link}
             target={'_blank'}
             ref={cardRef}
-            data-aos="zoom-in-down"
-            data-aos-duration={item.index + '000'}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             style={{width: width, }}
@@ -44,7 +62,7 @@ export default function Component(item: Props) {
              flex bg-white rounded-[33px] items-center 2xl:h-[260px] xl:h-[240px] md:h-60 h-44 relative pl-14`}
         >
             <LazyLoadImage
-                className={'md:flex hidden 2xl:w-60 xl:w-56 md:w-52  object-cover object-center'}
+                className={'md:flex hidden 2xl:w-60 xl:w-56 md:w-52 object-cover object-center'}
                 alt={"project-card-icon-" + item.id}
                 src={item.icon}
             />
