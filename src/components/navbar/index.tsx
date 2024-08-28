@@ -115,7 +115,7 @@ const Navbar: React.FC = () => {
 
                 <div
                     ref={menuContentRef}
-                    className="container fixed mx-auto inset-0 flex items-center justify-center opacity-0 z-10"
+                    className={`container fixed mx-auto inset-0 flex items-center justify-center opacity-0 z-10 ${menuOpen ? 'block' : 'hidden'}`}
                 >
                     <div
                         className={`absolute top-12 right-4 flex flex-col justify-between cursor-pointer w-10 h-10`}
