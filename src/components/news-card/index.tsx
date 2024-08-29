@@ -22,7 +22,7 @@ export default function Component(item: NewCardProps) {
                     wrapperProps={{
                         style: {transitionDelay: "1s"},
                     }}
-                    className="w-full h-full object-contain object-center absolute inset-0
+                    className="w-full h-full object-cover object-center absolute inset-0 rounded-lg
                      transition-transform duration-400 ease-in-out transform scale-100 group-hover:scale-105 rotate-0 group-hover:rotate-3
                      "
                     src={item.image} alt={item.title}

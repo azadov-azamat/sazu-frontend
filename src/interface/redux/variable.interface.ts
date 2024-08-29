@@ -41,6 +41,12 @@ export interface partnersDataKeys {
 
 export interface footerDataKeys {
     video: string;
+    telegram_link: string;
+    instagram_link: string;
+    facebook_link: string;
+    phone_number: string;
+    address: string;
+    address_link: string;
 }
 
 export interface projectsDataKey extends defaultKeys {

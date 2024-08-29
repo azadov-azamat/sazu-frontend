@@ -58,7 +58,7 @@ export default function Component(item: Props) {
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             style={{width: width, }}
-            className={`card-${item.index} shadow-md hover:!z-50 transition-transform duration-500
+            className={`card-${item.index} shadow-md hover:!z-50 transition-transform duration-500 overflow-hidden border-none
              flex bg-white rounded-[33px] items-center 2xl:h-[260px] xl:h-[240px] md:h-60 h-44 relative pl-14`}
         >
             <LazyLoadImage
@@ -66,7 +66,7 @@ export default function Component(item: Props) {
                 alt={"project-card-icon-" + item.id}
                 src={item.icon}
             />
-            <div className={'w-full xl:w-auto h-full md:w-1/2 absolute top-0 right-0 md:object-contain xl:object-cover object-cover object-center'}>
+            <div className={'w-full xl:w-auto h-full md:w-1/2 absolute top-0 right-0 object-cover object-center'}>
                 <LazyLoadImage
                     className={'w-full h-full'}
                     alt={"project-card-image-" + item.id}

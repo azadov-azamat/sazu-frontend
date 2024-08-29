@@ -15,6 +15,7 @@ import {createSubscribe} from "../../redux/reducers/variable.ts";
 export default function Component() {
 
     const {t} = useTranslation();
+    const {footer} = useAppSelector(state => state.variables);
 
     const {ref: footerRef, inView: footerInView} = useInView({
         threshold: 0,
@@ -48,22 +49,23 @@ export default function Component() {
                             items-start lg:gap-40 2xl:gap-32 gap-10">
                             <div className={'flex flex-col gap-3'}>
                                 <span className="text-primary-purple text-xl">{t('address')}</span>
-                                <a href={'https://yandex.uz/maps/10335/tashkent/house/YkAYdAJmTkwDQFprfX55cH9qYg==/?ll=69.256794%2C41.281396&z=17'} target={'_blank'}>{t ('address-company')}</a>
+                                <a href={footer?.address_link}
+                                   target={'_blank'}>{footer?.address}</a>
                             </div>
                             <div className={'flex flex-col gap-3'}>
                                 <span className="text-primary-purple text-xl">{t('phone-number')}</span>
-                                <a href={'tel:95 313 33 33'}>+998 95 313 33 33</a>
+                                <a href={`tel:${footer?.phone_number}`}>{footer?.phone_number}</a>
                             </div>
                             <div className={'flex flex-col gap-2'}>
                                 <span className="text-primary-purple text-xl">{t('social-network')}</span>
                                 <div className={'flex items-center gap-3'}>
-                                    <a target={'_blank'} href="https://t.me/+nBdEWxV0oMYxNDZi">
+                                    <a target={'_blank'} href={footer?.telegram_link}>
                                         <img loading={'lazy'} src={telegram} alt="telegram-icon" className={'w-9'}/>
                                     </a>
-                                    <a href="https://www.instagram.com/sazu_uz" target={'_blank'}>
+                                    <a href={footer?.instagram_link} target={'_blank'}>
                                         <img src={instagram} alt="instagram-icon" className={'w-9'}/>
                                     </a>
-                                    <a href="https://www.facebook.com/profile.php?id=61557165297636&mibextid=ZbWKwL">
+                                    <a href={footer?.facebook_link}>
                                         <img src={facebook} alt="facebook-icon" className={'w-9'}/>
                                     </a>
                                 </div>
