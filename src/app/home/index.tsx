@@ -6,8 +6,7 @@ import {
     HeaderSection,
     NewsSection,
     PartnersSection,
-    ProjectCardComponent,
-    VideoPlayerSection
+    ProjectCardComponent
 } from "../../components";
 import {useAppDispatch, useAppSelector} from "../../redux/hooks.ts";
 import {useEffect} from "react";
@@ -17,7 +16,7 @@ import {getNewsData} from "../../redux/reducers/variable.ts";
 export default function Controller() {
 
     const dispatch = useAppDispatch();
-    const {projects, footer} = useAppSelector(state => state.variables)
+    const {projects} = useAppSelector(state => state.variables)
 
     useEffect(() => {
         AOS.init();
@@ -41,12 +40,6 @@ export default function Controller() {
             <PartnersSection/>
             <NewsSection/>
             <ContactSection/>
-            <div className={'flex items-center md:px-0 px-6 justify-center'}>
-                <VideoPlayerSection video={footer?.video || ""}/>
-            </div>
-            <div>
-
-            </div>
         </div>
     );
 }

@@ -1,7 +1,4 @@
-import {
-    NewsSection,
-    VideoPlayerSection
-} from "../../components";
+import {NewsSection} from "../../components";
 import {useAppDispatch, useAppSelector} from "../../redux/hooks.ts";
 import {useEffect} from "react";
 import AOS from "aos";
@@ -14,7 +11,7 @@ export default function Controller() {
 
     const {id} = useParams()
     const dispatch = useAppDispatch();
-    const {currentNews, footer} = useAppSelector(state => state.variables)
+    const {currentNews} = useAppSelector(state => state.variables)
 
     useEffect(() => {
         AOS.init();
@@ -53,12 +50,6 @@ export default function Controller() {
                 </p>
             </div>
             <NewsSection/>
-            <div className={'flex items-center md:px-0 px-6 justify-center'}>
-                <VideoPlayerSection video={footer?.video || ""}/>
-            </div>
-            <div>
-
-            </div>
         </div>
     );
 }

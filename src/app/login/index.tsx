@@ -1,5 +1,5 @@
 
-import {AboutSection, LoginFormComponent, NewsSection, PartnersSection} from "../../components";
+import { LoginFormComponent} from "../../components";
 import {useEffect} from "react";
 import AOS from "aos";
 import {Link} from "react-router-dom";
@@ -23,13 +23,6 @@ export default function Controller() {
                         </Link>
                     </p>
                 </div>
-            </div>
-            <AboutSection/>
-            <PartnersSection/>
-            <NewsSection/>
-
-            <div>
-
             </div>
         </div>
     );

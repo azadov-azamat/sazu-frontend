@@ -1,13 +1,15 @@
 import {LayoutProps} from "./layout.props";
-import {FooterSection, NavbarSection} from "../components";
+import {FooterSection, NavbarSection, VideoPlayerSection} from "../components";
 import { useEffect } from 'react';
 import { gsap } from 'gsap';
 import bgVideo from '../assets/background/animation-back.mp4'
 import AOS from "aos";
+import {useAppSelector} from "../redux/hooks.ts";
 
 function Layout({children}: LayoutProps): JSX.Element {
 
     // const detailsClass= ' falling-element absolute z-[-1] bottom-0 w-56 h-52 bg-no-repeat bg-[length:225px_200px]';
+    const {footer} = useAppSelector(state => state.variables)
 
     useEffect(() => {
         AOS.init({
@@ -50,6 +52,9 @@ function Layout({children}: LayoutProps): JSX.Element {
                 {/*<div className={'bg-thirty-pattern top-[35%] right-1' + detailsClass}/>*/}
                 {/*<div className={'bg-fourth-pattern bottom-[30%] left-0' + detailsClass}/>*/}
                 {/*<div className={'bg-fifth-pattern bottom-[13%] right-10' + detailsClass}/>*/}
+                <div className={'flex items-center md:px-0 px-6 justify-center md:mt-32 mt-20 md:mb-32 mb-20'}>
+                    <VideoPlayerSection video={footer?.video || ""}/>
+                </div>
                 <FooterSection/>
             </div>
         </div>
