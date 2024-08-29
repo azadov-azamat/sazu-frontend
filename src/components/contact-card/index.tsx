@@ -8,12 +8,12 @@ export default function Component({name, image, profession, text}: contactDataKe
     // const {t} = useTranslation()
 
     return (
-        <div className="relative w-full xl:h-[490px] md:h-[350px] h-80 bg-black rounded-xl overflow-hidden shadow-lg group">
+        <div className="relative w-full xl:h-[490px] md:h-[360px] h-80 bg-black rounded-xl overflow-hidden shadow-lg group">
             <LazyLoadImage
                 loading={'lazy'}
                 src={image}
                 alt={name}
-                className="w-full h-full object-cover transition duration-500 group-hover:blur-sm ease-in-out group-hover:scale-95"
+                className="w-full h-full object-cover object-top transition duration-500 group-hover:blur-sm ease-in-out group-hover:scale-95"
             />
             <div
                 className="absolute inset-0 flex flex-col justify-end p-4 transition-all duration-500 bg-gradient-to-t from-black
