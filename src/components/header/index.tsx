@@ -33,9 +33,9 @@ export default function Component() {
                     prevEl: prevRef.current,
                 }}
                 loop={true}
-                speed={3000}
+                speed={1500}
                 autoplay={{
-                    delay: 5000,
+                    delay: 3000,
                     disableOnInteraction: false
                 }}
             >
@@ -58,11 +58,11 @@ export default function Component() {
                     ))
                 }
                 <div ref={nextRef} data-aos="fade-right" data-aos-duration="3000"
-                     className="swiper-button-next !w-12 mr-4 ">
+                     className="swiper-button-next !w-12 mr-4 !text-white">
                     {/*<img src={ArrowRight} alt="swiper-arrow-right"/>*/}
                 </div>
                 <div ref={prevRef} data-aos="fade-left" data-aos-duration="3000"
-                     className="swiper-button-prev !w-12 ml-4 ">
+                     className="swiper-button-prev !w-12 ml-4 !text-white">
                     {/*<img src={ArrowLeft} alt="swiper-arrow-left"/>*/}
                 </div>
             </Swiper>
