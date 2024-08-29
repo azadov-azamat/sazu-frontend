@@ -2,15 +2,15 @@
 
 import ReactPlayer from "react-player";
 
-export default function Component({video}: {video: string}) {
+export default function Component({video, autoplay = true, controls = false}: {video: string, autoplay?: boolean, controls?: boolean}) {
 
     return (
         <section className="video-wrapper xl:w-[850px] md:w-[700px] w-full xl:h-[450px] md:[350px] h-96 rounded-lg overflow-hidden">
             <ReactPlayer
                 url={video}
-                playing={true}
+                playing={autoplay}
                 loop
-                controls={false}
+                controls={controls}
                 muted
                 width="100%"
                 height="100%"

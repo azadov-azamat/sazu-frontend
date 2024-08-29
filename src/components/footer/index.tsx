@@ -65,7 +65,7 @@ export default function Component() {
                                     <a href={footer?.instagram_link} target={'_blank'}>
                                         <img src={instagram} alt="instagram-icon" className={'w-9'}/>
                                     </a>
-                                    <a href={footer?.facebook_link}>
+                                    <a href={footer?.facebook_link} target={'_blank'}>
                                         <img src={facebook} alt="facebook-icon" className={'w-9'}/>
                                     </a>
                                 </div>
