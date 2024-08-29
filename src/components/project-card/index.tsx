@@ -66,9 +66,9 @@ export default function Component(item: Props) {
                 alt={"project-card-icon-" + item.id}
                 src={item.icon}
             />
-            <div className={'w-full xl:w-auto h-full md:w-1/2 absolute top-0 right-0 object-cover object-center'}>
+            <div className={'w-full md:w-1/2 h-full absolute top-0 right-0 object-contain object-center'}>
                 <LazyLoadImage
-                    className={'w-full h-full'}
+                    className={'w-full h-full object-cover object-center'}
                     alt={"project-card-image-" + item.id}
                     src={item.image}
                 />
