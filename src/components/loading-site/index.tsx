@@ -45,7 +45,7 @@ export default function Component({setLoading}: {setLoading: any}) {
                 console.error("Some requests were not fulfilled.");
             } else {
                 setTimeout(()=>{
-                    setLoading(true);
+                    setLoading(false);
                 }, 2500)
             }
         } catch (e) {
