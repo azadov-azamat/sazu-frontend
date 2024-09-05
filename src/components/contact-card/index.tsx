@@ -10,7 +10,8 @@ export default function Component({name, image, profession, text}: contactDataKe
     return (
         <div className="relative w-full xl:h-[490px] md:h-[360px] h-80 bg-black rounded-xl overflow-hidden shadow-lg group">
             <LazyLoadImage
-                loading={'lazy'}
+                effect="blur"
+                rel={'preload'}
                 src={image}
                 alt={name}
                 className="w-full h-full object-cover object-top transition duration-500 group-hover:blur-sm ease-in-out group-hover:scale-95"
