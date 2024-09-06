@@ -21,7 +21,7 @@ export default function Component({setLoading}: {setLoading: any}) {
     useEffect(() => {
         gsap.fromTo(
             ".background-fill",
-            {bottom: '1px', height: 0},
+            {bottom: '1px', height: 0, delay: 2},
             {bottom: '1px', height: "98%", duration: 5, ease: "power1.inOut", repeat: -1 }
         );
     }, []);
