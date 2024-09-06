@@ -47,7 +47,6 @@ export default function Component() {
                                 loading={'lazy'}
                                 rel={'preload'}
                                 wrapperProps={{
-                                    // If you need to, you can tweak the effect transition using the wrapper style.
                                     style: {transitionDelay: "1s"},
                                 }}
                                 className={'w-full md:h-[700px] h-[70vh] object-cover object-center'}

@@ -19,6 +19,9 @@ export default function Component(item: NewCardProps) {
             <div className={'w-full h-[260px] relative'}>
                 <LazyLoadImage
                     scrollPosition={item.scrollPosition}
+                    effect="opacity"
+                    loading={'lazy'}
+                    rel={'preload'}
                     wrapperProps={{
                         style: {transitionDelay: "1s"},
                     }}
