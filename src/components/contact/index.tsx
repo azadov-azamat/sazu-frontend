@@ -18,7 +18,7 @@ export default function Component() {
 
     return (
         <section id={'contacts'}>
-            <PageTitleComponent title={t('contacts')} className={'justify-center'}/>
+            <PageTitleComponent title={t('about-team')} className={'justify-center'}/>
             <div>
                 {selectedProfile && (
                     <motion.div
