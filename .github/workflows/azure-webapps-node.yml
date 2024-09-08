@@ -16,6 +16,6 @@ jobs:
 
     - name: Deploy Docker container
       run: |
-        docker stop front  true
-        docker rm front  true
+        docker stop front || true
+        docker rm front || true
         docker run --restart unless-stopped --name front -dp 3000:3000 front
