@@ -13,7 +13,7 @@ export default function Component({name, image, profession, text}: contactDataKe
                 src={image}
                 alt={name}
                 loading={'lazy'}
-                className="!w-full !h-full transition duration-500 object-cover md:object-center object-top
+                className="!w-full !h-full transition duration-500 object-cover  object-top
                 group-hover:blur-sm ease-in-out group-hover:scale-95"
             />
             <div
