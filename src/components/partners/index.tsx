@@ -14,7 +14,7 @@ export default function Component() {
             <div className="flex w-full overflow-hidden">
                 <div className="flex gap-32 w-[200%] whitespace-nowrap animate-scroll select-none">
                     {partners.map((logo, index) => (
-                        <div key={index} className={'w-28 h-12 flex-shrink-0'}>
+                        <div key={index} className={'w-32 h-14 flex-shrink-0'}>
                             <LazyLoadImage src={logo.icon} alt={logo.icon}
                                  className="w-full h-full mx-4 object-contain"/>
                         </div>
