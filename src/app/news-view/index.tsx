@@ -26,7 +26,7 @@ export default function Controller() {
             <div className={'text-white'}>
                 <h2 className={'block font-bold text-center text-3xl mt-28 mb-4'}>{currentNews?.title}</h2>
                 <div
-                    className={'float-left lg:w-1/2 w-full md:h-[32rem] h-64 mb-4 rounded-lg overflow-hidden md:px-0 px-6'}>
+                    className={'float-left lg:w-1/2 w-full md:h-[32rem] h-64 mb-4 rounded-lg overflow-hidden md:px-0 px-6 !pr-6 relative'}>
                     {currentNews && currentNews?.video ? (
                         <ReactPlayer
                             url={currentNews?.video}
@@ -34,9 +34,7 @@ export default function Controller() {
                             loop
                             controls
                             muted
-                            width="100%"
-                            height="100%"
-                            className="react-player w-full h-full rounded-lg"
+                            className="react-player !w-full h-full rounded-lg static top-0"
                         />
                     ) : (
                         <LazyLoadImage
