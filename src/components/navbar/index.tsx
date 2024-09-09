@@ -140,7 +140,7 @@ const Navbar: React.FC = () => {
                             <a href="#partners" onClick={toggleMenu}>{t('partners')}</a>
                         </li>
                         <li className="text-2xl md:text-4xl xl:text-6xl text-white font-normal">
-                            <a href="#contacts" onClick={toggleMenu}>{t('contacts')}</a>
+                            <a href="#contacts" onClick={toggleMenu}>{t('about-team')}</a>
                         </li>
                     </ul>
                 </div>
