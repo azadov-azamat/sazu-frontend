@@ -46,7 +46,7 @@ export default function Component({setLoading}: {setLoading: any}) {
             } else {
                 setTimeout(()=>{
                     setLoading(false);
-                }, 2500)
+                }, 2800)
             }
         } catch (e) {
             console.log("error", e)

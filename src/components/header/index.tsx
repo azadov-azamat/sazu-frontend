@@ -49,7 +49,7 @@ export default function Component() {
                                 wrapperProps={{
                                     style: {transitionDelay: "1s"},
                                 }}
-                                className={'w-full md:h-[700px] h-[70vh] object-cover object-center'}
+                                className={'w-full md:h-[600px] h-[70vh] object-cover object-center'}
                                 alt={"carousel-data" + carousel.image}
                                 src={carousel.image}
                             />
