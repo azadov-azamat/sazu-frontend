@@ -42,17 +42,19 @@ export default function Component() {
                 {
                     carousels.map((carousel, key) => (
                         <SwiperSlide key={key} className={'w-full'}>
-                            <LazyLoadImage
-                                effect="blur"
-                                loading={'lazy'}
-                                rel={'preload'}
-                                wrapperProps={{
-                                    style: {transitionDelay: "1s"},
-                                }}
-                                className={'w-full md:h-[600px] h-[70vh] object-cover object-center'}
-                                alt={"carousel-data" + carousel.image}
-                                src={carousel.image}
-                            />
+                            <a href={carousel.link} target={'_blank'}>
+                                <LazyLoadImage
+                                    effect="blur"
+                                    loading={'lazy'}
+                                    rel={'preload'}
+                                    wrapperProps={{
+                                        style: {transitionDelay: "1s"},
+                                    }}
+                                    className={'w-full md:h-[600px] h-[70vh] object-cover object-center'}
+                                    alt={"carousel-data" + carousel.image}
+                                    src={carousel.image}
+                                />
+                            </a>
                         </SwiperSlide>
                     ))
                 }

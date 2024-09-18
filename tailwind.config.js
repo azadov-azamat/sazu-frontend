@@ -29,7 +29,7 @@ export default {
       colors: {
         'primary-black': '#0B0B0B',
         'primary-gray': '#828282',
-        'primary-purple': '#54267C'
+        'primary-purple': '#54257C'
       },
       lineHeight: {
         '62': '62px',

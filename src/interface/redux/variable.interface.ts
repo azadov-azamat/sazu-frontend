@@ -17,6 +17,7 @@ export interface InitialStateProps {
 
 export interface carouselDataKey {
     image: string;
+    link: string;
 }
 
 export interface aboutDataKey extends carouselDataKey{
