@@ -53,7 +53,6 @@ export default function Component({setLoading}: {setLoading: any}) {
             setLoading(true);
         }
     }
-
     return (
         <div className="relative w-full h-screen bg-white flex items-center justify-center">
             <div className={'relative md:w-96 md:h-80 w-64 h-60'}>
