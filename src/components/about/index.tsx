@@ -66,9 +66,9 @@ export default function Component() {
         if (about?.image && imageRef.current) {
             gsap.fromTo(
                 imageRef.current,
-                {scale: 1},
+                {scale: 0.8},
                 {
-                    scale: 1.2,
+                    scale: 1,
                     scrollTrigger: {
                         trigger: imageRef.current,
                         start: 'top bottom',
@@ -78,7 +78,7 @@ export default function Component() {
                 }
             );
         }
-    }, [about]);
+    }, [about, imageRef]);
 
     return (
         <section id={'about-us'}>
