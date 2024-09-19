@@ -39,7 +39,7 @@ const Navbar: React.FC = () => {
 
             gsap.to(menuRef.current, {
                 scale: calculateScale(),
-                duration: 1.8,
+                duration: 1.3,
                 ease: 'power4.inOut',
                 backdropFilter: 'blur(20px)',
             });
