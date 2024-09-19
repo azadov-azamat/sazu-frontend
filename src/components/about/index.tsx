@@ -83,7 +83,7 @@ export default function Component() {
     return (
         <section id={'about-us'}>
             <PageTitleComponent title={t('about-us')}/>
-            <div className={'flex md:flex-row flex-col gap-24 items-center mt-8'}>
+            <div className={'flex md:flex-row flex-col gap-24 items-center mt-8 px-6 md:px-0'}>
 
                 <div
                     ref={imageRef}
