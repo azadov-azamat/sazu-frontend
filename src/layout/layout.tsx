@@ -1,7 +1,7 @@
 import {LayoutProps} from "./layout.props";
 import {FooterSection, NavbarSection, VideoPlayerSection} from "../components";
 import { useEffect } from 'react';
-import { gsap } from 'gsap';
+// import { gsap } from 'gsap';
 import bgVideo from '../assets/background/animation-back.mp4'
 import AOS from "aos";
 import {useAppSelector} from "../redux/hooks.ts";
@@ -18,18 +18,18 @@ function Layout({children}: LayoutProps): JSX.Element {
         });
     }, []);
 
-    useEffect(() => {
-        gsap.fromTo(
-            '.falling-element',
-            { y: -300, opacity: 0 },
-            {
-                y: 0,
-                opacity: 1,
-                duration: 2,
-                stagger: 0.5,
-            }
-        );
-    }, []);
+    // useEffect(() => {
+    //     gsap.fromTo(
+    //         '.falling-element',
+    //         { y: -300, opacity: 0 },
+    //         {
+    //             y: 0,
+    //             opacity: 1,
+    //             duration: 2,
+    //             stagger: 0.5,
+    //         }
+    //     );
+    // }, []);
 
     return (
         <div className={'flex relative w-full h-auto justify-center items-center md:px-3 px-6'}>
