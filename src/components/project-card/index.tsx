@@ -59,10 +59,11 @@ export default function Component(item: Props) {
             onMouseLeave={handleMouseLeave}
             style={{width: width, }}
             className={`card-${item.index} shadow-md hover:!z-50 transition-transform duration-500  border-none
-             flex bg-white rounded-l-[33px] rounded-r-[34px] items-center 2xl:h-[260px] xl:h-[240px] md:h-60 h-44 relative pl-14`}
+             flex bg-white rounded-l-[33px] rounded-r-[34px] items-center 2xl:h-[260px] xl:h-[240px] md:h-60 sm:h-44 h-24 
+             overflow-hidden md:overflow-visible relative pl-14 `}
         >
             <LazyLoadImage
-                className={'md:static absolute 2xl:w-60 xl:w-56 md:w-52 object-cover object-center top-0 right-[32%] z-10'}
+                className={'md:static absolute 2xl:w-60 xl:w-56 md:w-52 sm:w-44 w-32 object-cover object-center sm:top-0 -top-3 right-[32%] z-10'}
                 alt={"project-card-icon-" + item.id}
                 src={item.icon}
             />

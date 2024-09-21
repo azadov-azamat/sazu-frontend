@@ -50,7 +50,7 @@ export default function Component() {
                                     wrapperProps={{
                                         style: {transitionDelay: "1s"},
                                     }}
-                                    className={'w-full md:h-[600px] h-[70vh] object-cover object-center'}
+                                    className={'w-full md:h-[600px] h-auto object-cover object-center'}
                                     alt={"carousel-data" + carousel.image}
                                     src={carousel.image}
                                 />
@@ -59,11 +59,11 @@ export default function Component() {
                     ))
                 }
                 <div ref={nextRef} data-aos="fade-right" data-aos-duration="3000"
-                     className="swiper-button-next !w-12 mr-4 !text-white">
+                     className="swiper-button-next md:!w-12 w-8 mr-4 !text-white">
                     {/*<img src={ArrowRight} alt="swiper-arrow-right"/>*/}
                 </div>
                 <div ref={prevRef} data-aos="fade-left" data-aos-duration="3000"
-                     className="swiper-button-prev !w-12 ml-4 !text-white">
+                     className="swiper-button-prev md:!w-12 w-8 ml-4 !text-white">
                     {/*<img src={ArrowLeft} alt="swiper-arrow-left"/>*/}
                 </div>
             </Swiper>

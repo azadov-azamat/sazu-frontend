@@ -32,7 +32,7 @@ function Layout({children}: LayoutProps): JSX.Element {
     // }, []);
 
     return (
-        <div className={'flex relative w-full h-auto justify-center items-center md:px-3 px-6'}>
+        <div className={'flex relative w-full h-auto justify-center items-center md:px-3 px-4 1024-1100:px-12 1280-1380:px-14 1535-1650:px-16'}>
             <video
                 className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
                 autoPlay
