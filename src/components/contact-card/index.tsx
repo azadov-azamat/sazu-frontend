@@ -8,17 +8,17 @@ export default function Component({name, image, profession, text}: contactDataKe
     // const {t} = useTranslation()
 
     return (
-        <div className="relative w-full xl:h-[440px] md:h-[360px] h-80 bg-black rounded-xl overflow-hidden shadow-lg group">
+        <div className="relative w-full xl:h-[440px] md:h-[360px] h-80 bg-black rounded-xl shadow-lg group">
             <img
                 src={image}
                 alt={name}
                 loading={'lazy'}
                 className="!w-full !h-full transition duration-500 object-cover  object-top
-                group-hover:blur-sm ease-in-out group-hover:scale-95"
+                group-hover:blur-sm ease-in-out group-hover:scale-95 rounded-[11px]"
             />
             <div
                 className="absolute inset-0 flex flex-col justify-end p-4 transition-all duration-500 bg-gradient-to-t from-black
-                via-transparent to-transparent group-hover:bg-opacity-0">
+                via-transparent to-transparent group-hover:bg-opacity-0 rounded-[10px]">
                 <h3
                     data-aos="fade-up"
                     data-aos-duration="1500"
@@ -30,7 +30,7 @@ export default function Component({name, image, profession, text}: contactDataKe
             </div>
             <div
                 className="absolute inset-0 p-4 flex flex-col justify-center items-center transition-opacity duration-500 opacity-0
-                group-hover:opacity-100 bg-black bg-opacity-70">
+                group-hover:opacity-100 bg-black bg-opacity-70 rounded-xl">
                 <h3 className="text-white text-2xl font-bold mb-2">{name}</h3>
                 <p className="text-gray-300 text-center truncate-multiline">{text}</p>
                 {/*<a href={'#contacts'} onClick={onSelect} className="border-none text-primary-purple !font-bold mt-4 inline-block">{t ("more")}</a>*/}
