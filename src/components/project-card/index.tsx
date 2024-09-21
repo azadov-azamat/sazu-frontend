@@ -59,7 +59,7 @@ export default function Component(item: Props) {
             onMouseLeave={handleMouseLeave}
             style={{width: width, }}
             className={`card-${item.index} shadow-md hover:!z-50 transition-transform duration-500  border-none
-             flex bg-white rounded-l-[33px] rounded-r-[34px] items-center 2xl:h-[260px] xl:h-[240px] md:h-60 sm:h-44 h-32 
+             flex bg-white rounded-l-[25px] md:rounded-l-[33px] rounded-r-[25px] md:rounded-r-[34px] items-center 2xl:h-[260px] xl:h-[240px] md:h-60 sm:h-44 h-32 
              overflow-hidden md:overflow-visible relative pl-14 `}
         >
             <LazyLoadImage
