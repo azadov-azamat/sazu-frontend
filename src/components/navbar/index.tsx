@@ -39,15 +39,15 @@ const Navbar: React.FC = () => {
 
             gsap.to(menuRef.current, {
                 scale: calculateScale(),
-                duration: 1.3,
+                duration: 0.5,
                 ease: 'power4.inOut',
                 backdropFilter: 'blur(20px)',
             });
 
             gsap.to(menuContentRef.current, {
                 opacity: 1,
-                delay: 1,
-                duration: 0.6,
+                delay: 0.7,
+                duration: 0.4,
             });
 
             // li elementlar uchun fade-up animatsiyasi
@@ -59,8 +59,8 @@ const Navbar: React.FC = () => {
                     {
                         opacity: 1,
                         y: 0,
-                        delay: 0.8, // Menyu ochilgandan keyin boshlanadi
-                        duration: 0.5,
+                        delay: 0.4, // Menyu ochilgandan keyin boshlanadi
+                        duration: 0.3,
                         stagger: 0.1, // Har bir li uchun ketma-ketlik
                         ease: 'power3.out',
                     }
