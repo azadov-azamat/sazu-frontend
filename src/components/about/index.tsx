@@ -83,15 +83,15 @@ export default function Component() {
     return (
         <section id={'about-us'}>
             <PageTitleComponent title={t('about-us')}/>
-            <div className={'flex md:flex-row flex-col gap-24 items-center mt-8 px-6 md:px-0'}>
+            <div className={'flex md:flex-row flex-col md:gap-24 gap-12 md:items-center items-start md:mt-8 mt-4'}>
 
                 <div
                     ref={imageRef}
-                    className={'md:w-[350px] w-3/4'}
+                    className={'md:w-[350px] sm:w-3/4 w-full float-left'}
                 >
                     <LazyLoadImage
                         loading={'lazy'}
-                        className={'w-full object-cover object-center mediaFill parallaxImage revealStaggered'}
+                        className={'w-full sm:h-auto h-56 object-cover object-center mediaFill parallaxImage revealStaggered rounded-[24px]'}
                         alt={"about-image"}
                         style={{opacity: 0.9}}
                         src={about?.image}
@@ -99,7 +99,8 @@ export default function Component() {
                 </div>
                 <p
                     ref={textRef}
-                    className="xl:w-[45%] w-full text-gray-500 px-6 md:px-0 font-normal md:text-3xl text-xl leading-9 words chars splitting"
+                    className="xl:w-[45%] w-full text-gray-500font-normal md:text-3xl text-xl sm:leading-9 leading-7
+                     words chars splitting"
                     data-splitting>
                     {about?.text}
                 </p>
