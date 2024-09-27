@@ -27,7 +27,7 @@ export default function Controller() {
     }, []);
 
     return (
-        <div className={'flex flex-col md:gap-32 gap-20'}>
+        <div className={'flex flex-col md:gap-32 sm:gap-20 gap-14'}>
             <HeaderSection/>
             <div className="flex flex-col gap-4 items-center h-auto">
                 {

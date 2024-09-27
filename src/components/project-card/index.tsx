@@ -13,7 +13,26 @@ interface Props extends projectsDataKey {
 
 export default function Component(item: Props) {
     const cardRef = useRef(null);
-    const [width] = useState('85%'); // Default width
+    const [width, setWidth] = useState('85%'); // Default width
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth <= 768) {
+                setWidth('100%');
+                setIsMobile(true);
+            } else {
+                setWidth('85%');
+                setIsMobile(false);
+            }
+        };
+
+        handleResize();
+
+        window.addEventListener('resize', handleResize);
+
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     useEffect(() => {
         gsap.fromTo(cardRef.current,
@@ -34,11 +53,13 @@ export default function Component(item: Props) {
     }, []);
 
     const handleMouseEnter = () => {
-        gsap.to(cardRef.current, {
-            duration: 0.5,
-            width: `calc(${width} + 50px)`,
-            boxShadow: "0 20px 40px rgba(0, 0, 0, 0.2)",
-        });
+       if (!isMobile) {
+           gsap.to(cardRef.current, {
+               duration: 0.5,
+               width: `calc(${width} + 50px)`,
+               boxShadow: "0 20px 40px rgba(0, 0, 0, 0.2)",
+           });
+       }
     };
 
     const handleMouseLeave = () => {
@@ -59,17 +80,19 @@ export default function Component(item: Props) {
             onMouseLeave={handleMouseLeave}
             style={{width: width, }}
             className={`card-${item.index} shadow-md hover:!z-50 transition-transform duration-500  border-none
-             flex bg-white rounded-l-[25px] md:rounded-l-[33px] rounded-r-[25px] md:rounded-r-[34px] items-center 2xl:h-[260px] xl:h-[240px] md:h-60 sm:h-44 h-32 
-             overflow-hidden md:overflow-visible relative pl-14 `}
+             flex bg-white rounded-l-[25px] md:rounded-l-[33px] rounded-r-[25px] md:rounded-r-[34px] items-center 
+             2xl:h-[260px] xl:h-[240px] md:h-60 sm:h-44 h-32 relative `}
         >
-            <LazyLoadImage
-                className={'md:static absolute 2xl:w-60 xl:w-56 md:w-52 sm:w-44 w-32 object-cover object-center top-0 right-[32%] z-10'}
-                alt={"project-card-icon-" + item.id}
-                src={item.icon}
-            />
-            <div className={'w-full md:w-1/2 h-full absolute top-0 right-0 object-contain object-center '}>
+            <div className={'w-1/2 md:w-1/3 flex items-center justify-center'}>
                 <LazyLoadImage
-                    className={'w-full rounded-r-[33px] h-full object-cover object-center blur-sm md:blur-none'}
+                    className={'2xl:w-60 xl:w-56 md:w-52 sm:w-44 w-32 object-cover object-center'}
+                    alt={"project-card-icon-" + item.id}
+                    src={item.icon}
+                />
+            </div>
+            <div className={'w-1/2 md:w-2/3 h-full absolute top-0 right-0 object-contain object-center '}>
+                <LazyLoadImage
+                    className={'w-full rounded-[24px] h-full object-cover object-center'}
                     alt={"project-card-image-" + item.id}
                     src={item.image}
                 />

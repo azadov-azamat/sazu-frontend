@@ -86,7 +86,7 @@ const Navbar: React.FC = () => {
 
 
     return (
-        <nav className="flex items-center w-full z-50 bg-transparent md:h-28 h-20 md:px-0 px-6">
+        <nav className="flex items-center w-full z-50 bg-transparent md:h-28 h-20">
             <div className="relative w-full text-white flex justify-between items-center">
                 <Link to="/">
                     <LazyLoadImage

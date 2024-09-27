@@ -50,7 +50,7 @@ export default function Component() {
                                     wrapperProps={{
                                         style: {transitionDelay: "1s"},
                                     }}
-                                    className={'w-full md:h-[600px] h-auto object-cover object-center'}
+                                    className={'w-full md:h-[600px] h-[200px] object-cover object-center'}
                                     alt={"carousel-data" + carousel.image}
                                     src={carousel.image}
                                 />
