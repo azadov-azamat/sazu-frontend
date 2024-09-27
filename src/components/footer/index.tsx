@@ -45,7 +45,7 @@ export default function Component() {
                                 src={SiteLogo}/>
                         </Link>
                         <div
-                            className="2xl:mt-16 mt-10 w-full flex md:flex-row flex-col flex-wrap justify-start md:items-center
+                            className="2xl:mt-16 mt-20 w-full flex md:flex-row flex-col flex-wrap justify-start md:items-center
                             items-start lg:gap-40 2xl:gap-32 gap-10">
                             <div className={'flex flex-col gap-3'}>
                                 <span className="text-primary-purple text-xl">{t('address')}</span>
@@ -75,7 +75,7 @@ export default function Component() {
                             </div>
                         </div>
                         <Link to={'/'}
-                              className={'flex absolute md:bottom-0 md:top-auto bottom-auto top-0 right-0 md:hidden'}>
+                              className={'flex absolute md:bottom-0 md:top-auto bottom-auto top-0 left-0 md:hidden'}>
                             <LazyLoadImage
                                 loading={'lazy'}
                                 alt={"logo-site"}
