@@ -14,7 +14,7 @@ export default function Component(item: NewCardProps) {
 
     return (
         <div
-            className="md:w-80 w-3/4 relative h-[500px] p-5 bg-white text-black rounded-[20px]
+            className="md:w-80 sm:w-3/4 w-full relative h-[500px] p-5 bg-white text-black rounded-[20px]
              overflow-hidden group shadow-purple-blur filter-blur">
             <div className={'w-full h-[260px] relative'}>
                 <LazyLoadImage

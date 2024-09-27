@@ -14,7 +14,7 @@ function Component({scrollPosition}: any) {
     return (
         <section id={'news'}>
             <PageTitleComponent title={t ('news')}/>
-            <div className="flex flex-wrap gap-8 mt-8 md:justify-between justify-center">
+            <div className="flex flex-wrap gap-8 md:mt-8 mt-4 md:justify-between justify-center">
                 {
                     news.slice(0, 4).map((item, index) => (<NewsCardComponent key={index} {...item} scrollPosition={scrollPosition} />))
                 }
