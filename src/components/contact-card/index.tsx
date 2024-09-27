@@ -8,7 +8,7 @@ export default function Component({name, image, profession, text}: contactDataKe
     // const {t} = useTranslation()
 
     return (
-        <div className="relative w-full xl:h-[440px] md:h-[360px] h-80 bg-black rounded-xl shadow-lg group">
+        <div className="relative w-full xl:h-[440px] md:h-[360px] sm:h-80 sm:mt-0 mt-24 h-96 bg-black rounded-xl shadow-lg group">
             <img
                 src={image}
                 alt={name}
@@ -17,7 +17,7 @@ export default function Component({name, image, profession, text}: contactDataKe
                 group-hover:blur-sm ease-in-out group-hover:scale-95 rounded-[11px]"
             />
             <div
-                className="absolute inset-0 flex flex-col justify-end p-4 transition-all duration-500 bg-gradient-to-t from-black
+                className="sm:absolute static inset-0 flex flex-col justify-end p-4 transition-all duration-500 sm:bg-gradient-to-t bg-transparent from-black
                 via-transparent to-transparent group-hover:bg-opacity-0 rounded-[10px]">
                 <h3
                     data-aos="fade-up"
@@ -26,7 +26,7 @@ export default function Component({name, image, profession, text}: contactDataKe
                 <p
                     data-aos="fade-up"
                     data-aos-duration="2000"
-                    className="text-gray-400">{profession}</p>
+                    className="text-gray-400 truncate">{profession}</p>
             </div>
             <div
                 className="absolute inset-0 p-4 flex flex-col justify-center items-center transition-opacity duration-500 opacity-0

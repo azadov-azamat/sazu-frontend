@@ -52,7 +52,7 @@ function Layout({children}: LayoutProps): JSX.Element {
                 {/*<div className={'bg-thirty-pattern top-[35%] right-1' + detailsClass}/>*/}
                 {/*<div className={'bg-fourth-pattern bottom-[30%] left-0' + detailsClass}/>*/}
                 {/*<div className={'bg-fifth-pattern bottom-[13%] right-10' + detailsClass}/>*/}
-                <div className={'flex items-center md:px-0 px-6 justify-center md:mt-32 mt-20 md:mb-32 mb-20'}>
+                <div className={'flex items-center md:px-0 px-6 justify-center md:mt-32 sm:mt-20 mt-16 md:mb-32 mb-20'}>
                     <VideoPlayerSection video={footer?.video || ""}/>
                 </div>
                 <FooterSection/>
