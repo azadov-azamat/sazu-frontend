@@ -42,6 +42,7 @@ const Navbar: React.FC = () => {
                 duration: 0.5,
                 ease: 'power4.inOut',
                 backdropFilter: 'blur(20px)',
+                webkitBackdropFilter: 'blur(20px)',
             });
 
             gsap.to(menuContentRef.current, {
