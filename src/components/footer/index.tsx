@@ -23,9 +23,8 @@ export default function Component() {
     });
 
     return (
-        <div className={'md:h-56 sm:h-80 h-[25rem]'}>
+        <div className={'md:h-56 sm:h-80 h-[28rem]'}>
             <div className="relative">
-                {/* Trigger Element: sahifa oxiriga yetganda */}
                 <div ref={footerRef} className="absolute bottom-0 left-0 w-full h-1"></div>
 
                 <motion.div
