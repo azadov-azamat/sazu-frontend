@@ -23,9 +23,9 @@ export default function Component() {
     });
 
     return (
-        <div className={'md:h-56 sm:h-80 h-[28rem]'}>
+        <div className={'md:h-56 sm:h-80 h-[25rem]'}>
             <div className="relative">
-                <div ref={footerRef} className="absolute bottom-0 left-0 w-full h-1"></div>
+                <div ref={footerRef} className="absolute top-0 left-0 w-full h-1"></div>
 
                 <motion.div
                     initial={{y: '100%'}}
@@ -45,7 +45,7 @@ export default function Component() {
                         </Link>
                         <div
                             className="2xl:mt-16 mt-20 w-full flex md:flex-row flex-col flex-wrap justify-start md:items-center
-                            items-start lg:gap-40 2xl:gap-32 gap-10">
+                            items-start lg:gap-40 2xl:gap-32 sm:gap-10 gap-5">
                             <div className={'flex flex-col gap-3'}>
                                 <span className="text-primary-purple text-xl">{t('address')}</span>
                                 <a href={footer?.address_link}
