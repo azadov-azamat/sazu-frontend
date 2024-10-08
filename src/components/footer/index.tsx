@@ -24,8 +24,8 @@ export default function Component() {
 
     return (
         <div className={'md:h-56 sm:h-80 h-[25rem]'}>
-            <div className="relative">
-                <div ref={footerRef} className="absolute top-0 left-0 w-full h-1"></div>
+            <div className="relative w-full h-full">
+                <div ref={footerRef} className="absolute  -bottom-5 h-[10rem] left-0 w-full"></div>
 
                 <motion.div
                     initial={{y: '100%'}}
