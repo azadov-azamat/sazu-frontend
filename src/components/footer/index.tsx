@@ -23,7 +23,7 @@ export default function Component() {
     });
 
     return (
-        <div className={'md:h-56 sm:h-80 h-[25rem]'}>
+        <div className={'md:h-60 sm:h-[28rem] lg:h-[16rem] h-[25rem]'}>
             <div className="relative w-full h-full">
                 <div ref={footerRef} className="absolute  -bottom-5 h-[10rem] left-0 w-full"></div>
 
