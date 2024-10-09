@@ -25,12 +25,12 @@ export default function Component() {
     return (
         <div className={'md:h-60 sm:h-[28rem] lg:h-[16rem] h-[25rem]'}>
             <div className="relative w-full h-full">
-                <div ref={footerRef} className="absolute  -bottom-5 h-[10rem] left-0 w-full"></div>
+                <div ref={footerRef} className="absolute  -bottom-24 h-[10rem] left-0 w-full"></div>
 
                 <motion.div
                     initial={{y: '100%'}}
                     animate={{y: footerInView ? '0%' : '100%'}}
-                    transition={{duration: 1}}
+                    transition={{duration: 0.7}}
                     className="text-white p-8 fixed bottom-0 left-0 w-full bg-[#141313]"
                 >
                     <div
