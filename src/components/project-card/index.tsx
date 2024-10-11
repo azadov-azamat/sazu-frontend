@@ -94,7 +94,7 @@ export default function Component(item: Props) {
                 <LazyLoadImage
                     className={'w-full rounded-[24px] h-full object-cover object-center'}
                     alt={"project-card-image-" + item.id}
-                    src={item.image}
+                    src={isMobile ? item.image_mobile : item.image}
                 />
             </div>
         </a>

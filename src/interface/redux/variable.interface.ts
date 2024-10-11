@@ -54,6 +54,7 @@ export interface projectsDataKey extends defaultKeys {
     icon: string;
     image: string;
     link: string;
+    image_mobile: string;
 }
 
 export interface newsDataKeys extends defaultKeys {
