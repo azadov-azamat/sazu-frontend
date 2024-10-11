@@ -23,9 +23,9 @@ export default function Component() {
     });
 
     return (
-        <div className={'md:h-60 sm:h-[28rem] lg:h-[16rem] h-[25rem]'}>
+        <div className={'md:h-60 sm:h-[28rem] lg:h-[16rem] h-[20rem]'}>
             <div className="relative w-full h-full">
-                <div ref={footerRef} className="absolute  -bottom-24 h-[10rem] left-0 w-full"></div>
+                <div ref={footerRef} className="absolute  -bottom-40 border border-red-500 h-[3rem] left-0 w-full"></div>
 
                 <motion.div
                     initial={{y: '100%'}}
