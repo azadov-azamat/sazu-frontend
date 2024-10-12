@@ -5,7 +5,7 @@ import ReactPlayer from "react-player";
 export default function Component({video, autoplay = true, controls = false}: {video: string, autoplay?: boolean, controls?: boolean}) {
 
     return (
-        <section className="video-wrapper xl:w-[850px] md:w-[700px] w-full xl:h-[450px] md:[350px] h-96 rounded-lg overflow-hidden">
+        <section className="video-wrapper xl:w-[850px] md:w-[700px] w-full xl:h-[450px] md:[350px] h-80 rounded-lg overflow-hidden">
             <ReactPlayer
                 url={video}
                 playing={autoplay}
