@@ -80,7 +80,7 @@ export default function Component(item: Props) {
             onMouseLeave={handleMouseLeave}
             style={{width: width, }}
             className={`card-${item.index} shadow-md hover:!z-50 transition-transform duration-500  border-none
-             flex bg-white rounded-l-[25px] md:rounded-l-[33px] rounded-r-[25px] md:rounded-r-[34px] items-center 
+             flex bg-white rounded-l-[18px] sm:rounded-l-[25px] md:rounded-l-[33px]  rounded-r-[18px] sm:rounded-r-[25px] md:rounded-r-[34px] items-center 
              2xl:h-[260px] xl:h-[240px] md:h-60 sm:h-44 h-32 relative `}
         >
             <div className={'w-1/2 md:w-1/3 flex items-center justify-center'}>
@@ -92,7 +92,7 @@ export default function Component(item: Props) {
             </div>
             <div className={'w-1/2 md:w-2/3 h-full absolute top-0 right-0 object-contain object-center '}>
                 <LazyLoadImage
-                    className={'w-full rounded-[24px] h-full object-cover object-center'}
+                    className={'w-full rounded-[16px] sm:rounded-[18px] md:rounded-[24px] h-full object-cover object-center'}
                     alt={"project-card-image-" + item.id}
                     src={isMobile ? item.image_mobile : item.image}
                 />
