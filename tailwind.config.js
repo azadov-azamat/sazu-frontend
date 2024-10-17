@@ -10,6 +10,7 @@ export default {
         '1280-1380': {'min': '1280px', 'max': '1380px'},
         '1535-1650': {'min': '1535px', 'max': '1650px'},
         '1024-1100': {'min': '1024px', 'max': '1100px'},
+        '1024-1052': {'min': '1024px', 'max': '1052px'},
       },
       boxShadow: {
         'purple-blur': '0 12px 20px rgba(91, 33, 182, 0.5)',
