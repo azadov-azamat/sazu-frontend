@@ -43,7 +43,7 @@ export default function Controller() {
                         />
                     )}
                 </div>
-                <p className={'font-normal text-lg mt-4 leading-8 indent-4 md:px-0 px-6'}>
+                <p className={'font-normal text-lg mt-4 leading-8 md:px-0 px-6'}>
                     {currentNews?.description}
                 </p>
             </div>
