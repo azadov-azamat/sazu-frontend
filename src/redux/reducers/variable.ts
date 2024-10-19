@@ -163,7 +163,8 @@ export const variableSlice = createSlice({
         })
 
         builder.addCase(getNewsData.fulfilled, (state: InitialStateProps, action) => {
-            state.news = action.payload
+            state.news = action.payload?.results
+            state.totalCount = action.payload?.count
         })
         builder.addCase(getNewsData.rejected, (state: InitialStateProps, action) => {
             state.news = []
