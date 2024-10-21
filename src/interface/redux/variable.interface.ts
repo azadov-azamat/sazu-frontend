@@ -33,7 +33,7 @@ export interface contactDataKey {
     image: string;
     name: string;
     profession: string;
-    text: string;
+    text?: string;
 }
 
 export interface partnersDataKeys {

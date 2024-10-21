@@ -23,7 +23,7 @@ export default function Controller() {
     }, []);
 
     useEffect(() => {
-        dispatch(getNewsData());
+        dispatch(getNewsData({page: 1}));
     }, []);
 
     return (

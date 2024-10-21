@@ -32,7 +32,7 @@ export default function Component({name, image, profession, text}: contactDataKe
                 className="absolute inset-0 p-4 flex flex-col justify-center items-center transition-opacity duration-500 opacity-0
                 group-hover:opacity-100 bg-black bg-opacity-70 rounded-xl">
                 <h3 className="text-white text-2xl font-bold mb-2">{name}</h3>
-                <p className="text-gray-300 text-center truncate-multiline">{text}</p>
+                <p className="text-gray-300 text-center truncate-multiline">{text ? text : ''}</p>
                 {/*<a href={'#contacts'} onClick={onSelect} className="border-none text-primary-purple !font-bold mt-4 inline-block">{t ("more")}</a>*/}
             </div>
         </div>
