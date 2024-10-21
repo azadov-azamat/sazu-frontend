@@ -18,5 +18,8 @@
   "subscribe": "Subscribe",
   "subscribe-success": "Success subscribe",
   "subscribe-exist": "The email has already been registered",
-  "subscribe-error": "Error saving, please try again"
+  "subscribe-error": "Error saving, please try again",
+  "other-news": "Other important news",
+"next": "Next",
+"previous": "Previous"
 }

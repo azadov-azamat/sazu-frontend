@@ -18,5 +18,8 @@
   "subscribe": "Obuna bo'lish",
   "subscribe-success": "Muvoffaqiyatli obuna bo'ldingiz",
   "subscribe-exist": "Elektron pochta allaqachon ro'yxatdan o'tgan",
-  "subscribe-error": "Saqlashda xatolik, qayta urinib ko'ring"
+  "subscribe-error": "Saqlashda xatolik, qayta urinib ko'ring",
+  "other-news": "Boshqa muhim yangiliklar",
+  "next": "Keyingisi",
+  "previous": "Oldingisi"
 }

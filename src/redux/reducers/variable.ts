@@ -35,9 +35,11 @@ export const getFooterData = createAsyncThunk('variables/getFooterData', async (
     }
 });
 
-export const getNewsData = createAsyncThunk('variables/getNewsData', async (_, {rejectWithValue}) => {
+export const getNewsData = createAsyncThunk('variables/getNewsData', async (params: any, {rejectWithValue}) => {
     try {
-        const response = await http.get(`/news`)
+        const response = await http.get(`/news`, {
+            params
+        })
         if (response.data === null) return rejectWithValue(response?.data)
         return response.data
     } catch (error) {

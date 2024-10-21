@@ -14,6 +14,37 @@ body {
     font-family: "Unbounded", sans-serif;
 }
 
+.pagination .active-page {
+    background-color: #54257C; /* Primary Purple */
+    color: white;
+    border-radius: 4px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+
+.pagination li {
+    list-style: none;
+    display: inline-block;
+}
+
+.pagination li a {
+    @apply px-3 py-2 block;
+}
+
+.pagination li a:hover {
+    @apply bg-primary-purple/50;
+}
+
+.pagination li.disabled a {
+    opacity: 0.5;
+    pointer-events: none; /* Disable clicks for disabled items */
+}
+
 .truncate-multiline {
     display: -webkit-box;
     -webkit-line-clamp: 5;
