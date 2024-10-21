@@ -36,7 +36,7 @@ export default function Component() {
                         <div className={'w-auto flex flex-col justify-center h-full'}>
                             <h3 className="text-4xl font-bold text-white">{selectedProfile.name}</h3>
                             <h4 className="text-2xl text-gray-400 my-4">{selectedProfile.profession}</h4>
-                            <p className="text-gray-400 text-base">{selectedProfile.text}</p>
+                            <p className="text-gray-400 text-base">{selectedProfile?.text}</p>
                         </div>
                     </motion.div>
                 )}

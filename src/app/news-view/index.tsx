@@ -68,7 +68,7 @@ function Controller({scrollPosition}: any) {
             </div>
             <section id={'other-news'}>
             <PageTitleComponent title={t ('other-news')}/>
-            <div className="flex flex-wrap gap-8 md:mt-8 mt-4 md:justify-between justify-center">
+            <div className={"flex flex-wrap gap-8 md:mt-8 mt-4 justify-center" + (news.length >= 4 ? 'md:justify-between' : 'md:justify-start')}>
                 {
                     news.map((item, index) => (<NewsCardComponent key={index} {...item} scrollPosition={scrollPosition}/>))
                 }
