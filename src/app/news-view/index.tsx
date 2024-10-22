@@ -62,7 +62,7 @@ function Controller({scrollPosition}: any) {
                         />
                     )}
                 </div>
-                <p className={'font-normal text-lg mt-4 leading-8 md:px-0 px-6'}>
+                <p className={'font-normal text-lg md:mt-4 mt-8 leading-8 md:px-0 px-6'}>
                     {currentNews?.description}
                 </p>
             </div>
