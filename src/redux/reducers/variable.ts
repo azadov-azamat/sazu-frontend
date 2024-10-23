@@ -140,25 +140,7 @@ export const variableSlice = createSlice({
         })
 
         builder.addCase(getPartnersData.fulfilled, (state: InitialStateProps, action) => {
-            state.partners = [
-                ...action.payload,
-                ...action.payload,
-                ...action.payload,
-                ...action.payload,
-                ...action.payload,
-                ...action.payload,
-                ...action.payload,
-                ...action.payload,
-                ...action.payload,
-                ...action.payload,
-                ...action.payload,
-                ...action.payload,
-                ...action.payload,
-                ...action.payload,
-                ...action.payload,
-                ...action.payload,
-                ...action.payload
-            ]
+            state.partners = action.payload
         })
         builder.addCase(getPartnersData.rejected, (state: InitialStateProps, action) => {
             state.partners = []

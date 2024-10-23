@@ -66,6 +66,4 @@ export interface newsDataKeys extends defaultKeys {
 
 export interface defaultKeys {
     id: number;
-    // created_at: string; // Assuming the timestamp is stored in ISO format
-    // updated_at: string; // Assuming the timestamp is stored in ISO format
 }

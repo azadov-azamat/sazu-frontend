@@ -2,7 +2,6 @@
 
 import {PageTitleComponent} from "../index.ts";
 import {LazyLoadImage} from "react-lazy-load-image-component";
-// import aboutImage from "../../assets/about-section.png";
 import Splitting from 'splitting';
 import {useEffect, useRef} from "react";
 import gsap from 'gsap';

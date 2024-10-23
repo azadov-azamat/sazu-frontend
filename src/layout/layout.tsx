@@ -1,14 +1,12 @@
 import {LayoutProps} from "./layout.props";
 import {FooterSection, NavbarSection, VideoPlayerSection} from "../components";
 import { useEffect } from 'react';
-// import { gsap } from 'gsap';
 import bgVideo from '../assets/background/animation-back.mp4'
 import AOS from "aos";
 import {useAppSelector} from "../redux/hooks.ts";
 
 function Layout({children}: LayoutProps): JSX.Element {
 
-    // const detailsClass= ' falling-element absolute z-[-1] bottom-0 w-56 h-52 bg-no-repeat bg-[length:225px_200px]';
     const {footer} = useAppSelector(state => state.variables)
 
     useEffect(() => {
@@ -17,19 +15,6 @@ function Layout({children}: LayoutProps): JSX.Element {
             once: true,
         });
     }, []);
-
-    // useEffect(() => {
-    //     gsap.fromTo(
-    //         '.falling-element',
-    //         { y: -300, opacity: 0 },
-    //         {
-    //             y: 0,
-    //             opacity: 1,
-    //             duration: 2,
-    //             stagger: 0.5,
-    //         }
-    //     );
-    // }, []);
 
     return (
         <div className={'flex relative w-full h-auto justify-center items-center md:px-3 px-4 1024-1100:px-12 1280-1380:px-14 1535-1650:px-16'}>
@@ -47,11 +32,6 @@ function Layout({children}: LayoutProps): JSX.Element {
                 <main className={'w-full h-auto'}>
                     {children}
                 </main>
-                {/*<div className={'bg-first-pattern top-[14%] right-0' + detailsClass}/>*/}
-                {/*<div className={'bg-second-pattern top-[30%] !-left-20' + detailsClass}/>*/}
-                {/*<div className={'bg-thirty-pattern top-[35%] right-1' + detailsClass}/>*/}
-                {/*<div className={'bg-fourth-pattern bottom-[30%] left-0' + detailsClass}/>*/}
-                {/*<div className={'bg-fifth-pattern bottom-[13%] right-10' + detailsClass}/>*/}
                 <div className={'flex items-center md:px-0 px-6 justify-center md:mt-32 sm:mt-20 mt-16'}>
                     <VideoPlayerSection video={footer?.video || ""}/>
                 </div>
