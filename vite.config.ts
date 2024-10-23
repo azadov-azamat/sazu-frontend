@@ -12,7 +12,7 @@ export default defineConfig({
     'process.env': process.env
   },
   optimizeDeps: {
-    include: ['framer-motion'],
+    include: ['framer-motion', 'react-fast-marquee'],
   },
   server: {
     watch: {
