@@ -23,6 +23,24 @@ export default function Component() {
                             </div>
                         ))}
                     </div>
+                    <div
+                        className="flex md:gap-32 sm:gap-24 gap-14 select-none">
+                        {partners.map((logo, index) => (
+                            <div key={index} className={'w-32 h-14 flex-shrink-0'}>
+                                <LazyLoadImage src={logo.icon} alt={logo.icon}
+                                               className="w-full h-full mx-4 object-contain"/>
+                            </div>
+                        ))}
+                    </div>
+                    <div
+                        className="flex md:gap-32 sm:gap-24 gap-14 select-none">
+                        {partners.map((logo, index) => (
+                            <div key={index} className={'w-32 h-14 flex-shrink-0'}>
+                                <LazyLoadImage src={logo.icon} alt={logo.icon}
+                                               className="w-full h-full mx-4 object-contain"/>
+                            </div>
+                        ))}
+                    </div>
                 </Marquee>
             </div>
         </div>
