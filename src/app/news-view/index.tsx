@@ -13,7 +13,6 @@ import { useSearchParams } from "react-router-dom";
 import { useInView } from 'react-intersection-observer';
 
 function Controller({scrollPosition}: any) {
-
     const {t} = useTranslation()
     const {id} = useParams()
     const dispatch = useAppDispatch();
