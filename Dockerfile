@@ -6,7 +6,7 @@ WORKDIR /app
 
 # Copy package.json and package-lock.json
 COPY package*.json ./
-
+ENV NODE_OPTIONS="--max-old-space-size=4096"
 # Install dependencies
 RUN npm install
 
