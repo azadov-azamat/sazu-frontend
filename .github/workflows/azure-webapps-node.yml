@@ -19,3 +19,4 @@ jobs:
         docker stop front || true
         docker rm front || true
         docker run --restart unless-stopped --name front -dp 3000:3000 front
+        docker image prune -f
