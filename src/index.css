@@ -4,6 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-display: swap;
+}
+
 .splitting .word {
     display: inline-block;
     transition: color 0.5s;
