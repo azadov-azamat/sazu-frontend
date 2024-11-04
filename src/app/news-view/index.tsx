@@ -10,6 +10,7 @@ import {trackWindowScroll} from "react-lazy-load-image-component";
 import ReactPaginate from "react-paginate";
 import {useParams} from "react-router"; 
 import { useSearchParams } from "react-router-dom";
+import { useInView } from 'react-intersection-observer';
 
 function Controller({scrollPosition}: any) {
 
@@ -40,13 +41,18 @@ function Controller({scrollPosition}: any) {
         setPage(selectedItem.selected + 1); 
     };
 
+    const [ref, inView] = useInView({
+        triggerOnce: true,
+        threshold: 0.5,
+    });
+
     return (
-        <div className={'flex flex-col md:gap-32 gap-20'}>
+        <div ref={ref} className={'flex flex-col md:gap-32 gap-20'}>
             <div className={'text-white'}>
                 <h2 className={'block font-bold text-center text-3xl mt-28 mb-4'}>{currentNews?.title}</h2>
                 <div
                     className={'md:float-left lg:w-1/2 w-full md:max-h-[32rem] mb-4 rounded-lg overflow-hidden md:px-0 px-6 !pr-6 relative'}>
-                    {currentNews && currentNews?.video ? (
+                    {inView && currentNews && currentNews?.video ? (
                         <ReactPlayer
                             url={currentNews?.video}
                             playing
