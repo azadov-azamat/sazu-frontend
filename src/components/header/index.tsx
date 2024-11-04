@@ -4,12 +4,12 @@ import {Swiper, SwiperSlide} from 'swiper/react';
 
 import {Navigation, Autoplay} from 'swiper/modules';
 import {LazyLoadImage} from "react-lazy-load-image-component";
-import {useEffect, useRef} from "react";
+import React, {useEffect, useRef} from "react";
 import {getCarouselData} from "../../redux/reducers/variable.ts";
 import {useAppDispatch, useAppSelector} from "../../redux/hooks.ts";
 
 
-export default function Component() {
+const Component = React.memo(function Header () {
 
     const dispatch = useAppDispatch();
 
@@ -69,4 +69,6 @@ export default function Component() {
             </Swiper>
         </header>
     );
-}
+})
+
+export default Component;

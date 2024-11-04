@@ -1,8 +1,8 @@
-// import React from 'react';
+import React from 'react';
 
 import ReactPlayer from "react-player";
 
-export default function Component({video, autoplay = true, controls = false}: {video: string, autoplay?: boolean, controls?: boolean}) {
+const Component = React.memo(function VideoPlayer({video, autoplay = true, controls = false}: {video: string, autoplay?: boolean, controls?: boolean}) {
 
     return (
         <section className="video-wrapper xl:w-[850px] md:w-[700px] w-full xl:h-[450px] md:[350px] sm:h-80 h-[280px] rounded-lg overflow-hidden">
@@ -18,4 +18,6 @@ export default function Component({video, autoplay = true, controls = false}: {v
             />
         </section>
     );
-}
+})
+
+export default Component;

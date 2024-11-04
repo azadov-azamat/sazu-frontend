@@ -1,15 +1,13 @@
 // import React from 'react';
 
 import {contactDataKey} from "../../interface/redux/variable.interface.ts";
-// import {useTranslation} from "react-i18next";
-// import {LazyLoadImage} from "react-lazy-load-image-component";
+import {LazyLoadImage} from "react-lazy-load-image-component";
 
 export default function Component({name, image, profession, text}: contactDataKey) {
-    // const {t} = useTranslation()
 
     return (
         <div className="relative w-full xl:h-[440px] md:h-[360px] sm:h-80 sm:mt-0 mt-24 h-96 bg-black rounded-xl shadow-lg group">
-            <img
+            <LazyLoadImage
                 src={image}
                 alt={name}
                 loading={'lazy'}

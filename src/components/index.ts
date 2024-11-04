@@ -16,5 +16,5 @@ export {default as ContactCardComponent} from './contact-card';
 export {default as ScrollToTopComponent} from './scroll-to-top';
 // export {default as ParticlesBackgroundComponent} from './particles-background';
 
-export {default as LoginFormComponent} from './form/login';
-export {default as RegisterFormComponent} from './form/register';
+// export {default as LoginFormComponent} from './form/login';
+// export {default as RegisterFormComponent} from './form/register';
