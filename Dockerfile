@@ -4,16 +4,15 @@ FROM node:18-alpine
 # Set working directory
 WORKDIR /app
 
-# Copy package.json and package-lock.json
-COPY package*.json ./
-
-# Install dependencies
-RUN npm install
-
-# Copy the rest of the application code
+# Copy all files and install dependencies in one step
 COPY . .
-RUN touch .env
+
+# Set environment variable (if needed, better to use ARG and ENV)
 RUN echo "VITE_BACKEND_HOST=https://back.sazumedia.com" > .env
+
+# Increase memory limit for build
+RUN node --max-old-space-size=2048 /usr/local/bin/npm ci
+
 # Build the React application
 RUN npm run build
 
