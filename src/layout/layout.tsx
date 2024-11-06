@@ -23,7 +23,6 @@ function Layout({children}: LayoutProps): JSX.Element {
                 autoPlay
                 loop
                 muted
-                data-aos="fade-in"
             >
                 <source src={bgVideo} type="video/mp4"/>
             </video>
