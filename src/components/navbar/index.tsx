@@ -128,19 +128,19 @@ const Navbar: React.FC = () => {
                             className={`w-8 h-0.5 bg-white transition-transform transform -rotate-45 -translate-y-1.5 absolute top-6`}></div>
                     </div>
                     <ul className="list-none p-0 m-0 flex flex-col items-center gap-4">
-                        <li className="text-2xl md:text-4xl xl:text-6xl text-white font-normal">
+                        <li className="text-2xl md:text-4xl xl:text-6xl text-white font-normal duration-300 hover:text-primary-purple">
                             <Link to="/" onClick={toggleMenu}>{t('main')}</Link>
                         </li>
-                        <li className="text-2xl md:text-4xl xl:text-6xl text-white font-normal">
+                        <li className="text-2xl md:text-4xl xl:text-6xl text-white font-normal duration-300 hover:text-primary-purple">
                             <a href="#about-us" onClick={toggleMenu}>{t('about-us')}</a>
                         </li>
-                        <li className="text-2xl md:text-4xl xl:text-6xl text-white font-normal">
+                        <li className="text-2xl md:text-4xl xl:text-6xl text-white font-normal duration-300 hover:text-primary-purple">
                             <a href="#news" onClick={toggleMenu}>{t('news')}</a>
                         </li>
-                        <li className="text-2xl md:text-4xl xl:text-6xl text-white font-normal">
+                        <li className="text-2xl md:text-4xl xl:text-6xl text-white font-normal duration-300 hover:text-primary-purple">
                             <a href="#partners" onClick={toggleMenu}>{t('partners')}</a>
                         </li>
-                        <li className="text-2xl md:text-4xl xl:text-6xl text-white font-normal">
+                        <li className="text-2xl md:text-4xl xl:text-6xl text-white font-normal duration-300 hover:text-primary-purple">
                             <a href="#contacts" onClick={toggleMenu}>{t('about-team')}</a>
                         </li>
                     </ul>
